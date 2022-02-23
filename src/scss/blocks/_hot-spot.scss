@@ -1,0 +1,61 @@
+.hot-spot {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 535px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
+
+    &__text-wrap {
+        margin-bottom: 90px;
+    }
+
+    &__title h1 {
+        font-size: 48px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    &__mouse-scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 124px;
+    }
+
+    &__mouse-link {
+        display: flex;
+
+        &::before {
+            content: url(../img/arrow-map-scroll.png);
+            position: absolute;
+            top: 65px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+
+        &:hover {
+            &::before {
+                animation: scroll-map-hot 1s infinite;
+            }
+        }
+    }
+
+    @keyframes scroll-map-hot {
+        0% {
+            transform: translate(-50%, 0);
+        }
+    
+        50% {
+            transform: translate(-50%, 21px);
+        }
+
+        100% {
+            transform: translate(-50%, 0);
+        }
+    }
+}

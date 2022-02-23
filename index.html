@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="src/css/main.css" />
+    <title>Clean air for Ukraine</title>
+  </head>
+  <body style="background-image: url(src/img/background1.png)">
+    <div class="container">
+      <header class="page-head">
+        <div class="page-head__logo-wrap">
+          <a href="#" class="page-head__logo-link" target="_blank"
+            ><img src="src/img/logo.png" alt="logo"
+          /></a>
+        </div>
+        <div class="page-head__panel">
+          <nav class="page-head__nav">
+            <ul class="page-head__list">
+              <li class="page-head__item">
+                <a href="#" class="page-head__item-link">Главная</a>
+              </li>
+              <li
+                class="page-head__item page-head__item_arrow page-head__item_arrow-left"
+              >
+                <a
+                  href="#"
+                  class="page-head__item-link page-head__item-link_arrow"
+                  >Статьи</a
+                >
+                <ul
+                  class="page-head__inner-list page-head__inner-list_left hidden"
+                >
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 1</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 2</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 3</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 4</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 5</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="page-head__item">
+                <a href="#" class="page-head__item-link">Ивенты</a>
+              </li>
+              <li class="page-head__item">
+                <a href="#" class="page-head__item-link">Карта</a>
+              </li>
+              <li
+                class="page-head__item page-head__item_arrow page-head__item_arrow-right"
+              >
+                <a
+                  href="#"
+                  class="page-head__item-link page-head__item-link_arrow"
+                  >О проекте</a
+                >
+                <ul
+                  class="page-head__inner-list page-head__inner-list_right hidden"
+                >
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 1</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 2</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 3</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 4</a>
+                  </li>
+                  <li class="page-head__inner-item">
+                    <a href="#" class="page-head__inner-link">item 5</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="page-head__input-wrap">
+            <label class="page-head__label" for="search-button"
+              ><img src="src/img/search.svg" alt="search-img" />
+              <input
+                type="text"
+                placeholder="Поиск"
+                class="page-head__input"
+                id="search-button"
+              />
+            </label>
+          </div>
+          <div class="page-head__button-wrap">
+            <span class="page-head__language">Укр</span>
+            <span class="page-head__language-ball"></span>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container-width">
+          <section
+            class="hot-spot"
+            style="background-image: url(src/img/hot-spots.png)"
+          >
+            <div class="hot-spot__text-wrap">
+              <div class="hot-spot__title">
+                <h1>Мапа горячих точок в Украине</h1>
+              </div>
+              <div class="hot-spot__mouse-scroll">
+                <a href="#interactive-map" class="hot-spot__mouse-link">
+                  <img src="src/img/mouse.svg" alt="mouse-icon" />
+                </a>
+              </div>
+            </div>
+          </section>
+          <section class="articles">
+            <div class="articles__block">
+              <div class="articles__head-title">
+                <h2>Статьи</h2>
+              </div>
+              <input
+                type="radio"
+                id="articles-first"
+                class="articles__head-hidden-input"
+                name="article-checkbox"
+                value=""
+                checked
+              />
+              <label
+                for="articles-first"
+                class="articles__head-label"
+                id="articles-first-label"
+                >Блоги</label
+              >
+              <input
+                type="radio"
+                id="articles-second"
+                class="articles__head-hidden-input"
+                name="article-checkbox"
+                value=""
+              />
+              <label
+                for="articles-second"
+                class="articles__head-label"
+                id="articles-second-label"
+                >Исследования</label
+              >
+              <input
+                type="radio"
+                id="articles-third"
+                class="articles__head-hidden-input"
+                name="article-checkbox"
+                value=""
+              />
+              <label
+                for="articles-third"
+                class="articles__head-label"
+                id="articles-third-label"
+                >Новости</label
+              >
+              <ul class="articles__content-list articles__content-list-1">
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+              </ul>
+              <ul class="articles__content-list articles__content-list-2">
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Исследования</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Исследования</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Исследования</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Исследования</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Исследования</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Исследования</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+              </ul>
+              <ul class="articles__content-list articles__content-list-3">
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Новости</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Новости</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Новости</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Новости</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Новости</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Новости</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читать далее</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="events">
+            <div class="events__block">
+              <div class="events__head-title">
+                <h2>Ивенты</h2>
+              </div>
+              <input
+                type="radio"
+                id="event-first"
+                class="events__head-hidden-input"
+                name="event-checkbox"
+                value=""
+                checked
+              />
+              <label
+                for="event-first"
+                class="events__head-label"
+                id="event-first-label"
+                >Коммуникация</label
+              >
+              <input
+                type="radio"
+                id="event-second"
+                class="events__head-hidden-input"
+                name="event-checkbox"
+                value=""
+              />
+              <label
+                for="event-second"
+                class="events__head-label"
+                id="event-second-label"
+                >Анонсы</label
+              >
+              <ul class="events__content-list events__content-list-1">
+                <li class="events__content-item">
+                  <div class="events__image-block">
+                    <div class="events__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="events__shadow"></div>
+                    </div>
+                    <div class="events__image-text">
+                      <span>Коммуникация</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="events__content-text-total">
+                    <div class="events__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="events__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="events__button-wrap">
+                    <button class="events__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="events__content-item">
+                  <div class="events__image-block">
+                    <div class="events__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="events__shadow"></div>
+                    </div>
+                    <div class="events__image-text">
+                      <span>Коммуникация</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="events__content-text-total">
+                    <div class="events__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="events__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="events__button-wrap">
+                    <button class="events__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="events__content-item">
+                  <div class="events__image-block">
+                    <div class="events__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="events__shadow"></div>
+                    </div>
+                    <div class="events__image-text">
+                      <span>Коммуникация</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="events__content-text-total">
+                    <div class="events__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="events__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="events__button-wrap">
+                    <button class="events__button">Читать далее</button>
+                  </div>
+                </li>
+              </ul>
+              <ul class="events__content-list events__content-list-2">
+                <li class="events__content-item">
+                  <div class="events__image-block">
+                    <div class="events__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="events__shadow"></div>
+                    </div>
+                    <div class="events__image-text">
+                      <span>Анонсы</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="events__content-text-total">
+                    <div class="events__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="events__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="events__button-wrap">
+                    <button class="events__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="events__content-item">
+                  <div class="events__image-block">
+                    <div class="events__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="events__shadow"></div>
+                    </div>
+                    <div class="events__image-text">
+                      <span>Анонсы</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="events__content-text-total">
+                    <div class="events__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="events__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="events__button-wrap">
+                    <button class="events__button">Читать далее</button>
+                  </div>
+                </li>
+                <li class="events__content-item">
+                  <div class="events__image-block">
+                    <div class="events__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="events__shadow"></div>
+                    </div>
+                    <div class="events__image-text">
+                      <span>Анонсы</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="events__content-text-total">
+                    <div class="events__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на
+                        Украине
+                      </h4>
+                    </div>
+                    <div class="events__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году
+                        посетили Украину. Мы сосредоточились опять на теме,
+                        основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="events__button-wrap">
+                    <button class="events__button">Читать далее</button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="interactive-map" id="interactive-map">
+            <div class="interactive-map__title-block">
+              <div class="interactive-map__title">
+                <h2>Визуализация и интервативная карта</h2>
+              </div>
+              <div class="interactive-map__title-text">
+                <p>
+                  «…будемо намагатися вам допомогти. На жаль, реалії сьогодні
+                  такі, що без оприлюднення проблеми в ЗМІ чиновники не дуже
+                  бажають рухатися. А от через розголос хоч щось починають
+                  робити…»
+                </p>
+              </div>
+            </div>
+            <div class="interactive-map__main-content">
+              <div id="map" class="interactive-map__map-block"></div>
+              <div class="interactive-map__right-content-block">
+                <div class="interactive-map__name">
+                  <span><b>Назва підприємства:</b> Запорізька ТЕС</span>
+                </div>
+                <div class="interactive-map__content-title">
+                  <h4>Довідкова інфо про підприємство:</h4>
+                </div>
+                <div class="interactive-map__content-text">
+                  <p>
+                    Запорізька ТЭЦ — сама потужна теплова електростанція України
+                    із загальною встановленою електричною потужністю 3650 МВт.
+                    Розташований у місті Енергодар Запорізької області на лівому
+                    берегу Каховського водосховища на відстані 1 км від
+                    Запорожської АЕС. Входить в ПАТ «ДТЕК Днепроенерго».
+                  </p>
+                </div>
+                <div class="interactive-map__list-block">
+                  <ul
+                    class="interactive-map__content-list interactive-map__content-list_blocker"
+                  >
+                    <li class="interactive-map__content-item">
+                      <div
+                        class="interactive-map__item-text interactive-map__item-text_block"
+                      >
+                        <p>
+                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          України із загальною встановленою електричною
+                          потужністю 3650 МВт.<br />
+                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          України із загальною встановленою електричною
+                          потужністю 3650 МВт.Запорізька ТЭЦ — сама потужна
+                          теплова електростанція
+                        </p>
+                      </div>
+                      <div class="interactive-map__button-close-wrap">
+                        <button class="interactive-map__button-close"></button>
+                      </div>
+                    </li>
+                    <li class="interactive-map__content-item">
+                      <div
+                        class="interactive-map__item-text interactive-map__item-text_block"
+                      >
+                        <p>
+                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          України із загальною встановленою електричною
+                          потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                          потужна теплова електростанція України із загальною
+                          встановленою електричною потужністю 3650
+                          МВт.Запорізька ТЭЦ — сама потужна теплова
+                          електростанція
+                        </p>
+                      </div>
+                      <div class="interactive-map__button-close-wrap">
+                        <button class="interactive-map__button-close"></button>
+                      </div>
+                    </li>
+                    <li class="interactive-map__content-item">
+                      <div
+                        class="interactive-map__item-text interactive-map__item-text_block"
+                      >
+                        <p>
+                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          України із загальною встановленою електричною
+                          потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                          потужна теплова електростанція України із загальною
+                          встановленою електричною потужністю 3650
+                          МВт.Запорізька ТЭЦ — сама потужна теплова
+                          електростанція
+                        </p>
+                      </div>
+                      <div class="interactive-map__button-close-wrap">
+                        <button class="interactive-map__button-close"></button>
+                      </div>
+                    </li>
+                    <li class="interactive-map__content-item">
+                      <div
+                        class="interactive-map__item-text interactive-map__item-text_block"
+                      >
+                        <p>
+                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          України із загальною встановленою електричною
+                          потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                          потужна теплова електростанція України із загальною
+                          встановленою електричною потужністю 3650
+                          МВт.Запорізька ТЭЦ — сама потужна теплова
+                          електростанція
+                        </p>
+                      </div>
+                      <div class="interactive-map__button-close-wrap">
+                        <button class="interactive-map__button-close"></button>
+                      </div>
+                    </li>
+                    <li class="interactive-map__content-item">
+                      <div
+                        class="interactive-map__item-text interactive-map__item-text_block"
+                      >
+                        <p>
+                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          України із загальною встановленою електричною
+                          потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                          потужна теплова електростанція України із загальною
+                          встановленою електричною потужністю 3650
+                          МВт.Запорізька ТЭЦ — сама потужна теплова
+                          електростанція
+                        </p>
+                      </div>
+                      <div class="interactive-map__button-close-wrap">
+                        <button class="interactive-map__button-close"></button>
+                      </div>
+                    </li>
+                    <li class="interactive-map__content-item">
+                      <div
+                        class="interactive-map__item-text interactive-map__item-text_block"
+                      >
+                        <p>
+                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          України із загальною встановленою електричною
+                          потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                          потужна теплова електростанція України із загальною
+                          встановленою електричною потужністю 3650
+                          МВт.Запорізька ТЭЦ — сама потужна теплова
+                          електростанція
+                        </p>
+                      </div>
+                      <div class="interactive-map__button-close-wrap">
+                        <button class="interactive-map__button-close"></button>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="interactive-map__list-button-wrap">
+                    <button class="interactive-map__list-button"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="special-project">
+            <div class="special-project__content">
+              <div class="special-project__block-title">
+                <h2>Спецпроекты</h2>
+              </div>
+              <ul class="special-project__list">
+                <li class="special-project__item">
+                  <a href="#" class="special-project__item-link">
+                    <div class="special-project__imp-wrap">
+                      <img src="src/img/earth.png" alt="special-proj" />
+                    </div>
+                    <div class="special-project__background-wrap">
+                      <div class="special-project__text-content-wrap">
+                        <div class="special-project__text-title">
+                          <h4>
+                            Мониторинг проблем нанесенных олигархом птицефабрики
+                            на Украине
+                          </h4>
+                        </div>
+                        <div class="special-project__text-content">
+                          <p>
+                            В июле мы с «Арникой» уже второй раз в этом году
+                            посетили Украину. Мы сосредоточились опять на теме,
+                            основой для нашей деятельности – крупный развод
+                            птицы...В июле мы с «Арникой» уже второй раз в этом
+                            году посетили Украину. Мы сосредоточились опять на
+                            теме
+                          </p>
+                        </div>
+                        <div class="special-project__date">
+                          <span>28/08/2017</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="special-project__item">
+                  <a href="#" class="special-project__item-link">
+                    <div class="special-project__imp-wrap">
+                      <img src="src/img/earth.png" alt="special-proj" />
+                    </div>
+                    <div class="special-project__background-wrap">
+                      <div class="special-project__text-content-wrap">
+                        <div class="special-project__text-title">
+                          <h4>
+                            Мониторинг проблем нанесенных олигархом птицефабрики
+                            на Украине
+                          </h4>
+                        </div>
+                        <div class="special-project__text-content">
+                          <p>
+                            В июле мы с «Арникой» уже второй раз в этом году
+                            посетили Украину. Мы сосредоточились опять на теме,
+                            основой для нашей деятельности – крупный развод
+                            птицы...В июле мы с «Арникой» уже второй раз в этом
+                            году посетили Украину. Мы сосредоточились опять на
+                            теме
+                          </p>
+                        </div>
+                        <div class="special-project__date">
+                          <span>28/08/2017</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="special-project__item">
+                  <a href="#" class="special-project__item-link">
+                    <div class="special-project__imp-wrap">
+                      <img src="src/img/earth.png" alt="special-proj" />
+                    </div>
+                    <div class="special-project__background-wrap">
+                      <div class="special-project__text-content-wrap">
+                        <div class="special-project__text-title">
+                          <h4>
+                            Мониторинг проблем нанесенных олигархом птицефабрики
+                            на Украине
+                          </h4>
+                        </div>
+                        <div class="special-project__text-content">
+                          <p>
+                            В июле мы с «Арникой» уже второй раз в этом году
+                            посетили Украину. Мы сосредоточились опять на теме,
+                            основой для нашей деятельности – крупный развод
+                            птицы...В июле мы с «Арникой» уже второй раз в этом
+                            году посетили Украину. Мы сосредоточились опять на
+                            теме
+                          </p>
+                        </div>
+                        <div class="special-project__date">
+                          <span>28/08/2017</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="special-project__item">
+                  <a href="#" class="special-project__item-link">
+                    <div class="special-project__imp-wrap">
+                      <img src="src/img/earth.png" alt="special-proj" />
+                    </div>
+                    <div class="special-project__background-wrap">
+                      <div class="special-project__text-content-wrap">
+                        <div class="special-project__text-title">
+                          <h4>
+                            Мониторинг проблем нанесенных олигархом птицефабрики
+                            на Украине
+                          </h4>
+                        </div>
+                        <div class="special-project__text-content">
+                          <p>
+                            В июле мы с «Арникой» уже второй раз в этом году
+                            посетили Украину. Мы сосредоточились опять на теме,
+                            основой для нашей деятельности – крупный развод
+                            птицы...В июле мы с «Арникой» уже второй раз в этом
+                            году посетили Украину. Мы сосредоточились опять на
+                            теме
+                          </p>
+                        </div>
+                        <div class="special-project__date">
+                          <span>28/08/2017</span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="about-project">
+            <div class="about-project__title-holder">
+              <h2>О проекте «<span>Чистый воздух для Украины</span>»</h2>
+            </div>
+            <div class="about-project__our-workers">
+              <div
+                class="about-project__img-holder-top about-project__img-holder-top_big"
+              >
+                <img src="src/img/projBigPhoto.png" alt="our-workers" />
+              </div>
+              <div class="about-project__span-holder">
+                <span>В июле мы с «Арникой» уже второй раз в этом</span>
+              </div>
+              <div class="about-project__content-block">
+                <div class="about-project__text-wrap">
+                  <p>
+                    В июле мы с «Арникой» уже второй раз в этом году посетили
+                    Украину. Мы сосредоточились опять на теме, основой для нашей
+                    деятельности –крупный развод птицы. Вместе с нашей
+                    организацией-партнер…В июле мы с «Арникой» уже второй раз в
+                    этом году посетили Украину. Мы сосредоточились опять на
+                    теме, основой для нашей деятельности – крупный развод птицы.
+                    Вместе с нашей организацией-партнер…В июле мы с «Арникой»
+                    уже второй раз в этом году посетили Украину.
+                  </p>
+                </div>
+                <div class="about-project__img-holder-top">
+                  <img src="src/img/projPhoto1.png" alt="our-workers" />
+                </div>
+              </div>
+              <div class="about-project__content-block">
+                <div class="about-project__img-holder-top">
+                  <img src="src/img/projPhoto2.png" alt="our-workers" />
+                </div>
+                <div class="about-project__text-wrap">
+                  <p>
+                    В июле мы с «Арникой» уже второй раз в этом году посетили
+                    Украину. Мы сосредоточились опять на теме, основой для нашей
+                    деятельности –крупный развод птицы. Вместе с нашей
+                    организацией-партнер…В июле мы с «Арникой» уже второй раз в
+                    этом году посетили Украину. Мы сосредоточились опять на
+                    теме, основой для нашей деятельности – крупный развод птицы.
+                    Вместе с нашей организацией-партнер…В июле мы с «Арникой»
+                    уже второй раз в этом году посетили Украину.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="about-project__our-team">
+              <div
+                class="about-project__title-holder about-project__title-holder_center"
+              >
+                <h2>Наша команда</h2>
+              </div>
+              <ul
+                class="about-project__photo-block"
+                style="background-image: url(src/img/bg-line.png)"
+              >
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo1.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo2.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo3.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo4.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo1.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo2.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo3.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+                <li class="about-project__photo-item">
+                  <div class="about-project__img-holder-bot">
+                    <img src="src/img/photo4.png" alt="photo" />
+                  </div>
+                  <div class="about-project__title-holder">
+                    <h4>Сергей Василий</h4>
+                  </div>
+                  <div class="about-project__span-holder-bot">
+                    <span>Преприниматель, основатель “Такого</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="request-block">
+            <div
+              class="request-block__title-holder request-block__title-holder_block-title"
+            >
+              <h2>
+                Заполните данные на одной из наших предложений. Для принятия
+                вашей заявки
+              </h2>
+            </div>
+            <ul class="request-block__info-box-holder">
+              <li class="request-block__info-box">
+                <div class="request-block__title-holder">
+                  <h4>Техническая поддержка</h4>
+                </div>
+                <div class="request-block__text-holder">
+                  <p>
+                    В июле мы с «Арникой» уже второй раз в этом году посетили
+                    Украину. Мы сосредоточились опять на теме, основой для нашей
+                    деятельности
+                  </p>
+                </div>
+                <div class="request-block__button-holder">
+                  <button class="request-block__button">Оставить заявку</button>
+                </div>
+              </li>
+              <li class="request-block__info-box">
+                <div class="request-block__title-holder">
+                  <h4>Установи свой сенсор</h4>
+                </div>
+                <div class="request-block__text-holder">
+                  <p>
+                    В июле мы с «Арникой» уже второй раз в этом году посетили
+                    Украину. Мы сосредоточились опять на теме, основой для нашей
+                    деятельности
+                  </p>
+                </div>
+                <div class="request-block__button-holder">
+                  <button class="request-block__button">Оставить заявку</button>
+                </div>
+              </li>
+              <li class="request-block__info-box">
+                <div class="request-block__title-holder">
+                  <h4>Напиши нам</h4>
+                </div>
+                <div class="request-block__text-holder">
+                  <p>
+                    В июле мы с «Арникой» уже второй раз в этом году посетили
+                    Украину. Мы сосредоточились опять на теме, основой для нашей
+                    деятельности
+                  </p>
+                </div>
+                <div class="request-block__button-holder">
+                  <button class="request-block__button">Оставить заявку</button>
+                </div>
+              </li>
+              <li class="request-block__info-box">
+                <div class="request-block__title-holder">
+                  <h4>Получай информацию</h4>
+                </div>
+                <div class="request-block__text-holder">
+                  <p>
+                    В июле мы с «Арникой» уже второй раз в этом году посетили
+                    Украину. Мы сосредоточились опять на теме, основой для нашей
+                    деятельности
+                  </p>
+                </div>
+                <div class="request-block__button-holder">
+                  <button class="request-block__button">Оставить заявку</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <footer class="page-foot">
+        <div class="page-foot__upper-block">
+          <div class="page-foot__img-wrap page-foot__img-wrap_center">
+            <a href="#" class="page-foot__img-link"
+              ><img src="src/img/logo.png" alt="logo"
+            /></a>
+          </div>
+          <div class="page-foot__blocks-wrap">
+            <span>Статьи</span>
+            <ul class="page-foot__list page-foot__list_grid">
+              <li class="page-foot__item">
+                <a href="#" class="page-foot__item-link">Дослідження</a>
+              </li>
+              <li class="page-foot__item">
+                <a href="#" class="page-foot__item-link">Блоги</a>
+              </li>
+              <li class="page-foot__item">
+                <a href="#" class="page-foot__item-link">Стаття</a>
+              </li>
+              <li class="page-foot__item">
+                <a href="#" class="page-foot__item-link">Новини</a>
+              </li>
+            </ul>
+          </div>
+          <div class="page-foot__blocks-wrap">
+            <span>Ивенты</span>
+            <ul class="page-foot__list page-foot__list_flex">
+              <li class="page-foot__item">
+                <a href="#" class="page-foot__item-link">Коммуникации</a>
+              </li>
+              <li class="page-foot__item">
+                <a href="#" class="page-foot__item-link">Анонсы</a>
+              </li>
+            </ul>
+          </div>
+          <div class="page-foot__blocks-wrap">
+            <span>Интерактивные карты</span>
+            <ul class="page-foot__list">
+              <li class="page-foot__item">
+                <a
+                  href="#"
+                  class="page-foot__item-link page-foot__item-link_map"
+                >
+                  <div class="page-foot__img-wrap page-foot__img-wrap_map">
+                    <img
+                      src="src/img/interactive-map-small.png"
+                      alt="interactive-map"
+                    />
+                  </div>
+                  <div class="page-foot__span-wrap"><span>Открыть</span></div>
+                  <span class="page-foot__shadow"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="page-foot__blocks-wrap">
+            <ul class="page-foot__list page-foot__list_about">
+              <li class="page-foot__item">
+                <a
+                  href="#"
+                  class="page-foot__item-link page-foot__item-link_about"
+                  >Спецпроекты</a
+                >
+              </li>
+              <li class="page-foot__item">
+                <a
+                  href="#"
+                  class="page-foot__item-link page-foot__item-link_about"
+                  >О проекте</a
+                >
+              </li>
+              <li class="page-foot__item">
+                <a
+                  href="#"
+                  class="page-foot__item-link page-foot__item-link_about"
+                  >Наши контакты</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="page-foot__blocks-wrap">
+            <span>Наши Соцсети</span>
+            <ul class="page-foot__list page-foot__list_contact">
+              <li class="page-foot__item page-foot__item_icon">
+                <a href="#" class="page-foot__item-link">
+                  <div
+                    class="page-foot__img-wrap page-foot__img-wrap_icon page-foot__img-wrap_fb"
+                  >
+                    <img src="src/img/facebook.svg" alt="facebook-logo" />
+                  </div>
+                </a>
+              </li>
+              <li class="page-foot__item page-foot__item_icon">
+                <a href="#" class="page-foot__item-link">
+                  <div
+                    class="page-foot__img-wrap page-foot__img-wrap_icon page-foot__img-wrap_tg"
+                  >
+                    <img src="src/img/telegram.svg" alt="telegram-logo" />
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="page-foot__bottom-block">
+          <div class="page-foot__partners-left">
+            <div class="page-foot__img-wrap">
+              <a href="#" class="page-foot__partners-link"
+                ><img src="src/img/activeCitizens.png" alt="active-citizens"
+              /></a>
+            </div>
+            <div class="page-foot__img-wrap">
+              <a href="#" class="page-foot__partners-link"
+                ><img src="src/img/britishCouncil.png" alt="british-council"
+              /></a>
+            </div>
+            <p>
+              Проект реалізується за підтримки Британської Ради в рамках Проекту
+              «Активні громадяни»
+            </p>
+          </div>
+          <div class="page-foot__partners-concate">
+            <div class="page-foot__partners-beetroot">
+              <a href="#" class="page-foot__partners-link">
+                <div class="page-foot__img-wrap page-foot__img-wrap_right">
+                  <img
+                    src="src/img/BeetrootAcademy.svg"
+                    alt="beetroot-academy"
+                  />
+                </div>
+                <p>
+                  За пітдримки “Бітрут-Академії” була створенна Веб-розробка
+                </p>
+              </a>
+            </div>
+            <div class="page-foot__partners-gds">
+              <a href="#" class="page-foot__partners-link">
+                <div
+                  class="page-foot__img-wrap page-foot__img-wrap_right page-foot__img-wrap_ball"
+                >
+                  <img src="src/img/GDS.png" alt="GDS-design" />
+                </div>
+                <p>Дизайн виконав: G.D.S Desing</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="src/js/slick.min.js"></script>
+    <script src="src/js/slick-config.js"></script>
+    <script src="src/js/map.js"></script>
+    <script src="src/js/events.js"></script>
+  </body>
+</html>

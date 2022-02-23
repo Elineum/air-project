@@ -1,0 +1,254 @@
+.interactive-map {
+
+    &__title-block {
+        margin-bottom: 25px;
+    }
+
+    &__title {
+        margin-bottom: 35px;
+
+        & h2 {
+            font-size: 36px;
+        }
+    }
+
+    &__title-text {
+        max-width: 868px;
+        font-size: 18px;
+        color: $grey;
+    }
+
+    &__map-block {
+        max-height: 541px;
+        max-width: 595px;
+    }
+
+    &__main-content {
+        display: flex;
+        gap: 25px;
+    }
+
+    &__name {
+        font-size: 18px;
+        margin-bottom: 25px;
+
+        & span {
+            color: $grey;
+        }
+
+        & b {
+            color: black;
+        }
+    }
+
+    &__right-content-block {
+        padding-top: 8px;
+        position: relative;
+        padding-bottom: 55px;
+    }
+
+    &__content-title {
+        margin-bottom: 10px;
+    }
+
+    &__content-text {
+        font-size: 18px;
+        color: $grey;
+        margin-bottom: 25px;
+        line-height: 27px;
+    }
+
+    &__content-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+
+        &_blocker {
+            max-height: 302px;
+        }
+    }
+
+    &__content-item {
+        padding: 12px 14px 11px;
+        border: 1px solid #CCCCCC;
+        border-radius: 10px;
+        line-height: 23px;
+        position: relative;
+        cursor: pointer;
+        transition: all ease-in-out 0.3s;
+
+        &_open {
+            background-color: $orange;
+
+            .interactive-map__item-text_block {
+                max-height: max-content;
+            }
+
+            .interactive-map__item-text {
+                color: black;
+            }
+
+            &::before {
+                border: 0 !important;
+            }
+
+            .interactive-map__button-close {
+                display: block;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 25px;
+            bottom: 17px;
+            width: 40px;
+            height: 0;
+            border-bottom: 10px dotted $orange;
+            transition: all ease-in-out 0.3s;
+        }
+
+        &:hover {
+            background-color: $orange;
+
+            &::before {
+                border-bottom: 10px dotted $blue;
+            }
+
+            .interactive-map__item-text {
+                color: black;
+            }
+        }
+    }
+
+    &__button-close {
+        width: 0;
+        height: 0;
+        border: 0;
+        cursor: pointer;
+        display: none;
+
+        &::before {
+            content: url(../img/closeBlock.svg);
+            position: absolute;
+            right: 25px;
+            bottom: 10px;
+            // TODO add content as icon and add hover
+        }
+    }
+
+    &__item-text {
+        overflow: hidden;
+        max-width: 435px;
+        color: $grey;
+        transition: all ease-in-out 0.3s;
+
+        &_block {
+            max-height: 69px;
+        }
+    }
+
+    &__list-button-wrap {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    &__list-button {
+        height: 37px;
+        width: 37px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: $blue;
+        border: 0;
+        transition: all ease-in-out 0.3s;
+
+        &::before {
+            content: url(../img/arrow.png);
+            position: absolute;
+            transform: translate(-50%, -75%);
+            transition: all ease-in-out 0.5s;
+        }
+
+        &:hover {
+            filter: drop-shadow(0px 0px 15px $blue);
+        }
+    }
+
+    &__list-button-back {
+        height: 37px;
+        width: 37px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: $blue;
+        border: 0;
+        transition: all ease-in-out 0.3s;
+
+        &::before {
+            content: url(../img/arrow.png);
+            position: absolute;
+            transform: translate(-48%, -25%) rotate(360deg) scale(1, -1);
+            transition: all ease-in-out 0.5s;
+        }
+    }
+
+    // & .slick-arrow {
+    //     position: absolute;
+    //     z-index: 4;
+    //     left: 45%;
+    //     bottom: 0;
+    //     height: 37px;
+    //     width: 37px;
+    //     background-color: $blue;
+    //     border: 1px solid $blue;
+    //     font-size: 0; 
+    //     border-radius: 50%;
+    //     cursor: pointer;
+
+        // &:hover {
+        //     filter: drop-shadow(0px 0px 15px $blue);
+        // }
+
+    //     &:active {
+    //         .slick-arrow.slick-prev, .slick-arrow.slick-next {
+    //             filter: drop-shadow(0px 0px 15px $blue);
+    //         }
+    //     }
+    // }
+
+    // & .slick-arrow.slick-disabled {
+    //     display: none;
+    // }
+
+    // & .slick-arrow.slick-prev{
+    //     &::before {
+    //         content: url(../img/arrow.png);
+    //         position: absolute;
+    //         left: 50%;
+    //         top: 50%;
+    //         transform: translate(-51%, -20%) rotate(180deg);
+    //         transition: all ease-in-out 0.3s;
+    //     }
+    // }
+
+    // & .slick-arrow.slick-next{
+    //     &::before {
+    //         content: url(../img/arrow.png);
+    //         position: absolute;
+    //         left: 50%;
+    //         top: 50%;
+    //         transform: translate(-51%, -80%);
+    //         transition: all ease-in-out 0.3s;
+    //     }
+    // }
+    
+    // .slick-track {
+    //     display: block;
+    // }
+}
+
+#map {
+    min-height: 541px;
+    min-width: 595px;
+}

@@ -1,0 +1,223 @@
+.page-foot {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &__upper-block {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1170px;
+        margin: 0 auto;
+        margin-bottom: 22px;
+        padding-top: 40px;
+    }
+
+    &__left-content, &__right-content {
+        display: flex;
+    }
+
+    &__item {
+        &_icon {
+            border: 3px solid transparent;
+            border-radius: 50%;
+            transition: all ease-in-out 0.5s;
+            outline: 0.5px solid transparent;
+    
+            &:hover {
+                transform: rotate(360deg);
+                outline: 0.5px solid $darkBlue;
+            }
+        }
+    }
+
+    &__img-wrap {
+        &_ball img {
+            border-radius: 50%;
+        }
+
+        &_right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 84px;
+        }
+
+        &_center {
+            align-self: center;
+        }
+
+        &_icon {
+            width: 40px;
+            height: 40px;
+            background-color: $blue;
+            border: 3.5px solid transparent;
+            border-radius: 50%;
+            transition: all ease-in-out 0.3s;
+
+            &:active {
+                background-color: $darkBlue;
+            }
+        }
+
+        &_fb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &_tg {
+            display: flex;
+            align-items: center;
+            padding-left: 8%;
+        }
+
+        &_map {
+            display: flex;
+        }
+    }
+
+    &__item-link {
+        color: $grey;
+        text-decoration: none;
+        font-weight: 300;
+
+        &_map {
+            position: relative;
+            display: block;
+        }
+
+        &_about {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+
+    &__span-wrap {
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        background-color: $orange;
+        padding: 6px 15px 5px;
+        border-radius: 14px;
+        color: white;
+        font-size: 14px;
+        z-index: 3;
+    }
+
+    &__bottom-block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 22px 0 35px;
+
+        &::after {
+        content: '';
+        max-width: 100%;
+        width: 1920px;
+        height: 1px;
+        background-color: $white;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 170px;
+        }
+    }
+
+    &__partners-left {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 358px;
+        justify-content: space-around;
+        font-size: 16px;
+        height: 116px;
+    }
+
+    &__partners-concate {
+        display: flex;
+        font-size: 14px;
+        gap: 90px;
+        height: 116px;
+    }
+
+    &__partners-beetroot {
+        max-width: 209px;
+        text-align: center;
+        height: 100%;
+    }
+
+    &__partners-gds {
+        max-width: 112px;
+        text-align: center;
+        height: 100%;
+    }
+
+    &__list {
+        list-style: none;
+        max-width: 192px;
+        padding-top: 20px;
+
+        &_grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 23px;
+        }
+
+        &_flex {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &_contact {
+            display: flex;
+            gap: 13px;
+        }
+
+        &_about {
+            display: flex;
+            flex-direction: column;
+            gap: 29px;
+            padding-top: 0;
+        }
+
+        &_contact {
+            transition: all ease-in-out 0.9s;
+        }
+    }
+
+    &__blocks-wrap {
+        & > span {
+            font-size: 18px;
+            font-weight: 500;
+            color: $grey;
+        }
+    }
+
+    &__partners-link {
+        color: $grey;
+    }
+
+    &__shadow {
+        position: absolute;
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0, 0.3);
+        border-radius: 10px;
+        top: 0;
+    }
+
+    &::before {
+        content: '';
+        max-width: 100%;
+        height: 1px;
+        width: 1920px;
+        background-color: $grey;
+        display: block;
+        position: absolute;
+        top: 0;
+    }
+}
