@@ -3,7 +3,7 @@ html {
 }
 
 .container {
-    margin: 53px auto 37px;
+    margin: 53px auto 0;
 }
 
 .container-width {
@@ -20,6 +20,5 @@ body {
     background-position-y: top;
     background-position-x: center;
     background-size: cover;
-    height: 100vh;
     font-family: 'Roboto', sans-serif;
 }

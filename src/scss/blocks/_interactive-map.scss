@@ -58,6 +58,16 @@
         line-height: 27px;
     }
 
+    &__material-title {
+        margin-bottom: 10px;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #0A0A21;
+        }
+    }
+
     &__content-list {
         list-style: none;
         display: flex;
@@ -71,7 +81,7 @@
     }
 
     &__content-item {
-        padding: 12px 14px 11px;
+        padding: 11px 14px 10px;
         border: 1px solid #CCCCCC;
         border-radius: 10px;
         line-height: 23px;
@@ -249,6 +259,6 @@
 }
 
 #map {
-    min-height: 541px;
+    min-height: 572px;
     min-width: 595px;
 }

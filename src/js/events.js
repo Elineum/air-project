@@ -5,6 +5,9 @@ let navHiddenMenuL = document.querySelector(".page-head__inner-list_left");
 let navHiddenMenuR = document.querySelector(".page-head__inner-list_right");
 let languageSwitherBall = document.querySelector(".page-head__language-ball");
 let languageSwitherText = document.querySelector(".page-head__language");
+let modalCloser = document.querySelectorAll(".js-close-modal");
+let shadowModal = document.querySelector(".window-box");
+let modalStarts = document.querySelector(".request-block__info-box-holder");
 let interactiveMapList = document.querySelector(
   ".interactive-map__content-list"
 );
@@ -18,6 +21,11 @@ let interactiveMapClose = document.querySelector(
   ".interactive-map__button-close"
 );
 
+[].forEach.call(modalCloser, (el) => {
+  el.addEventListener("click", modalClose);
+});
+let activeModal;
+
 function listenerAdder() {
   languageSwither.addEventListener("click", languageSwitherClick);
   navItemArrowL.addEventListener("mouseenter", navMenuLeft);
@@ -26,8 +34,38 @@ function listenerAdder() {
   navItemArrowR.addEventListener("mouseleave", navMenuRight);
   interactiveMapButton.addEventListener("click", interactiveMapListToggler);
   interactiveMapList.addEventListener("click", interactiveMapItemOpener);
+  modalStarts.addEventListener("click", openModal);
 }
 listenerAdder();
+
+function openModal(e) {
+  if (e.target.classList.contains("request-block__button")) {
+    shadowModal.classList.remove("hide-modal-shadow");
+
+    if (e.target.classList.contains("request-block__button_help")) {
+      let curr = document.querySelector(".window-box__help");
+      curr.classList.add("visible-modal");
+      activeModal = document.querySelector(".visible-modal");
+    } else if (e.target.classList.contains("request-block__button_add-point")) {
+      let curr = document.querySelector(".window-box__add-point");
+      curr.classList.add("visible-modal");
+      activeModal = document.querySelector(".visible-modal");
+    } else if (e.target.classList.contains("request-block__button_add-info")) {
+      let curr = document.querySelector(".window-box__add-info");
+      curr.classList.add("visible-modal");
+      activeModal = document.querySelector(".visible-modal");
+    } else if (e.target.classList.contains("request-block__button_subscribe")) {
+      let curr = document.querySelector(".window-box__news");
+      curr.classList.add("visible-modal");
+      activeModal = document.querySelector(".visible-modal");
+    }
+  } else return;
+}
+
+function modalClose() {
+  activeModal.classList.remove("visible-modal");
+  shadowModal.classList.add("hide-modal-shadow");
+}
 
 function languageSwitherClick() {
   languageSwither.classList.toggle("page-head__button-wrap_orange-bg");

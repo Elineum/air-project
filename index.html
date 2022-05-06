@@ -30,7 +30,7 @@
           <nav class="page-head__nav">
             <ul class="page-head__list">
               <li class="page-head__item">
-                <a href="#" class="page-head__item-link">Главная</a>
+                <a href="#" class="page-head__item-link">Головна</a>
               </li>
               <li
                 class="page-head__item page-head__item_arrow page-head__item_arrow-left"
@@ -38,7 +38,7 @@
                 <a
                   href="#"
                   class="page-head__item-link page-head__item-link_arrow"
-                  >Статьи</a
+                  >Публікації</a
                 >
                 <ul
                   class="page-head__inner-list page-head__inner-list_left hidden"
@@ -61,10 +61,10 @@
                 </ul>
               </li>
               <li class="page-head__item">
-                <a href="#" class="page-head__item-link">Ивенты</a>
+                <a href="#" class="page-head__item-link">Івенти</a>
               </li>
               <li class="page-head__item">
-                <a href="#" class="page-head__item-link">Карта</a>
+                <a href="#" class="page-head__item-link">Мапа</a>
               </li>
               <li
                 class="page-head__item page-head__item_arrow page-head__item_arrow-right"
@@ -72,7 +72,7 @@
                 <a
                   href="#"
                   class="page-head__item-link page-head__item-link_arrow"
-                  >О проекте</a
+                  >Про проєкт</a
                 >
                 <ul
                   class="page-head__inner-list page-head__inner-list_right hidden"
@@ -101,7 +101,7 @@
               ><img src="src/img/search.svg" alt="search-img" />
               <input
                 type="text"
-                placeholder="Поиск"
+                placeholder="Пошук"
                 class="page-head__input"
                 id="search-button"
               />
@@ -121,7 +121,7 @@
           >
             <div class="hot-spot__text-wrap">
               <div class="hot-spot__title">
-                <h1>Мапа горячих точок в Украине</h1>
+                <h1>Мапа гарячих точок его проблем</h1>
               </div>
               <div class="hot-spot__mouse-scroll">
                 <a href="#interactive-map" class="hot-spot__mouse-link">
@@ -133,10 +133,10 @@
           <section class="articles">
             <div class="articles__block">
               <div class="articles__head-title">
-                <h2>Статьи</h2>
+                <h2>Публікації</h2>
               </div>
               <input
-                type="radio"
+                type="radio" name="article-radio"
                 id="articles-first"
                 class="articles__head-hidden-input"
                 name="article-checkbox"
@@ -147,10 +147,10 @@
                 for="articles-first"
                 class="articles__head-label"
                 id="articles-first-label"
-                >Блоги</label
+                >Статті</label
               >
               <input
-                type="radio"
+                type="radio" name="article-radio"
                 id="articles-second"
                 class="articles__head-hidden-input"
                 name="article-checkbox"
@@ -160,10 +160,10 @@
                 for="articles-second"
                 class="articles__head-label"
                 id="articles-second-label"
-                >Исследования</label
+                >Блоги</label
               >
               <input
-                type="radio"
+                type="radio" name="article-radio"
                 id="articles-third"
                 class="articles__head-hidden-input"
                 name="article-checkbox"
@@ -173,9 +173,23 @@
                 for="articles-third"
                 class="articles__head-label"
                 id="articles-third-label"
-                >Новости</label
+                >Дослідження</label
               >
-              <ul class="articles__content-list articles__content-list-1">
+              <input
+                type="radio" name="article-radio"
+                id="articles-four"
+                class="articles__head-hidden-input"
+                name="article-checkbox"
+                value=""
+              />
+              <label
+                for="articles-four"
+                class="articles__head-label"
+                id="articles-four-label"
+                >Новини</label
+              >
+              <!-- TODO fix text on ukr -->
+             <ul class="articles__content-list articles__content-list-1">
                 <li class="articles__content-item">
                   <div class="articles__image-block">
                     <div class="articles__image-wrap">
@@ -183,26 +197,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Блоги</span><span>28/08/2017</span>
+                      <span>Публікації</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -212,26 +223,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Блоги</span><span>28/08/2017</span>
+                      <span>Публікації</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -241,26 +249,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Блоги</span><span>28/08/2017</span>
+                      <span>Публікації</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -270,26 +275,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Блоги</span><span>28/08/2017</span>
+                      <span>Публікації</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -299,26 +301,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Блоги</span><span>28/08/2017</span>
+                      <span>Публікації</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -328,26 +327,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Блоги</span><span>28/08/2017</span>
+                      <span>Публікації</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
               </ul>
@@ -359,26 +355,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Исследования</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -388,26 +381,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Исследования</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -417,26 +407,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Исследования</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -446,26 +433,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Исследования</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -475,26 +459,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Исследования</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -504,26 +485,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Исследования</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
               </ul>
@@ -535,26 +513,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Новости</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -564,26 +539,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Новости</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -593,26 +565,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Новости</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -622,26 +591,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Новости</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -651,26 +617,23 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Новости</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="articles__content-item">
@@ -680,26 +643,181 @@
                       <div class="articles__shadow"></div>
                     </div>
                     <div class="articles__image-text">
-                      <span>Новости</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="articles__content-text-total">
                     <div class="articles__content-title">
                       <h4>
-                        Мониторинг проблем нанесенных олигархом птицефабрики на
-                        Украине
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
                       </h4>
                     </div>
                     <div class="articles__content-text">
                       <p>
-                        В июле мы с «Арникой» уже второй раз в этом году
-                        посетили Украину. Мы сосредоточились опять на теме,
-                        основой для нашей деятельности – крупный развод птицы...
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
                       </p>
                     </div>
                   </div>
                   <div class="articles__button-wrap">
-                    <button class="articles__button">Читать далее</button>
+                    <button class="articles__button">Читати далі</button>
+                  </div>
+                </li>
+              </ul>
+              <ul class="articles__content-list articles__content-list-4">
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читати далі</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читати далі</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читати далі</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читати далі</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читати далі</button>
+                  </div>
+                </li>
+                <li class="articles__content-item">
+                  <div class="articles__image-block">
+                    <div class="articles__image-wrap">
+                      <img src="src/img/city.png" alt="article-image" />
+                      <div class="articles__shadow"></div>
+                    </div>
+                    <div class="articles__image-text">
+                      <span>Блоги</span><span>28/08/2017</span>
+                    </div>
+                  </div>
+                  <div class="articles__content-text-total">
+                    <div class="articles__content-title">
+                      <h4>
+                        Мониторинг проблем нанесенных олигархом птицефабрики на Украине
+                      </h4>
+                    </div>
+                    <div class="articles__content-text">
+                      <p>
+                        В июле мы с «Арникой» уже второй раз в этом году посетили Украину. Мы сосредоточились опять на теме, основой для нашей деятельности – крупный развод птицы...
+                      </p>
+                    </div>
+                  </div>
+                  <div class="articles__button-wrap">
+                    <button class="articles__button">Читати далі</button>
                   </div>
                 </li>
               </ul>
@@ -708,10 +826,10 @@
           <section class="events">
             <div class="events__block">
               <div class="events__head-title">
-                <h2>Ивенты</h2>
+                <h2>Івенты</h2>
               </div>
               <input
-                type="radio"
+                type="radio" name="event-radio"
                 id="event-first"
                 class="events__head-hidden-input"
                 name="event-checkbox"
@@ -722,10 +840,10 @@
                 for="event-first"
                 class="events__head-label"
                 id="event-first-label"
-                >Коммуникация</label
+                >Прес-релізи</label
               >
               <input
-                type="radio"
+                type="radio" name="event-radio"
                 id="event-second"
                 class="events__head-hidden-input"
                 name="event-checkbox"
@@ -735,7 +853,7 @@
                 for="event-second"
                 class="events__head-label"
                 id="event-second-label"
-                >Анонсы</label
+                >Анонси</label
               >
               <ul class="events__content-list events__content-list-1">
                 <li class="events__content-item">
@@ -745,7 +863,7 @@
                       <div class="events__shadow"></div>
                     </div>
                     <div class="events__image-text">
-                      <span>Коммуникация</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="events__content-text-total">
@@ -764,7 +882,7 @@
                     </div>
                   </div>
                   <div class="events__button-wrap">
-                    <button class="events__button">Читать далее</button>
+                    <button class="events__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="events__content-item">
@@ -774,7 +892,7 @@
                       <div class="events__shadow"></div>
                     </div>
                     <div class="events__image-text">
-                      <span>Коммуникация</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="events__content-text-total">
@@ -793,7 +911,7 @@
                     </div>
                   </div>
                   <div class="events__button-wrap">
-                    <button class="events__button">Читать далее</button>
+                    <button class="events__button">Читати далі</button>
                   </div>
                 </li>
                 <li class="events__content-item">
@@ -803,7 +921,7 @@
                       <div class="events__shadow"></div>
                     </div>
                     <div class="events__image-text">
-                      <span>Коммуникация</span><span>28/08/2017</span>
+                      <span>Блоги</span><span>28/08/2017</span>
                     </div>
                   </div>
                   <div class="events__content-text-total">
@@ -822,7 +940,7 @@
                     </div>
                   </div>
                   <div class="events__button-wrap">
-                    <button class="events__button">Читать далее</button>
+                    <button class="events__button">Читати далі</button>
                   </div>
                 </li>
               </ul>
@@ -920,7 +1038,7 @@
           <section class="interactive-map" id="interactive-map">
             <div class="interactive-map__title-block">
               <div class="interactive-map__title">
-                <h2>Визуализация и интервативная карта</h2>
+                <h2>Мапа гарячих точок еко проблем</h2>
               </div>
               <div class="interactive-map__title-text">
                 <p>
@@ -950,6 +1068,9 @@
                   </p>
                 </div>
                 <div class="interactive-map__list-block">
+                  <div class="interactive-map__material-title">
+                    <h4>Матеріали по темі:</h4>
+                  </div>
                   <ul
                     class="interactive-map__content-list interactive-map__content-list_blocker"
                   >
@@ -1072,7 +1193,7 @@
           <section class="special-project">
             <div class="special-project__content">
               <div class="special-project__block-title">
-                <h2>Спецпроекты</h2>
+                <h2>Спецпроєкты</h2>
               </div>
               <ul class="special-project__list">
                 <li class="special-project__item">
@@ -1200,7 +1321,7 @@
           </section>
           <section class="about-project">
             <div class="about-project__title-holder">
-              <h2>О проекте «<span>Чистый воздух для Украины</span>»</h2>
+              <h2>Про проєкт</h2>
             </div>
             <div class="about-project__our-workers">
               <div
@@ -1250,7 +1371,7 @@
               <div
                 class="about-project__title-holder about-project__title-holder_center"
               >
-                <h2>Наша команда</h2>
+                <h2>Наші партнери та експерти</h2>
               </div>
               <ul
                 class="about-project__photo-block"
@@ -1352,69 +1473,60 @@
               class="request-block__title-holder request-block__title-holder_block-title"
             >
               <h2>
-                Заполните данные на одной из наших предложений. Для принятия
-                вашей заявки
+                Зворотній звязок
               </h2>
             </div>
             <ul class="request-block__info-box-holder">
               <li class="request-block__info-box">
                 <div class="request-block__title-holder">
-                  <h4>Техническая поддержка</h4>
+                  <h4>Технічна підтримка</h4>
                 </div>
                 <div class="request-block__text-holder">
                   <p>
-                    В июле мы с «Арникой» уже второй раз в этом году посетили
-                    Украину. Мы сосредоточились опять на теме, основой для нашей
-                    деятельности
+                    Звернутися з питаннями чи пропозиціями для покращення розвитку платформи до ініціативної групи проєкту
                   </p>
                 </div>
                 <div class="request-block__button-holder">
-                  <button class="request-block__button">Оставить заявку</button>
+                  <button class="request-block__button request-block__button_help">Залишити заяву</button>
                 </div>
               </li>
               <li class="request-block__info-box">
                 <div class="request-block__title-holder">
-                  <h4>Установи свой сенсор</h4>
+                  <h4>Додати гарячу точку</h4>
                 </div>
                 <div class="request-block__text-holder">
                   <p>
-                    В июле мы с «Арникой» уже второй раз в этом году посетили
-                    Украину. Мы сосредоточились опять на теме, основой для нашей
-                    деятельности
+                    Надати інформацію щоб нанести ще одну “гарячу точку” на мапу
                   </p>
                 </div>
                 <div class="request-block__button-holder">
-                  <button class="request-block__button">Оставить заявку</button>
+                  <button class="request-block__button request-block__button_add-point">Залишити заяву</button>
                 </div>
               </li>
               <li class="request-block__info-box">
                 <div class="request-block__title-holder">
-                  <h4>Напиши нам</h4>
+                  <h4>Матеріали для публікації</h4>
                 </div>
                 <div class="request-block__text-holder">
                   <p>
-                    В июле мы с «Арникой» уже второй раз в этом году посетили
-                    Украину. Мы сосредоточились опять на теме, основой для нашей
-                    деятельности
+                    Прислати інформацію для публікації її у відповідному розділі на сайті: “Блоги”, “Дослідження” або “Новини”,Анонси, Прес-релізи
                   </p>
                 </div>
                 <div class="request-block__button-holder">
-                  <button class="request-block__button">Оставить заявку</button>
+                  <button class="request-block__button request-block__button_add-info">Залишити заяву</button>
                 </div>
               </li>
               <li class="request-block__info-box">
                 <div class="request-block__title-holder">
-                  <h4>Получай информацию</h4>
+                  <h4>Підписатися на новини</h4>
                 </div>
                 <div class="request-block__text-holder">
                   <p>
-                    В июле мы с «Арникой» уже второй раз в этом году посетили
-                    Украину. Мы сосредоточились опять на теме, основой для нашей
-                    деятельности
+                    Підписатися на розсилку новин чи іншої корисної інформації
                   </p>
                 </div>
                 <div class="request-block__button-holder">
-                  <button class="request-block__button">Оставить заявку</button>
+                  <button class="request-block__button request-block__button_subscribe">Залишити заяву</button>
                 </div>
               </li>
             </ul>
@@ -1423,13 +1535,8 @@
       </main>
       <footer class="page-foot">
         <div class="page-foot__upper-block">
-          <div class="page-foot__img-wrap page-foot__img-wrap_center">
-            <a href="#" class="page-foot__img-link"
-              ><img src="src/img/logo.png" alt="logo"
-            /></a>
-          </div>
           <div class="page-foot__blocks-wrap">
-            <span>Статьи</span>
+            <span>Статті</span>
             <ul class="page-foot__list page-foot__list_grid">
               <li class="page-foot__item">
                 <a href="#" class="page-foot__item-link">Дослідження</a>
@@ -1438,7 +1545,7 @@
                 <a href="#" class="page-foot__item-link">Блоги</a>
               </li>
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Стаття</a>
+                <a href="#" class="page-foot__item-link">Статті</a>
               </li>
               <li class="page-foot__item">
                 <a href="#" class="page-foot__item-link">Новини</a>
@@ -1446,18 +1553,18 @@
             </ul>
           </div>
           <div class="page-foot__blocks-wrap">
-            <span>Ивенты</span>
+            <span>Івенти</span>
             <ul class="page-foot__list page-foot__list_flex">
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Коммуникации</a>
+                <a href="#" class="page-foot__item-link">Анонси</a>
               </li>
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Анонсы</a>
+                <a href="#" class="page-foot__item-link">Прес-релізи</a>
               </li>
             </ul>
           </div>
           <div class="page-foot__blocks-wrap">
-            <span>Интерактивные карты</span>
+            <span>Інтерактивна мапа</span>
             <ul class="page-foot__list">
               <li class="page-foot__item">
                 <a
@@ -1470,7 +1577,7 @@
                       alt="interactive-map"
                     />
                   </div>
-                  <div class="page-foot__span-wrap"><span>Открыть</span></div>
+                  <div class="page-foot__span-wrap"><span>Відкрити</span></div>
                   <span class="page-foot__shadow"></span>
                 </a>
               </li>
@@ -1482,27 +1589,27 @@
                 <a
                   href="#"
                   class="page-foot__item-link page-foot__item-link_about"
-                  >Спецпроекты</a
+                  >Спецпроєкты</a
                 >
               </li>
               <li class="page-foot__item">
                 <a
                   href="#"
                   class="page-foot__item-link page-foot__item-link_about"
-                  >О проекте</a
+                  >Про проєкт</a
                 >
               </li>
               <li class="page-foot__item">
                 <a
                   href="#"
                   class="page-foot__item-link page-foot__item-link_about"
-                  >Наши контакты</a
+                  >Наші контакти</a
                 >
               </li>
             </ul>
           </div>
           <div class="page-foot__blocks-wrap">
-            <span>Наши Соцсети</span>
+            <span>Наші Соцмережі</span>
             <ul class="page-foot__list page-foot__list_contact">
               <li class="page-foot__item page-foot__item_icon">
                 <a href="#" class="page-foot__item-link">
@@ -1522,26 +1629,48 @@
                   </div>
                 </a>
               </li>
+              <li class="page-foot__item page-foot__item_icon">
+                <a href="#" class="page-foot__item-link">
+                  <div
+                    class="page-foot__img-wrap page-foot__img-wrap_icon page-foot__img-wrap_ig"
+                  >
+                    <img src="src/img/instagram.svg" alt="instagram-logo" />
+                  </div>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="page-foot__bottom-block">
           <div class="page-foot__partners-left">
-            <div class="page-foot__img-wrap">
-              <a href="#" class="page-foot__partners-link"
-                ><img src="src/img/activeCitizens.png" alt="active-citizens"
-              /></a>
+            <div class="page-foot__partners-dual">
+              <div class="page-foot__img-wrap">
+                <a href="#" class="page-foot__partners-link"
+                  ><img src="src/img/activeCitizens.png" alt="active-citizens"
+                /></a>
+              </div>
+              <div class="page-foot__img-wrap">
+                <a href="#" class="page-foot__partners-link"
+                  ><img src="src/img/britishCouncil.png" alt="british-council"
+                /></a>
+              </div>
+              <div class="page-foot__left-partners-text">
+                <p>
+                  Проект реалізується за підтримки Британської Ради в рамках Проекту «Активні громадяни»
+                </p>
+              </div>
             </div>
-            <div class="page-foot__img-wrap">
+            <div class="page-foot__partners-crisis">
               <a href="#" class="page-foot__partners-link"
-                ><img src="src/img/britishCouncil.png" alt="british-council"
-              /></a>
+                  ><img src="src/img/crisis.png" alt="ukraine-crisis"
+                /></a>
+              <div class="page-foot__crisis-partners-text">
+                <p>
+                  Інформаційні партнери
+                </p>
+              </div>
             </div>
-            <p>
-              Проект реалізується за підтримки Британської Ради в рамках Проекту
-              «Активні громадяни»
-            </p>
-          </div>
+        </div>
           <div class="page-foot__partners-concate">
             <div class="page-foot__partners-beetroot">
               <a href="#" class="page-foot__partners-link">
@@ -1552,7 +1681,7 @@
                   />
                 </div>
                 <p>
-                  За пітдримки “Бітрут-Академії” була створенна Веб-розробка
+                  Веб-розробка: “Бітрут-Академія”
                 </p>
               </a>
             </div>
@@ -1563,13 +1692,267 @@
                 >
                   <img src="src/img/GDS.png" alt="GDS-design" />
                 </div>
-                <p>Дизайн виконав: G.D.S Desing</p>
+                <p>Дизайн: G.D.S Desing</p>
               </a>
             </div>
           </div>
         </div>
       </footer>
-    </div>
+      <div class="window-box hide-modal-shadow">
+        <div class="window-box__add-info" style="background-image: url(src/img/modal-background.png);">
+          <div class="window-box__add-info-head" style="background-image: url(src/img/modal-head.png);">
+            <h2>Подати інформацію у розділ:</h2>
+          </div>
+          <div class="window-box__add-info-form-wrap">
+            <form class="window-box__add-info-form">
+              <div class="window-box__add-info-radio-block">
+                <div class="window-box__add-info-radio-part">
+                  <input type="radio" name="modal-radio" id="window-blog" checked>
+                  <label for="window-blog">Блог</label>
+                </div>
+                <div class="window-box__add-info-radio-part">
+                  <input type="radio" name="modal-radio" id="window-news">
+                  <label for="window-news">Новини</label>
+                </div>
+                <div class="window-box__add-info-radio-part">
+                  <input type="radio" name="modal-radio" id="window-research">
+                  <label for="window-research">Дослідження</label>
+                </div>
+                <div class="window-box__add-info-radio-part">
+                  <input type="radio" name="modal-radio" id="window-anonce">
+                  <label for="window-anonce">Анонс</label>
+                </div>
+                <div class="window-box__add-info-radio-part">
+                  <input type="radio" name="modal-radio" id="window-pres-release">
+                  <label for="window-pres-release">Прес-реліз</label>
+                </div>
+              </div>
+              <div class="window-box__add-info-form-input">
+                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Ваше призвище та ім’я">
+                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Ваш мейл">
+                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Контактний телефон">
+                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Назва організації чи ініцітиви">
+                <textarea name="add-info" class="window-box__add-info-textearea" id="" cols="30" rows="10" placeholder="Напишіть свій текст до новини"></textarea>
+                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Посилання на інфомарцію">
+                <div class="window-box__add-info-file-browser">
+                  <span class="window-box__add-info-file-browser-span">Прикріпити файли</span>
+                  <label for="file-browser-img" class="window-box__add-info-file-browser-label">
+                    <div class="window-box__add-info-file-browser-wrapper">
+                      <img src="src/img/addFileImage.png" alt="add-image">
+                    </div>
+                  </label>
+                  <input type="file" id="file-browser-img" accept="image/*" multiple>
+                  <label for="file-browser-doc" class="window-box__add-info-file-browser-label">
+                    <div class="window-box__add-info-file-browser-wrapper">
+                      <img src="src/img/addFileDocument.png" alt="add-document">
+                    </div>
+                  </label>
+                  <input type="file" id="file-browser-doc" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" multiple>
+                </div>
+              </div>
+              <div class="window-box__add-info-btn-wrap"> 
+                <button class="window-box__add-info-button" type="submit">Відправити</button>
+              </div>
+            </form>
+            <button class="window-box__add-info-close js-close-modal"></button>
+          </div>
+        </div>
+        <div class="window-box__help" style="background-image: url(src/img/modal-background.png);">
+          <div class="window-box__help-head" style="background-image: url(src/img/modal-head.png);">
+            <h2>Технічна підтримка</h2>
+            <div class="window-box__help-head-text"><p>Звернутися з питаннями чи пропозиціями для покращення розвитку платформи до ініціативної групи проєкту. </p></div>
+            <div class="window-box__help-head-time"><span>Технічна підтримка працює з 18.00 до 21.00 щодня</span></div>
+          </div>
+          <div class="window-box__help-form-wrap">
+            <form class="window-box__help-form">
+              <div class="window-box__help-form-input">
+                <input type="text" placeholder="Ваше призвище та ім’я">
+                <input type="email" placeholder="Ваш мейл">
+                <input type="text" placeholder="Контактний телефон">
+                <input type="text" placeholder="Назва організації чи ініцітиви">
+                <textarea cols="30" rows="10" maxlength="500" class="window-box__help-textarea" placeholder="Залиште Ваше повідомлення/ коментар (до 500 знаків)"></textarea>
+              </div>
+              <div class="window-box__help-add-time">
+                <label for="help-form-number" class="window-box__help-label">Додайте:</label>
+                <input class="window-box__help-input-time" id="help-form-number" type="text" placeholder="Коли вам зручно зателефонувати (з 18:00-21:00)">
+              </div>
+              <div class="window-box__help-btn-wrap">
+                <button class="window-box__help-button">Відправити</button>
+              </div>
+            </form>
+          </div>
+          <button class="window-box__help-close js-close-modal"></button>
+        </div>
+        <div class="window-box__add-point" style="background-image: url(src/img/modal-background.png);">
+          <div class="window-box__add-point-head" style="background-image: url(src/img/modal-head.png);">
+            <h2>Додати гарячу точку</h2>
+            <div class="window-box__add-point-head-text"><p>Надати інформацію щоб нанести ще одну “гарячу точку” на мапу</p></div>
+          </div>
+          <div class="window-box__add-point-form-wrap">
+            <form class="window-box__add-point-form">
+              <div class="window-box__add-point-form-input">
+                <input type="text" placeholder="Ваше призвище та ім’я">
+                <input type="email" placeholder="Ваш мейл">
+                <input type="text" placeholder="Контактний телефон">
+                <input type="text" placeholder="Назва Вашої організації чи ініцітиви">
+              </div>
+              <label for="add-point-info-input" class="window-box__add-point-label">Інформація про гарячу точку:</label>
+              <div class="window-box__add-point-form-input-extra">
+                <input type="text" id="add-point-info-input" placeholder="Найменування забруднювача">
+                <input type="text" placeholder="Додайте координати гарячої точки (широта та довгота)">
+                <textarea cols="30" rows="10" class="window-box__add-point-textarea" placeholder="Коротка інформація про забруднювач : (адреса, вид діяльності, код ЄДРПОУ, інше)"></textarea>
+                <input type="text" placeholder="Посилання на статті про забруднювач">
+                <input type="text" placeholder="Пулбікації ГО на цю тему: блоги, дослідження, новини...">
+              </div>
+              <div class="window-box__add-point-btn-wrap">
+                <button class="window-box__add-point-button">Відправити</button>
+              </div>
+            </form>
+          </div>
+          <button class="window-box__add-point-close js-close-modal"></button>
+        </div>
+        <div class="window-box__news" style="background-image: url(src/img/modal-background.png);">
+          <div class="window-box__news-head" style="background-image: url(src/img/modal-head.png);">
+            <h2>Підписатися на новини</h2>
+          </div>
+          <div class="window-box__news-form-wrap">
+            <form class="window-box__news-form">
+              <div class="window-box__news-form-input">
+                <input type="text" placeholder="Ваше призвище та ім’я">
+                <input type="email" placeholder="Ваш мейл">
+                <input type="text" placeholder="Назва організації чи ініцітиви">
+                <div class="window-box__news-select-wrap">
+                  <select>
+                    <option value="value0">Виберіть на який розділ хочете підписатися</option>
+                    <option value="value1">value1</option>
+                    <option value="value2">value2</option>
+                    <option value="value3">value3</option>
+                    <option value="value4">value4</option>
+                    <option value="value5">value5</option>
+                    <option value="value6">value6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="window-box__news-btn-wrap">
+                <button class="window-box__news-button">Відправити</button>
+              </div>
+            </form>
+          </div>
+          <button class="window-box__news-close js-close-modal"></button>
+        </div>
+        <div class="window-box__map" style="background-image: url(src/img/modal-background.png);">
+          <div class="window-box__map-head" style="background-image: url(src/img/modal-head.png);">
+            <h2>Мапа гарячих точок еко проблем</h2>
+          </div>
+          <div class="window-box__map-main">
+            <div id="map2" class="window-box__map-interactive">
+
+            </div>
+            <div class="window-box__map-content">
+              <div class="window-box__map-name">
+                <span><b>Назва підприємства:</b> Запорізька ТЕС</span> <!--TODO fix for JS-->
+              </div>
+              <div class="window-box__map-content-title">
+                <h4>Довідкова інфо про підприємство:</h4>
+              </div>
+              <div class="window-box__map-content-text">
+                <p>
+                  Запорізька ТЭЦ — сама потужна теплова електростанція України
+                  із загальною встановленою електричною потужністю 3650 МВт.
+                  Розташований у місті Енергодар Запорізької області на лівому
+                  берегу Каховського водосховища на відстані 1 км від
+                  Запорожської АЕС. Входить в ПАТ «ДТЕК Днепроенерго».
+                </p>
+              </div>
+              <div class="window-box__map-list-block">
+                <ul class="window-box__map-content-list window-box__map-content-list_blocker">
+                  <li class="window-box__map-content-item">
+                    <div class="window-box__map-item-text window-box__map-item-text_block">
+                      <p>
+                        Запорізька ТЭЦ — сама потужна теплова електростанція
+                        України із загальною встановленою електричною
+                        потужністю 3650 МВт.<br />
+                        Запорізька ТЭЦ — сама потужна теплова електростанція
+                        України із загальною встановленою електричною
+                        потужністю 3650 МВт.Запорізька ТЭЦ — сама потужна
+                        теплова електростанція
+                      </p>
+                    </div>
+                    <div class="window-box__map-button-close-wrap">
+                      <button class="window-box__map-button-close"></button>
+                    </div>
+                  </li>
+                  <li class="window-box__map-content-item">
+                    <div class="window-box__map-item-text window-box__map-item-text_block">
+                      <p>
+                        Запорізька ТЭЦ — сама потужна теплова електростанція
+                        України із загальною встановленою електричною
+                        потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                        потужна теплова електростанція України із загальною
+                        встановленою електричною потужністю 3650
+                        МВт.Запорізька ТЭЦ — сама потужна теплова
+                        електростанція
+                      </p>
+                    </div>
+                    <div class="window-box__map-button-close-wrap">
+                      <button class="window-box__map-button-close"></button>
+                    </div>
+                  </li>
+                  <li class="window-box__map-content-item">
+                    <div class="window-box__map-item-text window-box__map-item-text_block">
+                      <p>
+                        Запорізька ТЭЦ — сама потужна теплова електростанція
+                        України із загальною встановленою електричною
+                        потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                        потужна теплова електростанція України із загальною
+                        встановленою електричною потужністю 3650
+                        МВт.Запорізька ТЭЦ — сама потужна теплова
+                        електростанція
+                      </p>
+                    </div>
+                    <div class="window-box__map-button-close-wrap">
+                      <button class="window-box__map-button-close"></button>
+                    </div>
+                  </li>
+                  <li class="window-box__map-content-item">
+                    <div class="window-box__map-item-text window-box__map-item-text_block">
+                      <p>
+                        Запорізька ТЭЦ — сама потужна теплова електростанція
+                        України із загальною встановленою електричною
+                        потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                        потужна теплова електростанція України із загальною
+                        встановленою електричною потужністю 3650
+                        МВт.Запорізька ТЭЦ — сама потужна теплова
+                        електростанція
+                      </p>
+                    </div>
+                    <div class="window-box__map-button-close-wrap">
+                      <button class="window-box__map-button-close"></button>
+                    </div>
+                  </li>
+                  <li class="window-box__map-content-item">
+                    <div class="window-box__map-item-text window-box__map-item-text_block">
+                      <p>
+                        Запорізька ТЭЦ — сама потужна теплова електростанція
+                        України із загальною встановленою електричною
+                        потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама
+                        потужна теплова електростанція України із загальною
+                        встановленою електричною потужністю 3650
+                        МВт.Запорізька ТЭЦ — сама потужна теплова
+                        електростанція
+                      </p>
+                    </div>
+                    <div class="window-box__map-button-close-wrap">
+                      <button class="window-box__map-button-close"></button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button class="window-box__news-close js-close-modal"></button>
+        </div>
+      </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="src/js/slick.min.js"></script>
     <script src="src/js/slick-config.js"></script>

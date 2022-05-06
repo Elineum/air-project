@@ -133,6 +133,8 @@
         justify-content: space-between;
         bottom: 0;
         z-index: 5;
+        color: white;
+        font-weight: 300;
 
         & span {
             position: relative;
@@ -303,6 +305,7 @@
 
         &.slick-disabled {
             bottom: 30px;
+            right: 95px;
             
             &::before {
                 content: '';
@@ -350,12 +353,12 @@
     }
 
     & .slick-slide {
-        max-width: 377px !important;
+        max-width: 371px !important;
+        margin-right: 20px;
     }
 
     & .slick-track {
         display: flex;
-        gap: 20px;
         width: max-content !important;
     }
 
@@ -367,7 +370,8 @@
 
 #articles-first:checked~.articles__content-list-1,
 #articles-second:checked~.articles__content-list-2,
-#articles-third:checked~.articles__content-list-3 {
+#articles-third:checked~.articles__content-list-3,
+#articles-four:checked~.articles__content-list-4 {
     position: static;
     visibility: visible;
     opacity: 1;
@@ -377,7 +381,8 @@
 
 #articles-first:checked~#articles-first-label,
 #articles-second:checked~#articles-second-label,
-#articles-third:checked~#articles-third-label {
+#articles-third:checked~#articles-third-label,
+#articles-four:checked~#articles-four-label {
     &::before {
         opacity: 1;
     }
