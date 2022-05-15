@@ -4,26 +4,36 @@
     &__title-holder {
         max-width: 600px;
 
+        h2 {
+            font-size: 36px;
+            font-weight: 500;
+            }
+
         &_block-title {
             margin-bottom: 35px;
         }
     }
 
-    &__title-holder h4 {
+    &__content-title {
+        transform: translateX(-2px);
+
+        h4 {
         font-size: 18px;
+        font-weight: 500;
+        }
     }
 
     &__info-box-holder {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
         list-style: none;
     }
 
     &__info-box {
-        max-width: 574px;
-        min-width: 537px;
-        padding: 40px 25px;
+        width: 574px;
+        padding: 51px 56px 50px 27px;
         background-color: #fff;
         border-radius: 10px;
         filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.13));
@@ -51,9 +61,15 @@
     }
     
     &__text-holder {
-        padding: 25px 0;
+        padding: 26px 0 27px;
         color: $grey;
         transition: all ease-in-out 0.3s;
+        transform: translateX(-2px);
+        line-height: 23px;
+
+        &_half {
+            max-width: 315px;
+        }
     }
 
     &__button {
@@ -66,5 +82,6 @@
         cursor: pointer;
         font-size: 16px;
         transition: all ease-in-out 0.3s;
+        transform: translateX(-2px);
     }
 }

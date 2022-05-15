@@ -9,10 +9,14 @@ html {
 .container-width {
     max-width: 1171px;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px)  {
+        max-width: 720px;
+    }
 }
 
 main {
-    padding: 29px 0 40px;
+    padding: 29px 0 33px;
 }
 
 body {

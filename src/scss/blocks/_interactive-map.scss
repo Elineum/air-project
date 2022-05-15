@@ -1,21 +1,38 @@
 .interactive-map {
+    padding-bottom: 55px;
 
     &__title-block {
         margin-bottom: 25px;
     }
 
     &__title {
-        margin-bottom: 35px;
+        margin-bottom: 38px;
 
         & h2 {
             font-size: 36px;
+
+            @include media('<=tablet') {
+                font-size: 24px;
+                font-weight: 500;
+            }
+        }
+
+        @include media('<=tablet') {
+            margin-bottom: 25px;
         }
     }
 
     &__title-text {
         max-width: 868px;
         font-size: 18px;
+        padding-left: 3px;
+        line-height: 26px;
         color: $grey;
+
+        @include media('<=tablet') {
+            font-size: 16px;
+            max-width: 535px;
+        }
     }
 
     &__map-block {
@@ -30,7 +47,7 @@
 
     &__name {
         font-size: 18px;
-        margin-bottom: 25px;
+        margin-bottom: 23px;
 
         & span {
             color: $grey;
@@ -38,17 +55,26 @@
 
         & b {
             color: black;
+            font-weight: 500;
         }
     }
 
     &__right-content-block {
         padding-top: 8px;
         position: relative;
-        padding-bottom: 55px;
+
+        @include media('<=tablet') {
+            padding-top: 0;
+        }
     }
 
     &__content-title {
         margin-bottom: 10px;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
 
     &__content-text {
@@ -56,6 +82,12 @@
         color: $grey;
         margin-bottom: 25px;
         line-height: 27px;
+
+        @include media('<=tablet') {
+            font-size: 14px;
+            line-height: 21.1px;
+            word-spacing: -0.1px;
+        }
     }
 
     &__material-title {
@@ -77,11 +109,19 @@
 
         &_blocker {
             max-height: 302px;
+
+            @include media('<=tablet') {
+                max-height: 200px;
+            }
+        }
+
+        @include media('<=tablet') {
+            font-size: 14px;
         }
     }
 
     &__content-item {
-        padding: 11px 14px 10px;
+        padding: 9px 12px 12px;
         border: 1px solid #CCCCCC;
         border-radius: 10px;
         line-height: 23px;
@@ -118,18 +158,30 @@
             height: 0;
             border-bottom: 10px dotted $orange;
             transition: all ease-in-out 0.3s;
+
+            @include media('<=tablet') {
+                right: 10px;
+                bottom: 10px;
+                width: 30px;
+                height: 0;
+                border-bottom: 7px dotted $orange;
+            }
         }
 
         &:hover {
             background-color: $orange;
 
             &::before {
-                border-bottom: 10px dotted $blue;
+                border-bottom: 7px dotted $blue;
             }
 
             .interactive-map__item-text {
                 color: black;
             }
+        }
+
+        @include media('<=tablet') {
+            padding: 25px 33px 25px 10px;
         }
     }
 
@@ -143,8 +195,8 @@
         &::before {
             content: url(../img/closeBlock.svg);
             position: absolute;
-            right: 25px;
-            bottom: 10px;
+            right: 3px;
+            bottom: 0;
             // TODO add content as icon and add hover
         }
     }
@@ -157,6 +209,11 @@
 
         &_block {
             max-height: 69px;
+
+            @include media('<=tablet') {
+                max-height: 40px;
+                line-height: 20px;
+            }
         }
     }
 
@@ -172,6 +229,7 @@
         border-radius: 50%;
         background-color: $blue;
         border: 0;
+        transform: translate(-2px, 2px);
         transition: all ease-in-out 0.3s;
 
         &::before {
@@ -202,63 +260,15 @@
             transition: all ease-in-out 0.5s;
         }
     }
-
-    // & .slick-arrow {
-    //     position: absolute;
-    //     z-index: 4;
-    //     left: 45%;
-    //     bottom: 0;
-    //     height: 37px;
-    //     width: 37px;
-    //     background-color: $blue;
-    //     border: 1px solid $blue;
-    //     font-size: 0; 
-    //     border-radius: 50%;
-    //     cursor: pointer;
-
-        // &:hover {
-        //     filter: drop-shadow(0px 0px 15px $blue);
-        // }
-
-    //     &:active {
-    //         .slick-arrow.slick-prev, .slick-arrow.slick-next {
-    //             filter: drop-shadow(0px 0px 15px $blue);
-    //         }
-    //     }
-    // }
-
-    // & .slick-arrow.slick-disabled {
-    //     display: none;
-    // }
-
-    // & .slick-arrow.slick-prev{
-    //     &::before {
-    //         content: url(../img/arrow.png);
-    //         position: absolute;
-    //         left: 50%;
-    //         top: 50%;
-    //         transform: translate(-51%, -20%) rotate(180deg);
-    //         transition: all ease-in-out 0.3s;
-    //     }
-    // }
-
-    // & .slick-arrow.slick-next{
-    //     &::before {
-    //         content: url(../img/arrow.png);
-    //         position: absolute;
-    //         left: 50%;
-    //         top: 50%;
-    //         transform: translate(-51%, -80%);
-    //         transition: all ease-in-out 0.3s;
-    //     }
-    // }
-    
-    // .slick-track {
-    //     display: block;
-    // }
 }
 
 #map {
     min-height: 572px;
     min-width: 595px;
+
+    @include media('<=tablet') {
+        min-height: 468px;
+        max-height: 479px;
+        min-width: 350px;
+    }
 }

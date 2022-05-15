@@ -1,14 +1,12 @@
 .events {
-    padding-top: 45px;
-    margin-bottom: 45px;
     position: relative;
 
     &__block {
-        margin-bottom: 35px;
+        margin-bottom: 5px;
         position: relative;
         min-height: 600px;
         overflow: hidden;
-        padding-top: 20px;
+        padding-top: 10px;
     }
 
     &__head-title {
@@ -20,6 +18,7 @@
             font-size: 36px;
             position: relative;
             z-index: 2;
+            font-weight: 400;
         }
     }
 
@@ -32,7 +31,7 @@
         transition: all ease-in-out 0.3s;
         cursor: pointer;
         text-decoration: none;
-        margin: 0 10px 0 30px;
+        margin-left: 30px;
         user-select: none;
 
         &::before {
@@ -44,7 +43,7 @@
             min-width: 100%;
             border-radius: 30px;
             background-color: $blue;
-            filter: blur(20px);
+            filter: blur(15px);
             z-index: 1;
             transition: all ease-in-out 0.3s;
             opacity: 0;
@@ -81,7 +80,7 @@
             min-width: 100%;
             border-radius: 30px;
             background-color: $blue;
-            filter: blur(20px);
+            filter: blur(15px);
             z-index: 1;
             transition: all ease-in-out 0.3s;
             opacity: 0;
@@ -144,7 +143,7 @@
     &__content-list {
         position: absolute;
         left: 0;
-        top: 100px;
+        top: 93px;
         opacity: 0;
         visibility: hidden;
         display: flex;
@@ -157,6 +156,15 @@
     &__content-title {
         max-width: 345px;
         margin-bottom: 10px;
+
+        h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    &__content-text {
+        line-height: 21px;
     }
 
     &__content-text-total {

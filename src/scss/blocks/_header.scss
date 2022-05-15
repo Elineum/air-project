@@ -14,11 +14,14 @@
         display: block;
     }
 
+    &__nav {
+        padding-top: 3px;
+    }
+
     &__panel {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 52px;
     }
 
     &__list {
@@ -41,8 +44,8 @@
         &_arrow {
             &::after {
                 content: url(../img/header-arrow.svg);
-                padding-left: 5px;
                 color: $grey;
+                padding-left: 8px;
             }
         }
     }
@@ -86,16 +89,24 @@
         color: inherit;
     }
 
+    &__input-wrap {
+        padding: 0 55px 0 27px;
+    }
+
     &__input {
         background-color: transparent;
         outline: 0;
         border: 1px solid $grey;
-        border-radius: 14px;
-        padding: 6px 14px 5px 46px;
+        border-radius: 16px;
+        padding: 7px 14px 6px 46px;
         color: $grey;
         font-size: 13px;
         font-family: 'Roboto', sans-serif;
-        width: 234px;
+        width: 240px;
+
+        &::placeholder {
+            color: $grey;
+        }
     }
 
     &__label {
@@ -139,8 +150,8 @@
 
     &__language-ball {
         order: 3;
-        min-height: 16px;
-        min-width: 16px;
+        min-height: 18px;
+        min-width: 18px;
         background-color: $orange;
         border: 1px solid $blue;
         outline: 1px solid #fff;

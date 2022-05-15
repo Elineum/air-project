@@ -4,7 +4,6 @@
     position: relative;
 
     &__block {
-        margin-bottom: 35px;
         position: relative;
         min-height: 600px;
         overflow: hidden;
@@ -18,6 +17,7 @@
 
         & h2 {
             font-size: 36px;
+            font-weight: 400;
             position: relative;
             z-index: 2;
         }
@@ -32,7 +32,7 @@
         z-index: 3;
         transition: all ease-in-out 0.1s;
         cursor: pointer;
-        margin: 0 10px 0 30px;
+        margin-left: 30px;
         user-select: none;
 
         &::before {
@@ -44,7 +44,7 @@
             min-width: 100%;
             border-radius: 30px;
             background-color: $orange;
-            filter: blur(20px);
+            filter: blur(15px);
             z-index: 1;
             transition: all ease-in-out 0.3s;
             opacity: 0;
@@ -105,7 +105,7 @@
     }
 
     &__image-block {
-        max-width: 377px;
+        width: 377px;
         position: relative;
     }
 
@@ -138,7 +138,7 @@
 
         & span {
             position: relative;
-            bottom: -25px;
+            bottom: -26px;
         }
     }
 
@@ -158,12 +158,21 @@
     &__content-title {
         max-width: 345px;
         margin-bottom: 10px;
+
+        h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
 
     &__content-text-total {
         max-width: 377px;
         padding-top: 25px;
         margin-bottom: 25px;
+    }
+
+    &__content-text {
+        line-height: 21px;
     }
 
     &__button-wrap {
@@ -304,8 +313,8 @@
         }
 
         &.slick-disabled {
-            bottom: 30px;
-            right: 95px;
+            bottom: 29px;
+            right: 94px;
             
             &::before {
                 content: '';
@@ -353,7 +362,7 @@
     }
 
     & .slick-slide {
-        max-width: 371px !important;
+        width: 377px !important;
         margin-right: 20px;
     }
 
@@ -375,7 +384,7 @@
     position: static;
     visibility: visible;
     opacity: 1;
-    padding-top: 30px;
+    padding: 34px 0 44px;
     left: 0;
 }
 

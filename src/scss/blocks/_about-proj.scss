@@ -1,12 +1,22 @@
 .about-project {
     padding: 45px 0;
-    margin-bottom: 85px;
+    margin-bottom: 47px;
 
     &__title-holder {
 
         & h2 {
             font-size: 36px;
             margin-bottom: 35px;
+        }
+
+        & h4 {
+            font-size: 18px;
+            padding-top: 21px;
+            margin-bottom: 10px;
+        }
+
+        &_center h2 {
+            text-align: center;
         }
     }
 
@@ -24,18 +34,27 @@
         flex-wrap: wrap;
         align-items: center;
         padding-top: 25px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
     &__text-wrap {
-        max-width: 549px;
+        max-width: 565px;
         line-height: 31px;
         font-size: 18px;
         color: $grey;
+        padding-left: 13px;
+
+        &:first-child {
+            padding-left: 25px;
+        }
+    }
+
+    &__our-workers {
+        margin-bottom: 50px;
     }
 
     &__our-team {
-        padding-top: 65px;
+        padding-top: 38px;
     }
 
     &__img-holder-top {
@@ -43,23 +62,6 @@
 
         &_big {
             max-width: 100%;
-        }
-    }
-
-    &__title-holder {
-
-        & h2 {
-            font-size: 36px;
-        }
-
-        & h4 {
-            font-size: 18px;
-            padding-top: 25px;
-            margin-bottom: 10px;
-        }
-
-        &_center h2 {
-            text-align: center;
         }
     }
 
@@ -91,8 +93,8 @@
         & .slick-arrow {
             position: absolute;
             z-index: 4;
-            right: 0;
-            bottom: -78px;
+            right: 2px;
+            bottom: -85px;
             height: 44px;
             width: 44px;
             background-color: $blue;
@@ -110,7 +112,7 @@
         & .slick-arrow.slick-disabled {
             position: absolute;
             z-index: 4;
-            bottom: -78px;
+            bottom: -85px;
             height: 30px;
             width: 30px;
             background-color: transparent;
@@ -151,7 +153,7 @@
             }
 
             &.slick-disabled {
-                right: 65px;
+                right: 66px;
                 
                 &::before {
                     content: '';

@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 45px;
+    margin-bottom: 24px;
 
     &__text-wrap {
         margin-bottom: 90px;
@@ -24,6 +24,7 @@
         position: absolute;
         left: 50%;
         bottom: 124px;
+        transform: translate(-16px, -4px);
     }
 
     &__mouse-link {

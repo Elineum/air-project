@@ -20,11 +20,11 @@ let interactiveMapAllItems = document.querySelectorAll(
 let interactiveMapClose = document.querySelector(
   ".interactive-map__button-close"
 );
+let activeModal;
 
 [].forEach.call(modalCloser, (el) => {
   el.addEventListener("click", modalClose);
 });
-let activeModal;
 
 function listenerAdder() {
   languageSwither.addEventListener("click", languageSwitherClick);
@@ -35,6 +35,7 @@ function listenerAdder() {
   interactiveMapButton.addEventListener("click", interactiveMapListToggler);
   interactiveMapList.addEventListener("click", interactiveMapItemOpener);
   modalStarts.addEventListener("click", openModal);
+  shadowModal.addEventListener("click", modalClose);
 }
 listenerAdder();
 
@@ -62,9 +63,14 @@ function openModal(e) {
   } else return;
 }
 
-function modalClose() {
-  activeModal.classList.remove("visible-modal");
-  shadowModal.classList.add("hide-modal-shadow");
+function modalClose(e) {
+  if (
+    e.target == shadowModal ||
+    e.target.classList.contains("js-close-modal")
+  ) {
+    activeModal.classList.remove("visible-modal");
+    shadowModal.classList.add("hide-modal-shadow");
+  }
 }
 
 function languageSwitherClick() {

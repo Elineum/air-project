@@ -1,13 +1,19 @@
 .special-project {
     position: relative;
-    padding-top: 74px;
+    padding-top: 37px;
     padding-bottom: 84px;
     margin-bottom: 45px;
 
     &__block-title {
         padding-bottom: 35px;
+
         & h2 {
             font-size: 36px;
+
+            @include media('<=tablet') {
+                font-size: 24px;
+                font-weight: 500;
+            }
         }
     }
 
@@ -22,6 +28,10 @@
 
             & .special-project__background-wrap {
                 background-color: $orange;
+            }
+
+            & .special-project__text-content-wrap {
+                padding-left: 27px;
             }
             
             & .special-project__text-content {
@@ -64,6 +74,7 @@
         max-width: 377px;
         color: $lightBlue;
         margin-bottom: 6px;
+        line-height: 21.5px;
     }
 
     &__date {
