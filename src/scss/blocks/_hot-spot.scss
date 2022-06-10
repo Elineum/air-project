@@ -9,15 +9,24 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 24px;
+    border-radius: 10px;
 
     &__text-wrap {
         margin-bottom: 90px;
+
+        @include media('<=desktop') {
+            margin-bottom: 40px;
+        }
     }
 
     &__title h1 {
         font-size: 48px;
         font-weight: 500;
         color: #fff;
+
+        @include media('<=desktop') {
+            font-size: 29px;
+        }
     }
 
     &__mouse-scroll {
@@ -30,20 +39,25 @@
     &__mouse-link {
         display: flex;
 
+        img {
+            @include media('<=desktop') {
+                visibility: hidden;
+            }
+        }
+
         &::before {
             content: url(../img/arrow-map-scroll.png);
             position: absolute;
             top: 65px;
             left: 50%;
             transform: translate(-50%, 0);
+            animation: scroll-map-hot 1s infinite;
         }
+    }
 
-
-        &:hover {
-            &::before {
-                animation: scroll-map-hot 1s infinite;
-            }
-        }
+    @include media('<=desktop') {
+        min-height: 326px;
+        border-radius: 6px; 
     }
 
     @keyframes scroll-map-hot {

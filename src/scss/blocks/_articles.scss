@@ -59,7 +59,7 @@
         }
 
         &:active {
-            color: $grey;
+            color: #000000;
         }
     }
     
@@ -99,7 +99,7 @@
 
         &:active {
             .articles__head-link {
-                color: $grey;
+                color: #000000;
             }
         }
     }
@@ -107,6 +107,10 @@
     &__image-block {
         width: 377px;
         position: relative;
+
+        @include media('<=desktop') {
+            width: 350px;
+        }
     }
 
     &__image-wrap {
@@ -364,6 +368,10 @@
     & .slick-slide {
         width: 377px !important;
         margin-right: 20px;
+
+        @include media('<=desktop') {
+            width: 350px !important;
+        }
     }
 
     & .slick-track {
@@ -392,6 +400,8 @@
 #articles-second:checked~#articles-second-label,
 #articles-third:checked~#articles-third-label,
 #articles-four:checked~#articles-four-label {
+    color: #000000;
+
     &::before {
         opacity: 1;
     }

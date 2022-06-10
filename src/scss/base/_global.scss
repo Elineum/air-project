@@ -10,7 +10,7 @@ html {
     max-width: 1171px;
     margin: 0 auto;
 
-    @media screen and (max-width: 768px)  {
+    @include media('<=desktop') {
         max-width: 720px;
     }
 }

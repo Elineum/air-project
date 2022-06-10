@@ -8,6 +8,13 @@ let languageSwitherText = document.querySelector(".page-head__language");
 let modalCloser = document.querySelectorAll(".js-close-modal");
 let shadowModal = document.querySelector(".window-box");
 let modalStarts = document.querySelector(".request-block__info-box-holder");
+let modalMap = document.querySelector(".page-foot__interactive-map-wrap");
+let footerMap = document.querySelector(".js-footer-map");
+let beetrootText = document.querySelector(".js-beetroot-text");
+let gdsText = document.querySelector(".js-gds-text");
+let projPhotoBig = document.querySelector(".js-proj-photo-big");
+let projPhoto1 = document.querySelector(".js-proj-photo-1");
+let projPhoto2 = document.querySelector(".js-proj-photo-2");
 let interactiveMapList = document.querySelector(
   ".interactive-map__content-list"
 );
@@ -20,10 +27,62 @@ let interactiveMapAllItems = document.querySelectorAll(
 let interactiveMapClose = document.querySelector(
   ".interactive-map__button-close"
 );
+let modalIsActive;
 let activeModal;
+let currWidth = document.body.clientWidth;
+//////////////////////////////////////
+console.log(currWidth);
+
+if (768 <= currWidth && currWidth <= 1024) {
+  footerMap.src = "src/img/interactive-map-big.png";
+  beetrootText.textContent =
+    "За пітдримки “Бітрут-Академії” була створенна Веб-розробка";
+  gdsText.textContent = "Дизайн виконав: G.D.S Desing";
+  projPhotoBig.src = "src/img/projBigPhotoTablet.png";
+  projPhoto1.src = "src/img/projPhoto1Tablet.png";
+  projPhoto2.src = "src/img/projPhoto2Tablet.png";
+} else {
+  footerMap.src = "src/img/interactive-map-small.png";
+  beetrootText.textContent = "Веб-розробка: “Бітрут-Академія”";
+  gdsText.textContent = "Дизайн: G.D.S Desing";
+  projPhotoBig.src = "src/img/projBigPhoto.png";
+  projPhoto1.src = "src/img/projPhoto1.png";
+  projPhoto2.src = "src/img/projPhoto2.png";
+}
+
+window.addEventListener("resize", adaptiveChanger);
+
+function adaptiveChanger() {
+  currWidth = document.body.clientWidth;
+  if (768 <= currWidth && currWidth <= 1024) {
+    footerMap.src = "src/img/interactive-map-big.png";
+    beetrootText.textContent =
+      "За пітдримки “Бітрут-Академії” була створенна Веб-розробка";
+    gdsText.textContent = "Дизайн виконав: G.D.S Desing";
+    projPhotoBig.src = "src/img/projBigPhotoTablet.png";
+    projPhoto1.src = "src/img/projPhoto1Tablet.png";
+    projPhoto2.src = "src/img/projPhoto2Tablet.png";
+  } else {
+    footerMap.src = "src/img/interactive-map-small.png";
+    beetrootText.textContent = "Веб-розробка: “Бітрут-Академія”";
+    gdsText.textContent = "Дизайн: G.D.S Desing";
+    projPhotoBig.src = "src/img/projBigPhoto.png";
+    projPhoto1.src = "src/img/projPhoto1.png";
+    projPhoto2.src = "src/img/projPhoto2.png";
+  }
+}
+/////////////////////////////////////
 
 [].forEach.call(modalCloser, (el) => {
   el.addEventListener("click", modalClose);
+});
+
+if (modalIsActive) {
+  document.body.style.overflow = "hidden";
+}
+
+document.body.addEventListener("click", () => {
+  modalIsActive = document.querySelector(".visible-modal");
 });
 
 function listenerAdder() {
@@ -35,6 +94,7 @@ function listenerAdder() {
   interactiveMapButton.addEventListener("click", interactiveMapListToggler);
   interactiveMapList.addEventListener("click", interactiveMapItemOpener);
   modalStarts.addEventListener("click", openModal);
+  modalMap.addEventListener("click", openModal);
   shadowModal.addEventListener("click", modalClose);
 }
 listenerAdder();
@@ -42,6 +102,8 @@ listenerAdder();
 function openModal(e) {
   if (e.target.classList.contains("request-block__button")) {
     shadowModal.classList.remove("hide-modal-shadow");
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = "20px";
 
     if (e.target.classList.contains("request-block__button_help")) {
       let curr = document.querySelector(".window-box__help");
@@ -60,6 +122,13 @@ function openModal(e) {
       curr.classList.add("visible-modal");
       activeModal = document.querySelector(".visible-modal");
     }
+  } else if (e.target.closest(".page-foot__interactive-map-wrap")) {
+    shadowModal.classList.remove("hide-modal-shadow");
+    let curr = document.querySelector(".window-box__map");
+    curr.classList.add("visible-modal");
+    activeModal = document.querySelector(".visible-modal");
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = "20px";
   } else return;
 }
 
@@ -70,6 +139,8 @@ function modalClose(e) {
   ) {
     activeModal.classList.remove("visible-modal");
     shadowModal.classList.add("hide-modal-shadow");
+    document.body.style.overflow = "auto";
+    document.body.style.paddingRight = "";
   }
 }
 

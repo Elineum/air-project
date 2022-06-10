@@ -10,7 +10,7 @@
         & h2 {
             font-size: 36px;
 
-            @include media('<=tablet') {
+            @include media('<=desktop') {
                 font-size: 24px;
                 font-weight: 500;
             }
@@ -32,6 +32,10 @@
 
             & .special-project__text-content-wrap {
                 padding-left: 27px;
+
+                @include media('<=desktop') {
+                    padding: 0;
+                }
             }
             
             & .special-project__text-content {
