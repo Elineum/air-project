@@ -1,20 +1,28 @@
 let languageSwither = document.querySelector(".page-head__button-wrap");
+let languageSwitherBall = document.querySelector(".page-head__language-ball");
+let languageSwitherText = document.querySelector(".page-head__language");
+let nav = document.querySelector(".page-head__nav");
 let navItemArrowL = document.querySelector(".page-head__item_arrow-left");
 let navItemArrowR = document.querySelector(".page-head__item_arrow-right");
 let navHiddenMenuL = document.querySelector(".page-head__inner-list_left");
 let navHiddenMenuR = document.querySelector(".page-head__inner-list_right");
-let languageSwitherBall = document.querySelector(".page-head__language-ball");
-let languageSwitherText = document.querySelector(".page-head__language");
+let navContactBlock = document.querySelector(".page-head__adapt-wrap");
 let modalCloser = document.querySelectorAll(".js-close-modal");
-let shadowModal = document.querySelector(".window-box");
-let modalStarts = document.querySelector(".request-block__info-box-holder");
-let modalMap = document.querySelector(".page-foot__interactive-map-wrap");
+let modalShadow = document.querySelector(".window-box");
+let modalOpenerRequest = document.querySelector(
+  ".request-block__info-box-holder"
+);
+let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
 let footerMap = document.querySelector(".js-footer-map");
 let beetrootText = document.querySelector(".js-beetroot-text");
 let gdsText = document.querySelector(".js-gds-text");
 let projPhotoBig = document.querySelector(".js-proj-photo-big");
 let projPhoto1 = document.querySelector(".js-proj-photo-1");
 let projPhoto2 = document.querySelector(".js-proj-photo-2");
+let searchButton = document.querySelector(".js-search-button");
+let searchInput = document.querySelector(".page-head__input-search");
+let burgerWrap = document.querySelector(".js-burger-wrap");
+let burgerContent = document.querySelector(".js-burger-content");
 let interactiveMapList = document.querySelector(
   ".interactive-map__content-list"
 );
@@ -28,11 +36,10 @@ let interactiveMapClose = document.querySelector(
   ".interactive-map__button-close"
 );
 let modalIsActive;
-let activeModal;
+let currentModal;
+let navIsActive;
 let currWidth = document.body.clientWidth;
-//////////////////////////////////////
-console.log(currWidth);
-
+////////////////////////////////////
 if (768 <= currWidth && currWidth <= 1024) {
   footerMap.src = "src/img/interactive-map-big.png";
   beetrootText.textContent =
@@ -49,11 +56,48 @@ if (768 <= currWidth && currWidth <= 1024) {
   projPhoto1.src = "src/img/projPhoto1.png";
   projPhoto2.src = "src/img/projPhoto2.png";
 }
+/////////////////////////////////////
 
+[].forEach.call(modalCloser, (el) => {
+  el.addEventListener("click", modalClose);
+});
+console.log(navIsActive);
+if (modalIsActive || navIsActive) {
+  console.log("Соня дудка");
+  document.body.style.overflow = "hidden";
+} else {
+  document.body.style.overflow = "auto";
+  console.log("Соня не дудка");
+}
+
+languageSwither.addEventListener("click", languageSwitherClick);
+interactiveMapButton.addEventListener("click", interactiveMapListToggler);
+interactiveMapList.addEventListener("click", interactiveMapItemOpener);
+modalOpenerRequest.addEventListener("click", openModal);
+modalOpenerMap.addEventListener("click", openModal);
+modalShadow.addEventListener("click", modalClose);
+searchButton.addEventListener("click", toggleSearch);
+burgerWrap.addEventListener("click", burgerChanger);
+document.body.addEventListener("click", () => {
+  modalIsActive = document.querySelector(".visible-modal");
+  navIsActive = document.querySelector(".page-head__nav_active");
+});
 window.addEventListener("resize", adaptiveChanger);
+
+function burgerChanger() {
+  burgerWrap.classList.toggle("page-head__burger-wrap_active");
+  burgerContent.classList.toggle("page-head__burger-button_active");
+  navContactBlock.classList.toggle("page-head__adapt-wrap_active");
+  nav.classList.toggle("page-head__nav_active");
+
+  navIsActive
+    ? (document.body.style.overflow = "auto")
+    : (document.body.style.overflow = "hidden");
+}
 
 function adaptiveChanger() {
   currWidth = document.body.clientWidth;
+  console.log(`${currWidth}px current width`);
   if (768 <= currWidth && currWidth <= 1024) {
     footerMap.src = "src/img/interactive-map-big.png";
     beetrootText.textContent =
@@ -71,74 +115,52 @@ function adaptiveChanger() {
     projPhoto2.src = "src/img/projPhoto2.png";
   }
 }
-/////////////////////////////////////
-
-[].forEach.call(modalCloser, (el) => {
-  el.addEventListener("click", modalClose);
-});
-
-if (modalIsActive) {
-  document.body.style.overflow = "hidden";
-}
-
-document.body.addEventListener("click", () => {
-  modalIsActive = document.querySelector(".visible-modal");
-});
-
-function listenerAdder() {
-  languageSwither.addEventListener("click", languageSwitherClick);
-  navItemArrowL.addEventListener("mouseenter", navMenuLeft);
-  navItemArrowL.addEventListener("mouseleave", navMenuLeft);
-  navItemArrowR.addEventListener("mouseenter", navMenuRight);
-  navItemArrowR.addEventListener("mouseleave", navMenuRight);
-  interactiveMapButton.addEventListener("click", interactiveMapListToggler);
-  interactiveMapList.addEventListener("click", interactiveMapItemOpener);
-  modalStarts.addEventListener("click", openModal);
-  modalMap.addEventListener("click", openModal);
-  shadowModal.addEventListener("click", modalClose);
-}
-listenerAdder();
 
 function openModal(e) {
   if (e.target.classList.contains("request-block__button")) {
-    shadowModal.classList.remove("hide-modal-shadow");
+    modalShadow.classList.remove("hide-modal-shadow");
     document.body.style.overflow = "hidden";
     document.body.style.paddingRight = "20px";
 
     if (e.target.classList.contains("request-block__button_help")) {
       let curr = document.querySelector(".window-box__help");
       curr.classList.add("visible-modal");
-      activeModal = document.querySelector(".visible-modal");
+      currentModal = document.querySelector(".visible-modal");
     } else if (e.target.classList.contains("request-block__button_add-point")) {
       let curr = document.querySelector(".window-box__add-point");
       curr.classList.add("visible-modal");
-      activeModal = document.querySelector(".visible-modal");
+      currentModal = document.querySelector(".visible-modal");
     } else if (e.target.classList.contains("request-block__button_add-info")) {
       let curr = document.querySelector(".window-box__add-info");
       curr.classList.add("visible-modal");
-      activeModal = document.querySelector(".visible-modal");
+      currentModal = document.querySelector(".visible-modal");
     } else if (e.target.classList.contains("request-block__button_subscribe")) {
       let curr = document.querySelector(".window-box__news");
       curr.classList.add("visible-modal");
-      activeModal = document.querySelector(".visible-modal");
+      currentModal = document.querySelector(".visible-modal");
     }
   } else if (e.target.closest(".page-foot__interactive-map-wrap")) {
-    shadowModal.classList.remove("hide-modal-shadow");
+    modalShadow.classList.remove("hide-modal-shadow");
     let curr = document.querySelector(".window-box__map");
     curr.classList.add("visible-modal");
-    activeModal = document.querySelector(".visible-modal");
+    currentModal = document.querySelector(".visible-modal");
     document.body.style.overflow = "hidden";
     document.body.style.paddingRight = "20px";
   } else return;
 }
 
+function toggleSearch() {
+  searchButton.classList.toggle("page-head__search-opener-active");
+  searchInput.classList.toggle("page-head__input-search-active");
+}
+
 function modalClose(e) {
   if (
-    e.target == shadowModal ||
+    e.target == modalShadow ||
     e.target.classList.contains("js-close-modal")
   ) {
-    activeModal.classList.remove("visible-modal");
-    shadowModal.classList.add("hide-modal-shadow");
+    currentModal.classList.remove("visible-modal");
+    modalShadow.classList.add("hide-modal-shadow");
     document.body.style.overflow = "auto";
     document.body.style.paddingRight = "";
   }
@@ -163,9 +185,9 @@ function interactiveMapListToggler() {
 
 function interactiveMapItemOpener(e) {
   let interactiveMapLi = e.target.closest("li");
-  let interactiveMapButtonHehe = e.target.closest("button");
+  let interactiveMapButton = e.target.closest("button");
 
-  if (interactiveMapLi && !interactiveMapButtonHehe) {
+  if (interactiveMapLi && !interactiveMapButton) {
     for (let key of interactiveMapAllItems) {
       key.classList.remove("interactive-map__content-item_open");
     }
@@ -175,16 +197,4 @@ function interactiveMapItemOpener(e) {
       key.classList.remove("interactive-map__content-item_open");
     }
   }
-}
-
-function navMenuLeft() {
-  if (navHiddenMenuL.classList.contains("hidden")) {
-    navHiddenMenuL.classList.toggle("hidden");
-  } else setTimeout(() => navHiddenMenuL.classList.toggle("hidden"), 500);
-}
-
-function navMenuRight() {
-  if (navHiddenMenuR.classList.contains("hidden")) {
-    navHiddenMenuR.classList.toggle("hidden");
-  } else setTimeout(() => navHiddenMenuR.classList.toggle("hidden"), 500);
 }

@@ -34,16 +34,23 @@ $(document).ready(function () {
     mobileFirst: true,
     responsive: [
       {
-        breakpoint: 1440,
+        breakpoint: 1439,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 767,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 479,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 2,
         },
       },

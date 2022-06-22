@@ -26,6 +26,8 @@
         max-width: 970px;
         width: 100%;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.349);
+        // TODO scroll on all block, or only text block?
+        // overflow-y: scroll;
 
         @include media('<=desktop') {
             max-width: 769px;
@@ -99,11 +101,19 @@
     &__add-info-form {
         display: flex;
         flex-direction: column;
-        padding: 50px 135px 0;
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 50px;
+        max-height: calc(100vh - 254px);
+        // overflow-y: scroll;
 
         @include media('<=desktop') {
-            padding: 50px 24px 0;
+            max-width: 720px;
         }
+    }
+
+    &__add-info-form {
+        padding-top: 40px;
     }
 
     &__help-form-input, 
@@ -161,6 +171,11 @@
         @include media('<=desktop') {
             max-width: 720px;
         }
+    }
+
+    &__add-point-form-wrap {
+        max-height: calc(100vh - 254px);
+        overflow-y: scroll;
     }
 
     &__help-label, 
@@ -400,10 +415,6 @@
 
     }
 
-    &__add-info-form {
-        padding-top: 40px;
-    }
-
     &__add-info-file-browser {
         max-width: 340px;
         width: 100%;
@@ -445,14 +456,19 @@
     }
 
     &__map-main {
-        margin: 50px 118px 90px 135px;
+        max-width: 700px;
+        margin: 50px auto 0;
         overflow-y: scroll;
-        max-height: calc(100vh - 394px);
+        max-height: calc(100vh - 304px);
 
         //TODO hide scroll
         // &::-webkit-scrollbar {
         //     width: 1px;
         // }
+
+        @media screen {
+            max-width: 720px;
+        }
     }
 
     &__map-interactive {
@@ -575,12 +591,4 @@
     100% {
         transform: translateY(0);
     }
-
-    // 0% {
-    //     opacity: 0;
-    // }
-
-    // 100% {
-    //     opacity: 1;
-    // }
 }

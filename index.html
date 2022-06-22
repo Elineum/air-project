@@ -11,7 +11,7 @@
   </head>
   <body style="background-image: url(src/img/background1.png)">
     <div class="container">
-      <header class="page-head">
+      <header class="page-head container-width">
         <div class="page-head__logo-wrap">
           <a href="#" class="page-head__logo-link" target="_blank"
             ><img src="src/img/logo.png" alt="logo"
@@ -20,7 +20,7 @@
         <div class="page-head__panel">
           <nav class="page-head__nav">
             <ul class="page-head__list">
-              <li class="page-head__item">
+              <li class="page-head__item page-head__item-adaptive-first">
                 <a href="#" class="page-head__item-link">Головна</a>
               </li>
               <li
@@ -31,28 +31,27 @@
                   class="page-head__item-link page-head__item-link_arrow"
                   >Публікації</a
                 >
-                <ul
-                  class="page-head__inner-list page-head__inner-list_left hidden"
+                <div class="page-head__inner-menu-wrap">
+                  <ul
+                  class="page-head__inner-list page-head__inner-list_left"
                 >
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 1</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 2</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 3</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 4</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 5</a>
-                  </li>
-                </ul>
+                    <li class="page-head__inner-item">
+                      <a href="#" class="page-head__inner-link">Статті</a>
+                    </li>
+                    <li class="page-head__inner-item">
+                      <a href="#" class="page-head__inner-link">Блоги</a>
+                    </li>
+                    <li class="page-head__inner-item">
+                      <a href="#" class="page-head__inner-link">Дослідження</a>
+                    </li>
+                    <li class="page-head__inner-item">
+                      <a href="#" class="page-head__inner-link">Новини</a>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li class="page-head__item">
-                <a href="#" class="page-head__item-link">Івенти</a>
+                <a href="#events" class="page-head__item-link">Івенти</a>
               </li>
               <li class="page-head__item">
                 <a href="#" class="page-head__item-link">Мапа</a>
@@ -65,43 +64,85 @@
                   class="page-head__item-link page-head__item-link_arrow"
                   >Про проєкт</a
                 >
-                <ul
-                  class="page-head__inner-list page-head__inner-list_right hidden"
-                >
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 1</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 2</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 3</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 4</a>
-                  </li>
-                  <li class="page-head__inner-item">
-                    <a href="#" class="page-head__inner-link">item 5</a>
-                  </li>
-                </ul>
+                <div class="page-head__inner-menu-wrap">
+                  <ul
+                    class="page-head__inner-list page-head__inner-list_right"
+                  >
+                    <li class="page-head__inner-item">
+                      <a href="#" class="page-head__inner-link">Спецпроєкти</a>
+                    </li>
+                    <li class="page-head__inner-item">
+                      <a href="#" class="page-head__inner-link">Зворотній звязок</a>
+                    </li>
+                    <li class="page-head__inner-item">
+                      <a href="#" class="page-head__inner-link">Наші партнери</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="page-head__item page-head__item-adaptive-last">
+                <a href="#" class="page-head__item-link">Наші партнери</a>
+              </li>
+              <li class="page-head__item page-head__item-adaptive-last">
+                <a href="#" class="page-head__item-link">Зворотній звязок</a>
               </li>
             </ul>
           </nav>
           <div class="page-head__input-wrap">
-            <label class="page-head__label" for="search-button"
-              ><img src="src/img/search.svg" alt="search-img" />
-              <input
-                type="text"
-                placeholder="Пошук"
-                class="page-head__input"
-                id="search-button"
-              />
-            </label>
+            <div class="page-head__input-search">
+              <label class="page-head__label" for="search-button"
+                ><img src="src/img/search.svg" alt="search-img" />
+                <input
+                  type="text"
+                  placeholder="Пошук"
+                  class="page-head__input"
+                  id="search-button"
+                />
+              </label>
+            </div>
+            <div class="page-head__search-opener js-search-button">
+
+            </div>
           </div>
-          <div class="page-head__button-wrap">
-            <span class="page-head__language">Укр</span>
-            <span class="page-head__language-ball"></span>
+          <div class="page-head__burger-wrap js-burger-wrap">
+            <div class="page-head__burger-button js-burger-content"></div>
           </div>
+          <div class="page-head__adapt-wrap">
+            <ul class="page-head__contact-list">
+              <li class="page-foot__item page-foot__item_icon">
+                <a href="#" class="page-foot__item-link">
+                  <div
+                    class="page-foot__img-wrap page-foot__img-wrap_icon page-foot__img-wrap_fb"
+                  >
+                    <img src="src/img/facebook.svg" alt="facebook-logo" />
+                  </div>
+                </a>
+              </li>
+              <li class="page-foot__item page-foot__item_icon">
+                <a href="#" class="page-foot__item-link">
+                  <div
+                    class="page-foot__img-wrap page-foot__img-wrap_icon page-foot__img-wrap_tg"
+                  >
+                    <img src="src/img/telegram.svg" alt="telegram-logo" />
+                  </div>
+                </a>
+              </li>
+              <li class="page-foot__item page-foot__item_icon">
+                <a href="#" class="page-foot__item-link">
+                  <div
+                    class="page-foot__img-wrap page-foot__img-wrap_icon page-foot__img-wrap_ig"
+                  >
+                    <img src="src/img/instagram.svg" alt="instagram-logo" />
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="page-head__button-wrap">
+              <span class="page-head__language">Укр</span>
+              <span class="page-head__language-ball"></span>
+            </div>
+          </div>
+          
         </div>
       </header>
       <main>
@@ -121,7 +162,7 @@
               </div>
             </div>
           </section>
-          <section class="articles">
+          <section class="articles" id="articles">
             <div class="articles__block">
               <div class="articles__head-title">
                 <h2>Публікації:</h2>
@@ -813,7 +854,7 @@
               </ul>
             </div>
           </section>
-          <section class="events">
+          <section class="events" id="events">
             <div class="events__block">
               <div class="events__head-title">
                 <h2>Івенты:</h2>
@@ -1180,7 +1221,7 @@
               </div>
             </div>
           </section>
-          <section class="special-project">
+          <section class="special-project" id="special-project">
             <div class="special-project__content">
               <div class="special-project__block-title">
                 <h2>Спецпроєкты</h2>
@@ -1309,7 +1350,7 @@
               </ul>
             </div>
           </section>
-          <section class="about-project">
+          <section class="about-project" id="about-project">
             <div class="about-project__title-holder">
               <h2>Про проєкт</h2>
             </div>
@@ -1458,7 +1499,7 @@
               </ul>
             </div>
           </section>
-          <section class="request-block">
+          <section class="request-block" id="request-block">
             <div
               class="request-block__title-holder request-block__title-holder_block-title"
             >
