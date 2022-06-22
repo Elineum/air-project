@@ -63,11 +63,9 @@ if (768 <= currWidth && currWidth <= 1024) {
 });
 console.log(navIsActive);
 if (modalIsActive || navIsActive) {
-  console.log("Соня дудка");
   document.body.style.overflow = "hidden";
 } else {
   document.body.style.overflow = "auto";
-  console.log("Соня не дудка");
 }
 
 languageSwither.addEventListener("click", languageSwitherClick);
