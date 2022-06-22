@@ -5,7 +5,7 @@ $(document).ready(function () {
     mobileFirst: true,
     responsive: [
       {
-        breakpoint: 1279,
+        breakpoint: 76,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
