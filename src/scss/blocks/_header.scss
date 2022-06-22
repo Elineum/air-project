@@ -11,7 +11,7 @@
         gap: 35px;
         flex-wrap: wrap;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             flex-direction: column;
             align-items: center;
             gap: 60px;
@@ -25,7 +25,7 @@
     &__nav {
         padding-top: 3px;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: none;
         }
 
@@ -73,7 +73,7 @@
     } 
 
     &__item-adaptive-first {
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: none;
         }
     }
@@ -81,7 +81,7 @@
     &__item-adaptive-last {
         display: none;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: inherit;
         }
     }
@@ -167,7 +167,7 @@
     &__input-wrap {
         padding: 0 55px 0 27px;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: flex;
             align-items: center;
             padding: 0 26px 0 0;
@@ -175,13 +175,13 @@
     }
 
     &__input-search {
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: none;
         }
     }
 
     &__input-search-active {
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: inherit;
             animation: opacity-animation 0.2s 1;
         }
@@ -238,7 +238,7 @@
     &__search-opener {
         display: none;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: flex;
             max-width: 45px;
             padding: 6px 13px 4px 12px;
@@ -257,7 +257,7 @@
     }
 
     &__search-opener-active {
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: flex;
             width: 45px;
             height: 35px;
@@ -294,7 +294,7 @@
         display: flex;
         align-items: center;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: none;
         }
 
@@ -314,7 +314,7 @@
         display: none;
         gap: 20px;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: flex;
         }
     }
@@ -341,7 +341,7 @@
             border-radius: 50%;
         }
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             display: flex;
         }
     }

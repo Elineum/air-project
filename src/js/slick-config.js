@@ -1,9 +1,24 @@
 $(document).ready(function () {
   $(".special-project__list").slick({
-    slidesToShow: 2,
-    slidesToScroll: 2,
     speed: 1000,
     infinite: false,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 1279,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
   $(".articles__content-list").slick({
     speed: 1000,
@@ -48,7 +63,7 @@ $(document).ready(function () {
         },
       },
       {
-        breakpoint: 479,
+        breakpoint: 320,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,

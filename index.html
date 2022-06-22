@@ -21,47 +21,45 @@
           <nav class="page-head__nav">
             <ul class="page-head__list">
               <li class="page-head__item page-head__item-adaptive-first">
-                <a href="#" class="page-head__item-link">Головна</a>
+                <a href="#" class="page-head__item-link js">Головна</a>
               </li>
               <li
                 class="page-head__item page-head__item_arrow page-head__item_arrow-left"
               >
-                <a
-                  href="#"
-                  class="page-head__item-link page-head__item-link_arrow"
-                  >Публікації</a
+                <span
+                  class="page-head__item-link page-head__item-link_arrow js"
+                  >Публікації</span
                 >
                 <div class="page-head__inner-menu-wrap">
                   <ul
                   class="page-head__inner-list page-head__inner-list_left"
                 >
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link">Статті</a>
+                      <a href="#" class="page-head__inner-link js">Статті</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link">Блоги</a>
+                      <a href="#" class="page-head__inner-link js">Блоги</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link">Дослідження</a>
+                      <a href="#" class="page-head__inner-link js">Дослідження</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link">Новини</a>
+                      <a href="#" class="page-head__inner-link js">Новини</a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li class="page-head__item">
-                <a href="#events" class="page-head__item-link">Івенти</a>
+                <a href="#events" class="page-head__item-link js">Івенти</a>
               </li>
               <li class="page-head__item">
-                <a href="#" class="page-head__item-link">Мапа</a>
+                <a href="#interactive-map" class="page-head__item-link js">Мапа</a>
               </li>
               <li
                 class="page-head__item page-head__item_arrow page-head__item_arrow-right"
               >
                 <a
-                  href="#"
-                  class="page-head__item-link page-head__item-link_arrow"
+                  class="page-head__item-link page-head__item-link_arrow js"
                   >Про проєкт</a
                 >
                 <div class="page-head__inner-menu-wrap">
@@ -69,22 +67,22 @@
                     class="page-head__inner-list page-head__inner-list_right"
                   >
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link">Спецпроєкти</a>
+                      <a href="#special-project" class="page-head__inner-link">Спецпроєкти</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link">Зворотній звязок</a>
+                      <a href="#request-block" class="page-head__inner-link">Зворотній звязок</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link">Наші партнери</a>
+                      <a href="#our-experts" class="page-head__inner-link">Наші партнери</a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li class="page-head__item page-head__item-adaptive-last">
-                <a href="#" class="page-head__item-link">Наші партнери</a>
+                <a href="#our-experts" class="page-head__item-link js">Наші партнери</a>
               </li>
               <li class="page-head__item page-head__item-adaptive-last">
-                <a href="#" class="page-head__item-link">Зворотній звязок</a>
+                <a href="#request-block" class="page-head__item-link js">Зворотній звязок</a>
               </li>
             </ul>
           </nav>
@@ -100,9 +98,7 @@
                 />
               </label>
             </div>
-            <div class="page-head__search-opener js-search-button">
-
-            </div>
+            <div class="page-head__search-opener js-search-button"></div>
           </div>
           <div class="page-head__burger-wrap js-burger-wrap">
             <div class="page-head__burger-button js-burger-content"></div>
@@ -1358,7 +1354,11 @@
               <div
                 class="about-project__img-holder-top about-project__img-holder-top_big"
               >
-                <img src="src/img/projBigPhoto.png" class="js-proj-photo-big" alt="our-workers" />
+                <picture>
+                  <source srcset="src/img/projBigPhotoTablet.png" media="(max-width: 1279px)">
+                  <source srcset="src/img/projBigPhotoMobile.png" media="(max-width: 767px)">
+                  <img src="src/img/projBigPhoto.png" class="js-proj-photo-big" alt="our-workers" />
+                </picture>
               </div>
               <div class="about-project__span-holder">
                 <span>В июле мы с «Арникой» уже второй раз в этом</span>
@@ -1377,12 +1377,20 @@
                   </p>
                 </div>
                 <div class="about-project__img-holder-top">
-                  <img src="src/img/projPhoto1.png" class="js-proj-photo-1" alt="our-workers" />
+                  <picture>
+                    <source srcset="src/img/projPhoto1Tablet.png" media="(max-width: 1280px)">
+                    <source srcset="src/img/projPhoto1Mobile.png" media="(max-width: 767px)">
+                    <img src="src/img/projPhoto1.png" alt="our-workers" />
+                  </picture>
                 </div>
               </div>
               <div class="about-project__content-block about-project__content-block_3">
                 <div class="about-project__img-holder-top">
-                  <img src="src/img/projPhoto2.png" class="js-proj-photo-2" alt="our-workers" />
+                  <picture>
+                    <source srcset="src/img/projPhoto2Tablet.png" media="(max-width: 1279px)">
+                    <source srcset="src/img/projPhoto2Mobile.png" media="(max-width: 767px)">
+                    <img src="src/img/projPhoto2.png" alt="our-workers" />
+                  </picture>
                 </div>
                 <div class="about-project__text-wrap">
                   <p>
@@ -1398,7 +1406,7 @@
                 </div>
               </div>
             </div>
-            <div class="about-project__our-team">
+            <div class="about-project__our-team" id="our-experts">
               <div
                 class="about-project__title-holder about-project__title-holder_center"
               >
@@ -1605,10 +1613,11 @@
                   class="page-foot__interactive-map-wrap"
                 >
                 <div class="page-foot__img-wrap page-foot__img-wrap_map">
-                  <img class="js-footer-map"
-                    src="src/img/interactive-map-small.png"
-                    alt="interactive-map"
-                  />
+                  <picture>
+                    <source srcset="src/img/interactive-map-mobile.png" media="(max-width: 767px)">
+                    <source srcset="src/img/interactive-map-big.png" media="(max-width: 1279px)">
+                    <img src="src/img/interactive-map-small.png" alt="interactive-map"/>
+                  </picture>
                 </div>
                 <div class="page-foot__span-wrap"><span>Відкрити</span></div>
               </div>

@@ -10,7 +10,7 @@
         & h2 {
             font-size: 36px;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1280px) {
                 font-size: 24px;
                 font-weight: 500;
             }
@@ -33,7 +33,7 @@
             & .special-project__text-content-wrap {
                 padding-left: 27px;
 
-                @include media('<=desktop') {
+                @media screen and (max-width: 1280px) {
                     padding: 0;
                 }
             }

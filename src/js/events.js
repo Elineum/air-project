@@ -8,6 +8,7 @@ let navHiddenMenuL = document.querySelector(".page-head__inner-list_left");
 let navHiddenMenuR = document.querySelector(".page-head__inner-list_right");
 let navContactBlock = document.querySelector(".page-head__adapt-wrap");
 let modalCloser = document.querySelectorAll(".js-close-modal");
+let burgerLink = document.querySelectorAll(".js");
 let modalShadow = document.querySelector(".window-box");
 let modalOpenerRequest = document.querySelector(
   ".request-block__info-box-holder"
@@ -16,9 +17,6 @@ let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
 let footerMap = document.querySelector(".js-footer-map");
 let beetrootText = document.querySelector(".js-beetroot-text");
 let gdsText = document.querySelector(".js-gds-text");
-let projPhotoBig = document.querySelector(".js-proj-photo-big");
-let projPhoto1 = document.querySelector(".js-proj-photo-1");
-let projPhoto2 = document.querySelector(".js-proj-photo-2");
 let searchButton = document.querySelector(".js-search-button");
 let searchInput = document.querySelector(".page-head__input-search");
 let burgerWrap = document.querySelector(".js-burger-wrap");
@@ -39,36 +37,14 @@ let modalIsActive;
 let currentModal;
 let navIsActive;
 let currWidth = document.body.clientWidth;
-////////////////////////////////////
-if (768 <= currWidth && currWidth <= 1024) {
-  footerMap.src = "src/img/interactive-map-big.png";
-  beetrootText.textContent =
-    "За пітдримки “Бітрут-Академії” була створенна Веб-розробка";
-  gdsText.textContent = "Дизайн виконав: G.D.S Desing";
-  projPhotoBig.src = "src/img/projBigPhotoTablet.png";
-  projPhoto1.src = "src/img/projPhoto1Tablet.png";
-  projPhoto2.src = "src/img/projPhoto2Tablet.png";
-} else {
-  footerMap.src = "src/img/interactive-map-small.png";
-  beetrootText.textContent = "Веб-розробка: “Бітрут-Академія”";
-  gdsText.textContent = "Дизайн: G.D.S Desing";
-  projPhotoBig.src = "src/img/projBigPhoto.png";
-  projPhoto1.src = "src/img/projPhoto1.png";
-  projPhoto2.src = "src/img/projPhoto2.png";
-}
-/////////////////////////////////////
 
 [].forEach.call(modalCloser, (el) => {
   el.addEventListener("click", modalClose);
 });
-console.log(navIsActive);
-if (modalIsActive || navIsActive) {
-  console.log("Соня дудка");
-  document.body.style.overflow = "hidden";
-} else {
-  document.body.style.overflow = "auto";
-  console.log("Соня не дудка");
-}
+
+[].forEach.call(burgerLink, (el) => {
+  el.addEventListener("click", burgerChanger);
+});
 
 languageSwither.addEventListener("click", languageSwitherClick);
 interactiveMapButton.addEventListener("click", interactiveMapListToggler);
@@ -85,34 +61,30 @@ document.body.addEventListener("click", () => {
 window.addEventListener("resize", adaptiveChanger);
 
 function burgerChanger() {
-  burgerWrap.classList.toggle("page-head__burger-wrap_active");
-  burgerContent.classList.toggle("page-head__burger-button_active");
-  navContactBlock.classList.toggle("page-head__adapt-wrap_active");
-  nav.classList.toggle("page-head__nav_active");
+  if (currWidth < 1280) {
+    burgerWrap.classList.toggle("page-head__burger-wrap_active");
+    burgerContent.classList.toggle("page-head__burger-button_active");
+    navContactBlock.classList.toggle("page-head__adapt-wrap_active");
+    nav.classList.toggle("page-head__nav_active");
 
-  navIsActive
-    ? (document.body.style.overflow = "auto")
-    : (document.body.style.overflow = "hidden");
+    navIsActive
+      ? (document.body.style.overflow = "auto")
+      : (document.body.style.overflow = "hidden");
+  } else {
+    return;
+  }
 }
 
 function adaptiveChanger() {
   currWidth = document.body.clientWidth;
-  console.log(`${currWidth}px current width`);
-  if (768 <= currWidth && currWidth <= 1024) {
-    footerMap.src = "src/img/interactive-map-big.png";
+
+  if (320 <= currWidth && currWidth <= 1280) {
     beetrootText.textContent =
       "За пітдримки “Бітрут-Академії” була створенна Веб-розробка";
     gdsText.textContent = "Дизайн виконав: G.D.S Desing";
-    projPhotoBig.src = "src/img/projBigPhotoTablet.png";
-    projPhoto1.src = "src/img/projPhoto1Tablet.png";
-    projPhoto2.src = "src/img/projPhoto2Tablet.png";
   } else {
-    footerMap.src = "src/img/interactive-map-small.png";
     beetrootText.textContent = "Веб-розробка: “Бітрут-Академія”";
     gdsText.textContent = "Дизайн: G.D.S Desing";
-    projPhotoBig.src = "src/img/projBigPhoto.png";
-    projPhoto1.src = "src/img/projPhoto1.png";
-    projPhoto2.src = "src/img/projPhoto2.png";
   }
 }
 

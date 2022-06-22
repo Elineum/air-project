@@ -8,16 +8,20 @@
     &__title {
         margin-bottom: 38px;
 
+        @media screen and (max-width: 375px) {
+            max-width: 231px;
+        }
+
         & h2 {
             font-size: 36px;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1280px) {
                 font-size: 24px;
                 font-weight: 500;
             }
         }
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             margin-bottom: 25px;
         }
     }
@@ -29,9 +33,13 @@
         line-height: 26px;
         color: $grey;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             font-size: 16px;
             max-width: 535px;
+        }
+
+        @media screen and (max-width: 375px) {
+            padding-left: 0;
         }
     }
 
@@ -43,11 +51,21 @@
     &__main-content {
         display: flex;
         gap: 25px;
+
+        @media screen and (max-width: 1280px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__name {
         font-size: 18px;
         margin-bottom: 23px;
+
+        @media screen and (max-width: 1280px) {
+            padding-top: 0;
+            max-width: 345px;
+            font-size: 16px;
+        }
 
         & b {
             font-weight: 500;
@@ -57,9 +75,11 @@
     &__right-content-block {
         padding-top: 8px;
         position: relative;
+        max-width: 551px;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             padding-top: 0;
+            max-width: 345px;
         }
     }
 
@@ -69,6 +89,10 @@
         h4 {
             font-size: 18px;
             font-weight: 500;
+
+            @media screen and (max-width: 767px){
+                font-size: 16px;
+            }
         }
     }
 
@@ -78,10 +102,14 @@
         margin-bottom: 25px;
         line-height: 27px;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             font-size: 14px;
             line-height: 21.1px;
             word-spacing: -0.1px;
+        }
+
+        @media screen and (max-width: 767px){
+            font-size: 16px;
         }
     }
 
@@ -92,6 +120,10 @@
             font-size: 18px;
             font-weight: 500;
             color: #0A0A21;
+
+            @media screen and (max-width: 1280px) {
+                font-size: 16px;
+            }
         }
     }
 
@@ -105,12 +137,16 @@
         &_blocker {
             max-height: 302px;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1280px) {
                 max-height: 200px;
+            }
+
+            @media screen and (max-width: 767px) {
+                max-height: 400px;
             }
         }
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             font-size: 14px;
         }
     }
@@ -154,7 +190,7 @@
             border-bottom: 10px dotted $orange;
             transition: all ease-in-out 0.3s;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1280px) {
                 right: 10px;
                 bottom: 10px;
                 width: 30px;
@@ -169,7 +205,7 @@
             &::before {
                 border-bottom: 10px dotted $blue;
 
-                @include media('<=desktop') {
+                @media screen and (max-width: 1280px) {
                     border-bottom: 7px dotted $blue;                
                 }
             }
@@ -179,7 +215,7 @@
             }
         }
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1280px) {
             padding: 25px 33px 25px 10px;
         }
     }
@@ -198,7 +234,7 @@
             bottom: 10px;
             // TODO add content as icon and add hover
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1280px) {
                 right: 3px;
                 bottom: 0;
             }
@@ -214,7 +250,7 @@
         &_block {
             max-height: 69px;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1280px) {
                 max-height: 40px;
                 line-height: 20px;
             }
@@ -270,9 +306,15 @@
     min-height: 572px;
     min-width: 595px;
 
-    @include media('<=desktop') {
+    @media screen and (max-width: 1280px) {
         min-height: 468px;
-        max-height: 479px;
+        max-height: 468px;
         min-width: 350px;
+    }
+
+    @media screen and (max-width: 767px) {
+        min-height: 355px;
+        max-height: 355px;
+        min-width: 327px;
     }
 }
