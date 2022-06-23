@@ -1,0 +1,28 @@
+.article-w-cards {
+    padding: 45px 0;
+
+    .text-holder {
+        margin-bottom: 35px;
+    }
+
+    .col {
+        width: calc(100%/3);
+        margin: 0 -10px;
+
+        .card {
+            padding: 0 10px;
+
+            .image-holder {
+                margin-bottom: 10px;
+            }
+
+            .text-holder {
+                color: $grey;
+                font-weight: 300;
+                font-size: 14px;
+                margin: 0;
+                
+            }
+        }
+    }
+}

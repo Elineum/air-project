@@ -1,0 +1,18 @@
+.article-w-pic {
+    padding: 45px 0;
+
+    .text-holder {
+        margin-bottom: 35px;
+    }
+
+    .image-holder {
+        img {
+            margin-bottom: 10px;
+        }
+
+        .image-description {
+            color: $grey;
+            font-weight: 300;
+        }
+    }
+}

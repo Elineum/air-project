@@ -1,0 +1,48 @@
+.hero-article {
+    padding: 100px 0 45px;
+
+    .title-holder {
+        max-width: 670px;
+        margin-bottom: 35px;
+    }
+
+    .date-holder {
+        border-bottom: 1px solid #CCCCCC;
+
+        .hero-btn {
+            padding: 5px 21px;
+            color: $white;
+            background-color: $orange;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        
+        span {
+            color: grey;
+            font-size: 16px;
+        }
+    }
+
+    .hero-image {
+        border-radius: 10px;
+        padding: 26px 0 55px;
+    }
+
+    .article-content.flex {
+        .image-holder {
+            border-radius: 10px;
+            width: 40%;
+            order: 2;
+        }
+
+        .text-holder {
+            width: 50%;
+
+            .text-main {
+                margin-bottom: 40px;
+                line-height: 30px;
+            }
+        }
+    }
+}
