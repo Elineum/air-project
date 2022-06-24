@@ -8,13 +8,27 @@
     &__list {
         list-style: none;
         display: flex;
-        gap: 35px;
+        gap: 10px 35px;
         flex-wrap: wrap;
+        max-width: 520px;
+        max-height: 420px;
+        align-content: center;
 
         @media screen and (max-width: 1280px) {
             flex-direction: column;
             align-items: center;
             gap: 60px;
+        }
+
+        @media screen and (max-width: 767px) {
+            gap: 50px;
+        }
+
+        @media screen and (max-width: 375px) {
+            flex-direction: column;
+            align-items: normal;
+            gap: 50px;
+            transform: translateY(110px);
         }
     }
 
@@ -43,6 +57,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media screen and (max-width: 375px) {
+                padding-left: 25px;
+                align-items: normal;
+                justify-content: normal;
+            }
         }
     }
 
@@ -54,13 +74,39 @@
 
     &__item {
         z-index: 5;
+
         &_arrow {
             position: relative;
+            z-index: 7;
 
             &:hover {
                 .page-head__inner-menu-wrap {
                     visibility: visible;
                     opacity: 1;
+                }
+            }
+        }
+
+        &_arrow-right {
+            z-index: 6;
+
+            &:hover {
+                .page-head__inner-menu-wrap {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            @media screen and (max-width: 1280px) {
+                a::after {
+                    display: none;
+                }
+
+                &:hover {
+                    .page-head__inner-menu-wrap {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
                 }
             }
         }
@@ -172,6 +218,10 @@
             align-items: center;
             padding: 0 26px 0 0;
         }
+
+        @media screen and (max-width: 767px) {
+            position: relative;
+        }
     }
 
     &__input-search {
@@ -184,6 +234,12 @@
         @media screen and (max-width: 1280px) {
             display: inherit;
             animation: opacity-animation 0.2s 1;
+        }
+
+        @media screen and (max-width: 767px) {
+            position: absolute;
+            right: 0;
+            transform: translateY(50px);
         }
     }
 
@@ -306,6 +362,10 @@
             z-index: 6;
             transform: translateX(-50%);
             gap: 100px;
+
+            @media screen and (max-width: 767px) {
+                bottom: 3%;
+            }
         }
     }
 

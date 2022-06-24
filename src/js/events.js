@@ -2,10 +2,6 @@ let languageSwither = document.querySelector(".page-head__button-wrap");
 let languageSwitherBall = document.querySelector(".page-head__language-ball");
 let languageSwitherText = document.querySelector(".page-head__language");
 let nav = document.querySelector(".page-head__nav");
-let navItemArrowL = document.querySelector(".page-head__item_arrow-left");
-let navItemArrowR = document.querySelector(".page-head__item_arrow-right");
-let navHiddenMenuL = document.querySelector(".page-head__inner-list_left");
-let navHiddenMenuR = document.querySelector(".page-head__inner-list_right");
 let navContactBlock = document.querySelector(".page-head__adapt-wrap");
 let modalCloser = document.querySelectorAll(".js-close-modal");
 let burgerLink = document.querySelectorAll(".js");
@@ -13,6 +9,9 @@ let modalShadow = document.querySelector(".window-box");
 let modalOpenerRequest = document.querySelector(
   ".request-block__info-box-holder"
 );
+let fileDoc = document.querySelector(".window-box__file-doc");
+let fileImg = document.querySelector(".window-box__file-img");
+let aboutProjectLink = document.querySelector(".js-adaptive-href");
 let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
 let footerMap = document.querySelector(".js-footer-map");
 let beetrootText = document.querySelector(".js-beetroot-text");
@@ -30,6 +29,12 @@ let interactiveMapButton = document.querySelector(
 let interactiveMapAllItems = document.querySelectorAll(
   "ul.interactive-map__content-list > li"
 );
+let interactiveMapModalAllItems = document.querySelectorAll(
+  "ul.window-box__map-content-list > li"
+);
+let interactiveMapModalList = document.querySelector(
+  ".window-box__map-content-list"
+);
 let interactiveMapClose = document.querySelector(
   ".interactive-map__button-close"
 );
@@ -45,10 +50,25 @@ let currWidth = document.body.clientWidth;
 [].forEach.call(burgerLink, (el) => {
   el.addEventListener("click", burgerChanger);
 });
+console.log(fileImg.files);
+fileDoc.addEventListener("change", moveCoord);
+fileImg.addEventListener("change", moveCoord);
+function moveCoord() {
+  fileDoc.files.length > 0
+    ? (fileDoc.style.left = "-93px")
+    : (fileDoc.style.left = "-9999rem");
+
+  fileImg.files.length > 0
+    ? (fileImg.style.left = "-93px")
+    : (fileImg.style.left = "-9999rem");
+  console.log(fileImg.files.length);
+}
+moveCoord();
 
 languageSwither.addEventListener("click", languageSwitherClick);
 interactiveMapButton.addEventListener("click", interactiveMapListToggler);
 interactiveMapList.addEventListener("click", interactiveMapItemOpener);
+interactiveMapModalList.addEventListener("click", interactiveMapItemOpener);
 modalOpenerRequest.addEventListener("click", openModal);
 modalOpenerMap.addEventListener("click", openModal);
 modalShadow.addEventListener("click", modalClose);
@@ -79,14 +99,17 @@ function adaptiveChanger() {
   currWidth = document.body.clientWidth;
 
   if (320 <= currWidth && currWidth <= 1280) {
+    aboutProjectLink.href = "#about-project";
     beetrootText.textContent =
       "За пітдримки “Бітрут-Академії” була створенна Веб-розробка";
     gdsText.textContent = "Дизайн виконав: G.D.S Desing";
   } else {
     beetrootText.textContent = "Веб-розробка: “Бітрут-Академія”";
     gdsText.textContent = "Дизайн: G.D.S Desing";
+    aboutProjectLink.removeAttribute("href");
   }
 }
+adaptiveChanger();
 
 function openModal(e) {
   if (e.target.classList.contains("request-block__button")) {
@@ -159,14 +182,41 @@ function interactiveMapItemOpener(e) {
   let interactiveMapLi = e.target.closest("li");
   let interactiveMapButton = e.target.closest("button");
 
-  if (interactiveMapLi && !interactiveMapButton) {
-    for (let key of interactiveMapAllItems) {
-      key.classList.remove("interactive-map__content-item_open");
+  if (
+    (interactiveMapLi
+      ? interactiveMapLi.classList.contains("interactive-map__content-item")
+      : false) ||
+    (interactiveMapButton
+      ? interactiveMapButton.classList.contains("interactive-map__button-close")
+      : false)
+  ) {
+    if (interactiveMapLi && !interactiveMapButton) {
+      for (let key of interactiveMapAllItems) {
+        key.classList.remove("interactive-map__content-item_open");
+      }
+      interactiveMapLi.classList.add("interactive-map__content-item_open");
+    } else {
+      for (let key of interactiveMapAllItems) {
+        key.classList.remove("interactive-map__content-item_open");
+      }
     }
-    interactiveMapLi.classList.add("interactive-map__content-item_open");
-  } else {
-    for (let key of interactiveMapAllItems) {
-      key.classList.remove("interactive-map__content-item_open");
+  } else if (
+    (interactiveMapLi
+      ? interactiveMapLi.classList.contains("window-box__map-content-item")
+      : false) ||
+    (interactiveMapButton
+      ? interactiveMapButton.classList.contains("window-box__map-button-close")
+      : false)
+  ) {
+    if (interactiveMapLi && !interactiveMapButton) {
+      for (let key of interactiveMapModalAllItems) {
+        key.classList.remove("window-box__map-content-item_open");
+      }
+      interactiveMapLi.classList.add("window-box__map-content-item_open");
+    } else {
+      for (let key of interactiveMapModalAllItems) {
+        key.classList.remove("window-box__map-content-item_open");
+      }
     }
   }
 }

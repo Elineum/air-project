@@ -26,11 +26,15 @@
         max-width: 970px;
         width: 100%;
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.349);
-        // TODO scroll on all block, or only text block?
-        // overflow-y: scroll;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         @media screen and (max-width: 1280px) {
             max-width: 769px;
+        }
+
+        @media screen and (max-width: 375px) {
+            max-width: 375px;
         }
     }
 
@@ -50,6 +54,15 @@
         background-size: cover;
         min-height: 254px;
 
+        @media screen and (max-width: 1280px) {
+            background-position-x: left;
+            background-size: cover;
+        }
+
+        @media screen and (max-width: 767px) {
+            min-height: 119px;
+        }
+
         h2 {
             font-size: 36px;
             color: white;
@@ -58,11 +71,10 @@
             @media screen and (max-width: 1280px) {
                 font-size: 24px;
             }
-        }
 
-        @media screen and (max-width: 1280px) {
-            background-position-x: left;
-            background-size: cover;
+            @media screen and (max-width: 767px) {
+                font-size: 18px;
+            }
         }
     }
 
@@ -70,6 +82,10 @@
     &__add-info-head {
         @media screen and (max-width: 1280px) {
             min-height: 201px;
+        }
+
+        @media screen and (max-width: 767px) {
+            min-height: 119px;
         }
     }
 
@@ -79,20 +95,71 @@
         font-size: 12px;
         text-align: center;
         color: #CDCFD1;
+        margin: 0 auto;
+
+        &_top {
+            @media screen and (max-width: 1280px) {
+                max-width: 245px;
+            }
+
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+
+        &_bot {
+            line-height: 21px;
+            display: none;
+            font-size: 14px;
+            color: #4D4D4D;
+            margin-bottom: 15px;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+        }
     }
 
-    &__add-info-form-wrap {
-        margin-bottom: 25px;
-
-        @media screen and (max-width: 1280px) {
-            margin-bottom: 0px;
-        }
+    &__add-point-head-text_bot {
+        margin-bottom: 33px;
     }
 
     &__help-head-time {
         color: white;
         font-size: 12px;
         font-weight: 500;
+    }
+
+    &__help-head-time, 
+    &__add-point-head-time {
+
+        &_top {
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+
+        &_bot {
+            line-height: 21px;
+            display: none;
+            font-size: 14px;
+            color: #4D4D4D;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 25px;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+        }
+    }
+
+    &__add-info-form-wrap {
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 767px) {
+            min-height: calc(100vh - 119px);
+        }
     }
 
     &__help-form, 
@@ -105,10 +172,20 @@
         margin: 0 auto;
         padding-top: 50px;
         max-height: calc(100vh - 254px);
-        // overflow-y: scroll;
+        overflow: scroll;
 
         @media screen and (max-width: 1280px) {
             max-width: 720px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-top: 33px;
+            max-width: 325px;
+            max-height: calc(100vh - 119px);
+        }
+
+        &::-webkit-scrollbar {
+            width: 0px;
         }
     }
 
@@ -123,9 +200,16 @@
     &__add-info-form-input {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
         gap: 20px;
         margin-bottom: 20px;
+        
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
         input[type='text'], input[type='email'] {
             max-width: 340px;
@@ -138,14 +222,16 @@
             background-color: transparent;
             border: 1px solid #4D4D4D;
 
+            @media screen and (max-width: 1280px) {
+                max-width: 350px;
+            }
+
+            @media screen and (max-width: 767px) {
+                max-width: 325px;
+            }
+
             &::placeholder {
                 color: #4D4D4D;
-            }
-        }
-
-        @media screen and (max-width: 1280px) {
-            input[type='text'], input[type='email'] {
-                max-width: 350px;
             }
         }
     }
@@ -164,18 +250,25 @@
         max-height: 94px;
         background-color: transparent;
 
-        &::placeholder {
-            color: #4D4D4D;
-        }
-
         @media screen and (max-width: 1280px) {
             max-width: 720px;
+        }
+
+        @media screen and (max-width: 767px) {
+            max-width: 325px;
+        }
+
+        &::placeholder {
+            color: #4D4D4D;
         }
     }
 
     &__add-point-form-wrap {
         max-height: calc(100vh - 254px);
-        overflow-y: scroll;
+
+        @media screen and (max-width: 767px) {
+            max-height: calc(100vh - 119px);
+        }
     }
 
     &__help-label, 
@@ -187,6 +280,11 @@
     &__help-add-time {
         display: flex;
         flex-direction: column;
+
+        @media screen and (max-width: 767px) {
+            width: 325px;
+            margin: 0 auto;
+        }
     }
 
     &__help-input-time {
@@ -272,14 +370,6 @@
     }
 
     //Add hot-spot block
-    &__add-point-head-text {
-        color: white;
-
-        @media screen and (max-width: 1280px) {
-            max-width: 245px;
-        }
-    }
-
     &__help-textarea {
         margin-bottom: 20px;
     }
@@ -342,11 +432,18 @@
     &__add-info-radio-block {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 55px;
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 25px;
+            flex-direction: column;
+            gap: 27px;
+        }
     }
 
     &__add-info-radio-part {
         font-size: 12px;
-        margin-bottom: 50px;
+        margin: 0 2px;
 
         input[type="radio"] {
             visibility: hidden;
@@ -416,17 +513,37 @@
     }
 
     &__add-info-file-browser {
-        max-width: 340px;
+        max-width: max-content;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         gap: 20px;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0;
 
-        input {
-            visibility: hidden;
-            display: none;
+        @media screen and (max-width: 767px) {
+            justify-content: space-between;
+            max-width: 340px;
         }
+    }
+
+    &__file-img,
+    &__file-doc {
+        position: absolute;
+        left: -93px;
+        bottom: 15px;
+        font-size: 10px;
+    }
+
+    &__file-doc {
+        bottom: 0;
+    }
+
+    &__add-info-file-browser-container {
+        display: flex;
+        gap: 23px;
     }
 
     &__add-info-file-browser-span {
@@ -457,17 +574,20 @@
 
     &__map-main {
         max-width: 700px;
-        margin: 50px auto 0;
+        margin: 50px auto 90px;
         overflow-y: scroll;
-        max-height: calc(100vh - 304px);
+        max-height: calc(100vh - 394px);
 
-        //TODO hide scroll
-        // &::-webkit-scrollbar {
-        //     width: 1px;
-        // }
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
 
-        @media screen {
+        @media screen and (max-width: 1279px){
             max-width: 720px;
+        }
+
+        @media screen and (max-width: 767px){
+            max-width: 325px;
         }
     }
 
@@ -477,6 +597,9 @@
 
     &__map-name {
         @extend .interactive-map__name;
+
+        font-size: 18px;
+        margin-bottom: 9px;
     }
 
     &__map-content-title {
@@ -486,26 +609,43 @@
     &__map-content-text {
         @extend .interactive-map__content-text;
 
+        font-size: 14px;
+        line-height: 25px;
         max-width: 720px;
-        letter-spacing: -0.2px;
+        letter-spacing: 0.2px;
+    }
+
+    &__map-material-title {
+        @extend .interactive-map__material-title;
+
+        font-size: 18px;
+        margin-bottom: 10px;
     }
 
     &__map-content-list {
         @extend .interactive-map__content-list;
+
+        max-height: max-content;
     }
 
     &__map-content-item {
         @extend .interactive-map__content-item;
 
+        padding: 17px 15px 16px 14px;
+        line-height: 20px;
+
         &_open {
             background-color: $orange;
+            padding: 35px 15px 55px 14px;
 
-            .interactive-map__item-text_block {
+            .window-box__map-item-text_block {
+                animation: height-small-m 0.5s 1;
                 max-height: max-content;
             }
 
             .interactive-map__item-text {
                 color: black;
+                max-width: max-content;
             }
 
             &::before {
@@ -545,15 +685,12 @@
         @extend .interactive-map__item-text;
 
         max-width: 500px;
+        animation: height-small-revert-m 0.5s 1;
 
         &_block {
-            max-height: 50px;
+            max-height: 40px;
         }
     }
-
-    // &__map-button-close-wrap {
-    //     @extend .interactive-map__;
-    // }
 
     &__map-button-close {
         @extend .interactive-map__button-close;
@@ -563,7 +700,7 @@
             position: absolute;
             right: 25px;
             bottom: 10px;
-            // TODO add content as icon and add hover
+
         }
     }
 }
@@ -571,7 +708,6 @@
 .visible-modal {
     display: flex;
     animation: modal-show 0.8s 1;
-    //TODO 0.4 for opacity, 0.8 for translate 
 }
 
 .hide-modal-shadow {
@@ -590,5 +726,29 @@
 
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes height-small-m {
+    from {
+        max-height: 40px;
+    }
+    50% {
+        max-height: 135px;
+    }
+    to {
+        max-height: max-content;
+    }
+}
+
+@keyframes height-small-revert-m {
+    from {
+        max-height: max-content;
+    }
+    50% {
+        max-height: 135px;
+    }
+    to {
+        max-height: 40px;
     }
 }

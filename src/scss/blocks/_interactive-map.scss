@@ -1,3 +1,26 @@
+:root {
+    --height: 302px;
+    --height-tablet: 219px;
+    --text-height: 69px;
+    --block-height: 92px;
+}
+
+@media screen and (max-width: 1279px) {
+    :root {
+        --height: 200px;
+        --height-tablet: 234px;
+        --text-height: 40px;
+        --block-height: 75px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        --height: 400px;
+        --height-tablet: 272px;
+    }
+}
+
 .interactive-map {
     padding-bottom: 55px;
 
@@ -90,7 +113,7 @@
             font-size: 18px;
             font-weight: 500;
 
-            @media screen and (max-width: 767px){
+            @media screen and (max-width: 1279px){
                 font-size: 16px;
             }
         }
@@ -133,21 +156,20 @@
         flex-direction: column;
         gap: 10px;
         overflow: hidden;
-
-        &_blocker {
-            max-height: 302px;
-
-            @media screen and (max-width: 1280px) {
-                max-height: 200px;
-            }
-
-            @media screen and (max-width: 767px) {
-                max-height: 400px;
-            }
-        }
+        max-height: 302px;
+        animation: height-animation-revert 0.5s 1;
 
         @media screen and (max-width: 1280px) {
-            font-size: 14px;
+            max-height: 200px;
+        }
+
+        @media screen and (max-width: 767px) {
+            max-height: 400px;
+        }
+
+        &_blocker {
+            animation: height-animation 0.5s 1;
+            max-height: unset;
         }
     }
 
@@ -160,15 +182,26 @@
         cursor: pointer;
         transition: all ease-in-out 0.3s;
 
+        @media screen and (max-width: 1280px) {
+            padding: 25px 33px 25px 10px;
+        }
+
         &_open {
             background-color: $orange;
+            padding: 46px 14px 56px;
+
+            @media screen and (max-width: 1280px) {
+                padding: 26px 10px 44px;
+            }
 
             .interactive-map__item-text_block {
+                animation: height-small 0.5s 1;
                 max-height: max-content;
             }
 
             .interactive-map__item-text {
                 color: black;
+                max-width: max-content;
             }
 
             &::before {
@@ -214,10 +247,6 @@
                 color: black;
             }
         }
-
-        @media screen and (max-width: 1280px) {
-            padding: 25px 33px 25px 10px;
-        }
     }
 
     &__button-close {
@@ -232,7 +261,6 @@
             position: absolute;
             right: 25px;
             bottom: 10px;
-            // TODO add content as icon and add hover
 
             @media screen and (max-width: 1280px) {
                 right: 3px;
@@ -246,6 +274,7 @@
         max-width: 435px;
         color: $grey;
         transition: all ease-in-out 0.3s;
+        animation: height-small-revert 0.5s 1;
 
         &_block {
             max-height: 69px;
@@ -300,21 +329,69 @@
             transition: all ease-in-out 0.5s;
         }
     }
-}
 
-#map {
-    min-height: 572px;
-    min-width: 595px;
-
-    @media screen and (max-width: 1280px) {
-        min-height: 468px;
-        max-height: 468px;
-        min-width: 350px;
+    #map {
+        min-height: 572px;
+        min-width: 595px;
+    
+        @media screen and (max-width: 1280px) {
+            min-height: 468px;
+            max-height: 468px;
+            min-width: 350px;
+        }
+    
+        @media screen and (max-width: 767px) {
+            min-height: 355px;
+            max-height: 355px;
+            min-width: 327px;
+        }
+    }
+    
+    @keyframes height-animation {
+        0% {
+            max-height: var(--height);
+        }
+        50% {
+            max-height: 602px;
+        }
+        100% {
+            max-height: unset;
+        }
+    }
+    
+    @keyframes height-animation-revert {
+        0% {
+            max-height: unset;
+        }
+        50% {
+            max-height: 602px;
+        }
+        100% {
+            max-height: var(--height);
+        }
     }
 
-    @media screen and (max-width: 767px) {
-        min-height: 355px;
-        max-height: 355px;
-        min-width: 327px;
+    @keyframes height-small {
+        from {
+            max-height: var(--text-height);
+        }
+        50% {
+            max-height: var(--height-tablet);
+        }
+        to {
+            max-height: max-content;
+        }
+    }
+
+    @keyframes height-small-revert {
+        from {
+            max-height: max-content;
+        }
+        50% {
+            max-height: var(--height-tablet);
+        }
+        to {
+            max-height: var(--text-height);
+        }
     }
 }
