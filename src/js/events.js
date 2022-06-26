@@ -11,11 +11,11 @@ let articleInput1 = document.querySelector("#articles-first");
 let articleInput2 = document.querySelector("#articles-second");
 let articleInput3 = document.querySelector("#articles-third");
 let articleInput4 = document.querySelector("#articles-four");
-let atricleArr = document.querySelectorAll(".articles__head-hidden-input");
+let inputArray = document.querySelectorAll(".tab-array");
 let eventInput1 = document.querySelector("#events-first");
 let eventInput2 = document.querySelector("#events-second");
 let closeModalr = document.querySelectorAll(".js-close-modal");
-let burgerLink = document.querySelectorAll(".js-burger-link");
+let tabLink = document.querySelectorAll(".js-tab-link");
 let fileDoc = document.querySelector(".window-box__file-doc");
 let fileImg = document.querySelector(".window-box__file-img");
 let aboutProjectLink = document.querySelector(".js-adaptive-href");
@@ -74,7 +74,7 @@ window.addEventListener("resize", adaptiveContent);
 [].forEach.call(closeModalr, (el) => {
   el.addEventListener("click", closeModal);
 });
-[].forEach.call(burgerLink, (el) => {
+[].forEach.call(tabLink, (el) => {
   el.addEventListener("click", burgerChanger);
 });
 
@@ -92,7 +92,7 @@ function dropMenuStarter() {
 }
 
 function burgerChanger(e) {
-  if (currWidth < 1280) {
+  if (currWidth < 1280 && navIsActive) {
     burgerWrap.classList.toggle("page-head__burger-wrap_active");
     burgerContent.classList.toggle("page-head__burger-button_active");
     navContactBlock.classList.toggle("page-head__adapt-wrap_active");
@@ -105,25 +105,27 @@ function burgerChanger(e) {
     dropMenuActive ? dropMenuStarter() : null;
   }
 
-  e.target.classList.contains("page-head__inner-link")
-    ? tabSwitcher(e.target)
-    : null;
+  e.target.classList.contains("js-tab-link") ? tabSwitcher(e.target) : null;
 }
 
 function tabSwitcher(transferredElement) {
-  transferredElement == navDropArticle
+  transferredElement.classList.contains("js-articles")
     ? remSetChecked(articleInput1)
-    : transferredElement == navDropBlogs
+    : transferredElement.classList.contains("js-blogs")
     ? remSetChecked(articleInput2)
-    : transferredElement == navDropResearch
+    : transferredElement.classList.contains("js-research")
     ? remSetChecked(articleInput3)
-    : transferredElement == navDropNews
+    : transferredElement.classList.contains("js-news")
     ? remSetChecked(articleInput4)
+    : transferredElement.classList.contains("js-releases")
+    ? remSetChecked(eventInput1)
+    : transferredElement.classList.contains("js-announces")
+    ? remSetChecked(eventInput2)
     : null;
 }
 
 function remSetChecked(currentInput) {
-  atricleArr.forEach((input) => {
+  inputArray.forEach((input) => {
     input.removeAttribute("checked");
   });
   currentInput.checked = true;

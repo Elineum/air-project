@@ -30,16 +30,16 @@
                 <div class="page-head__inner-menu-wrap">
                   <ul class="page-head__inner-list page-head__inner-list_left">
                     <li class="page-head__inner-item">
-                      <a href="#articles" class="page-head__inner-link js-burger-link js-articles">Статті</a>
+                      <a href="#articles" class="page-head__inner-link js-tab-link js-articles">Статті</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#articles" class="page-head__inner-link js-burger-link js-blogs">Блоги</a>
+                      <a href="#articles" class="page-head__inner-link js-tab-link js-blogs">Блоги</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#articles" class="page-head__inner-link js-burger-link js-research">Дослідження</a>
+                      <a href="#articles" class="page-head__inner-link js-tab-link js-research">Дослідження</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#articles" class="page-head__inner-link js-burger-link js-news">Новини</a>
+                      <a href="#articles" class="page-head__inner-link js-tab-link js-news">Новини</a>
                     </li>
                   </ul>
                 </div>
@@ -147,7 +147,7 @@
               <input
                 type="radio" name="article-radio"
                 id="articles-first"
-                class="articles__head-hidden-input"
+                class="articles__head-hidden-input tab-array"
                 value=""
                 checked
               />
@@ -160,7 +160,7 @@
               <input
                 type="radio" name="article-radio"
                 id="articles-second"
-                class="articles__head-hidden-input"
+                class="articles__head-hidden-input tab-array"
                 value=""
               />
               <label
@@ -172,7 +172,7 @@
               <input
                 type="radio" name="article-radio"
                 id="articles-third"
-                class="articles__head-hidden-input"
+                class="articles__head-hidden-input tab-array"
                 value=""
               />
               <label
@@ -184,7 +184,7 @@
               <input
                 type="radio" name="article-radio"
                 id="articles-four"
-                class="articles__head-hidden-input"
+                class="articles__head-hidden-input tab-array"
                 value=""
               />
               <label
@@ -859,7 +859,7 @@
               <input
                 type="radio" name="events-radio"
                 id="events-first"
-                class="events__head-hidden-input"
+                class="events__head-hidden-input tab-array"
                 value=""
                 checked
               />
@@ -872,7 +872,7 @@
               <input
                 type="radio" name="events-radio"
                 id="events-second"
-                class="events__head-hidden-input"
+                class="events__head-hidden-input tab-array"
                 value=""
               />
               <label
@@ -1596,16 +1596,16 @@
             <span class="page-foot__adapt-hide">Статті</span>
             <ul class="page-foot__list page-foot__list_grid">
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Дослідження</a>
+                <a href="#articles" class="page-foot__item-link js-tab-link js-research">Дослідження</a>
               </li>
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Блоги</a>
+                <a href="#articles" class="page-foot__item-link js-tab-link js-blogs">Блоги</a>
               </li>
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Статті</a>
+                <a href="#articles" class="page-foot__item-link js-tab-link js-articles">Статті</a>
               </li>
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Новини</a>
+                <a href="#articles" class="page-foot__item-link js-tab-link js-news">Новини</a>
               </li>
             </ul>
           </div>
@@ -1613,10 +1613,10 @@
             <span class="page-foot__adapt-hide">Івенти</span>
             <ul class="page-foot__list page-foot__list_flex">
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Анонси</a>
+                <a href="#events" class="page-foot__item-link js-tab-link js-announces">Анонси</a>
               </li>
               <li class="page-foot__item">
-                <a href="#" class="page-foot__item-link">Прес-релізи</a>
+                <a href="#events" class="page-foot__item-link js-tab-link js-releases">Прес-релізи</a>
               </li>
             </ul>
           </div>
@@ -1885,16 +1885,41 @@
                 <input type="text" placeholder="Ваше призвище та ім’я">
                 <input type="email" placeholder="Ваш мейл">
                 <input type="text" placeholder="Назва організації чи ініцітиви">
-                <div class="window-box__news-select-wrap">
-                  <select>
-                    <option value="value0">Виберіть на який розділ хочете підписатися</option>
-                    <option value="value1">value1</option>
-                    <option value="value2">value2</option>
-                    <option value="value3">value3</option>
-                    <option value="value4">value4</option>
-                    <option value="value5">value5</option>
-                    <option value="value6">value6</option>
-                  </select>
+                <div class="window-box__news-label-wrap">
+                  <input type="checkbox" id="modalNews" class="window-box__news-input">
+                  <label for="modalNews" class="window-box__news-label">Виберіть на який розділ хочете підписатися</label>
+                  <div class="window-box__news-label-inner-menu">
+                    <ul class="window-box__news-label-inner-list">
+                      <li class="window-box__news-label-inner-item">
+                        <span class="window-box__news-label-inner-text">Блоги</span>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                      </li>
+                      <li class="window-box__news-label-inner-item">
+                        <span class="window-box__news-label-inner-text">Статті</span>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                      </li>
+                      <li class="window-box__news-label-inner-item">
+                        <span class="window-box__news-label-inner-text">Івенти</span>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                      </li>
+                      <li class="window-box__news-label-inner-item">
+                        <span class="window-box__news-label-inner-text">Дослідження</span>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                      </li>
+                      <li class="window-box__news-label-inner-item">
+                        <span class="window-box__news-label-inner-text">Новини</span>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                      </li>
+                      <li class="window-box__news-label-inner-item">
+                        <span class="window-box__news-label-inner-text">Анонси</span>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                      </li>
+                      <li class="window-box__news-label-inner-item">
+                        <span class="window-box__news-label-inner-text">Прес-релізи</span>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div class="window-box__news-btn-wrap">
