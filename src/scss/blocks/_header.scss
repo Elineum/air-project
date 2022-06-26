@@ -11,16 +11,12 @@
         gap: 10px 35px;
         flex-wrap: wrap;
         max-width: 520px;
-        max-height: 420px;
+        max-height: 610px;
         align-content: center;
 
         @media screen and (max-width: 1279px) {
             flex-direction: column;
             align-items: center;
-            gap: 60px;
-        }
-
-        @media screen and (max-width: 767px) {
             gap: 50px;
         }
 
@@ -75,14 +71,26 @@
     &__item {
         z-index: 5;
 
+        @media screen and (max-width: 1279px) {
+            width: 150px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 767px) {
+            width: 150px;
+            text-align: start;
+        }
+
         &_arrow {
             position: relative;
             z-index: 7;
 
-            &:hover {
-                .page-head__inner-menu-wrap {
-                    visibility: visible;
-                    opacity: 1;
+            @media screen and (min-width: 1280px) {
+                &:hover {
+                    .page-head__inner-menu-wrap {
+                        visibility: visible;
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -116,6 +124,25 @@
         visibility: hidden;
         opacity: 0;
         transition: all 0.2s ease-out 0.3s;
+
+        @media screen and (max-width: 1279px) {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            max-height: 1px;
+            transition: all ease-in-out 0s;
+        }
+
+        &_active {
+            @media screen and (max-width: 1279px) {
+                max-height: max-content;
+                animation: dropMenu 0.2s 1;
+                animation-timing-function: ease-in-out;
+                position: static;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
     } 
 
     &__item-adaptive-first {
@@ -128,7 +155,7 @@
         display: none;
 
         @media screen and (max-width: 1279px) {
-            display: inherit;
+            display: block;
         }
     }
 
@@ -141,8 +168,17 @@
             &::after {
                 content: url(../img/header-arrow.svg);
                 color: $grey;
-                padding-left: 8px;
+                padding: 0 8px;
+                transition: all ease-in-out 0.1s;
+
+                @media screen and (max-width: 1279px) {
+                    position: absolute;
+                }
             }
+        }
+
+        &_revert::after {
+            transform: rotate(-180deg);
         }
     }
 
@@ -167,6 +203,20 @@
         
         &_left {
             left: -45%;
+
+            @media screen and (max-width: 1279px) {
+                position: static;
+                padding: 35px 0 0 0;
+                width: unset;
+                background-color: unset;
+                text-align: center;
+                gap: 25px;
+                box-shadow: 0 0 0 transparent;
+            }
+
+            @media screen and (max-width: 767px) {
+                text-align: start;
+            }
         }
 
         &_right {
@@ -182,13 +232,21 @@
             height: 18px;
             border-radius: 2px;
             background-color: white;
-            transform: translate(-50%,-5px) rotate(45deg);     
+            transform: translate(-50%,-5px) rotate(45deg);
+
+            @media screen and (max-width: 1279px) {
+                    content: unset;
+            }
         }
     }
 
     &__inner-item {
         min-width: max-content;
         position: relative;
+
+        @media screen and (max-width: 1279px) {
+            color: #7E7E7E;
+        }
 
         &::after {
             content: url(../img/header-small-arrow.png);
@@ -201,6 +259,10 @@
         &:hover {
             &::after {
                 visibility: visible;
+
+                @media screen and (max-width: 1279px) {
+                    content: unset;
+            }
             }
         }
     }
@@ -495,6 +557,21 @@
                 outline: 1px solid #fff;
             }
         }
+    }
+}
+
+@keyframes dropMenu {
+    from {
+        max-height: 1px;
+        opacity: 0;
+    }
+    50% {
+        max-height: 200px;
+        opacity: 0.5;
+    }
+    to {
+        max-height: max-content;
+        opacity: 1;
     }
 }
 

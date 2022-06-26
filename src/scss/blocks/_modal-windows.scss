@@ -37,6 +37,10 @@
         @media screen and (max-width: 375px) {
             max-width: 375px;
         }
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
     }
 
     &__help-head, 
@@ -188,10 +192,6 @@
         @media screen and (max-width: 767px) {
             padding-top: 33px;
             max-width: 325px;
-        }
-
-        &::-webkit-scrollbar {
-            width: 0px;
         }
     }
 
@@ -575,17 +575,10 @@
     }
 
     //MAP block
-    &__map {
-        background-repeat: no-repeat;
-        background-size: cover;
-        overflow-y: scroll;
-    }
-
     &__map-main {
         max-width: 700px;
-        padding: 50px 0 90px;
+        padding-top: 50px;
         margin: 0 auto;
-        max-height: calc(100vh - 254px);
 
         @media screen and (max-width: 1279px){
             max-width: 720px;
@@ -632,6 +625,7 @@
         @extend .interactive-map__content-list;
 
         max-height: max-content;
+        padding-bottom: 50px
     }
 
     &__map-content-item {

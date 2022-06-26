@@ -56,7 +56,7 @@
             color: #000000;
 
             &::before {
-                opacity: 1;
+                opacity: 0.8;
             }
         }
 
@@ -198,8 +198,6 @@
         position: relative;
         max-width: max-content;
         z-index: 2;
-        margin-bottom: 70px;
-        padding-left: 10px;
 
         &::before {
             content: '';
@@ -335,6 +333,7 @@
     #articles-third:checked~#articles-third-label,
     #articles-four:checked~#articles-four-label {
         color: #000000;
+        font-weight: 500;
 
         &::before {
             opacity: 1;

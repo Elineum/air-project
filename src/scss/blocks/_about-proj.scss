@@ -86,11 +86,10 @@
     }
 
     &__text-wrap {
-        max-width: 565px;
+        max-width: 550px;
         line-height: 31px;
         font-size: 18px;
         color: $grey;
-        padding-left: 13px;
 
         &_order {
             @media screen and (max-width: 1279px) {

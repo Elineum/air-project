@@ -2,7 +2,18 @@ let languageInput = document.querySelector(".page-head__language-input");
 let languageLabel = document.querySelector(".page-head__language-label");
 let languageText = document.querySelector(".page-head__language-text");
 let nav = document.querySelector(".page-head__nav");
+let navDropArticle = document.querySelector(".js-articles");
+let navDropBlogs = document.querySelector(".js-blogs");
+let navDropResearch = document.querySelector(".js-research");
+let navDropNews = document.querySelector(".js-news");
 let navContactBlock = document.querySelector(".page-head__adapt-wrap");
+let articleInput1 = document.querySelector("#articles-first");
+let articleInput2 = document.querySelector("#articles-second");
+let articleInput3 = document.querySelector("#articles-third");
+let articleInput4 = document.querySelector("#articles-four");
+let atricleArr = document.querySelectorAll(".articles__head-hidden-input");
+let eventInput1 = document.querySelector("#events-first");
+let eventInput2 = document.querySelector("#events-second");
 let closeModalr = document.querySelectorAll(".js-close-modal");
 let burgerLink = document.querySelectorAll(".js-burger-link");
 let fileDoc = document.querySelector(".window-box__file-doc");
@@ -15,6 +26,8 @@ let searchButton = document.querySelector(".js-search-button");
 let searchInput = document.querySelector(".page-head__input-search");
 let burgerWrap = document.querySelector(".js-burger-wrap");
 let burgerContent = document.querySelector(".js-burger-content");
+let burgerDrop = document.querySelector(".js-burger-dropmenu");
+let burgerDropContent = document.querySelector(".page-head__inner-menu-wrap");
 let modalShadow = document.querySelector(".window-box");
 let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
 let modalOpenerRequest = document.querySelector(
@@ -42,6 +55,7 @@ let currWidth = document.body.clientWidth;
 let modalIsActive;
 let currentModal;
 let navIsActive;
+let dropMenuActive;
 
 languageInput.addEventListener("click", languageSwap);
 interactiveMapButton.addEventListener("click", interactiveMapListToggler);
@@ -54,6 +68,7 @@ modalOpenerMap.addEventListener("click", openModal);
 modalShadow.addEventListener("click", closeModal);
 searchButton.addEventListener("click", toggleSearch);
 burgerWrap.addEventListener("click", burgerChanger);
+burgerDrop.addEventListener("click", dropMenuStarter);
 document.body.addEventListener("click", modalIsActiveCheck);
 window.addEventListener("resize", adaptiveContent);
 [].forEach.call(closeModalr, (el) => {
@@ -68,7 +83,15 @@ function modalIsActiveCheck() {
   navIsActive = document.querySelector(".page-head__nav_active");
 }
 
-function burgerChanger() {
+function dropMenuStarter() {
+  if (currWidth < 1280) {
+    burgerDrop.classList.toggle("page-head__item-link_revert");
+    burgerDropContent.classList.toggle("page-head__inner-menu-wrap_active");
+    dropMenuActive = document.querySelector(".page-head__item-link_revert");
+  }
+}
+
+function burgerChanger(e) {
   if (currWidth < 1280) {
     burgerWrap.classList.toggle("page-head__burger-wrap_active");
     burgerContent.classList.toggle("page-head__burger-button_active");
@@ -78,7 +101,32 @@ function burgerChanger() {
     navIsActive
       ? (document.body.style.overflow = "auto")
       : (document.body.style.overflow = "hidden");
+
+    dropMenuActive ? dropMenuStarter() : null;
   }
+
+  e.target.classList.contains("page-head__inner-link")
+    ? tabSwitcher(e.target)
+    : null;
+}
+
+function tabSwitcher(transferredElement) {
+  transferredElement == navDropArticle
+    ? remSetChecked(articleInput1)
+    : transferredElement == navDropBlogs
+    ? remSetChecked(articleInput2)
+    : transferredElement == navDropResearch
+    ? remSetChecked(articleInput3)
+    : transferredElement == navDropNews
+    ? remSetChecked(articleInput4)
+    : null;
+}
+
+function remSetChecked(currentInput) {
+  atricleArr.forEach((input) => {
+    input.removeAttribute("checked");
+  });
+  currentInput.checked = true;
 }
 
 function adaptiveContent() {
