@@ -1,18 +1,13 @@
-let languageSwither = document.querySelector(".page-head__button-wrap");
-let languageSwitherBall = document.querySelector(".page-head__language-ball");
-let languageSwitherText = document.querySelector(".page-head__language");
+let languageInput = document.querySelector(".page-head__language-input");
+let languageLabel = document.querySelector(".page-head__language-label");
+let languageText = document.querySelector(".page-head__language-text");
 let nav = document.querySelector(".page-head__nav");
 let navContactBlock = document.querySelector(".page-head__adapt-wrap");
-let modalCloser = document.querySelectorAll(".js-close-modal");
-let burgerLink = document.querySelectorAll(".js");
-let modalShadow = document.querySelector(".window-box");
-let modalOpenerRequest = document.querySelector(
-  ".request-block__info-box-holder"
-);
+let closeModalr = document.querySelectorAll(".js-close-modal");
+let burgerLink = document.querySelectorAll(".js-burger-link");
 let fileDoc = document.querySelector(".window-box__file-doc");
 let fileImg = document.querySelector(".window-box__file-img");
 let aboutProjectLink = document.querySelector(".js-adaptive-href");
-let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
 let footerMap = document.querySelector(".js-footer-map");
 let beetrootText = document.querySelector(".js-beetroot-text");
 let gdsText = document.querySelector(".js-gds-text");
@@ -20,6 +15,11 @@ let searchButton = document.querySelector(".js-search-button");
 let searchInput = document.querySelector(".page-head__input-search");
 let burgerWrap = document.querySelector(".js-burger-wrap");
 let burgerContent = document.querySelector(".js-burger-content");
+let modalShadow = document.querySelector(".window-box");
+let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
+let modalOpenerRequest = document.querySelector(
+  ".request-block__info-box-holder"
+);
 let interactiveMapList = document.querySelector(
   ".interactive-map__content-list"
 );
@@ -38,47 +38,35 @@ let interactiveMapModalList = document.querySelector(
 let interactiveMapClose = document.querySelector(
   ".interactive-map__button-close"
 );
+let currWidth = document.body.clientWidth;
 let modalIsActive;
 let currentModal;
 let navIsActive;
-let currWidth = document.body.clientWidth;
 
-[].forEach.call(modalCloser, (el) => {
-  el.addEventListener("click", modalClose);
-});
-
-[].forEach.call(burgerLink, (el) => {
-  el.addEventListener("click", burgerChanger);
-});
-console.log(fileImg.files);
-fileDoc.addEventListener("change", moveCoord);
-fileImg.addEventListener("change", moveCoord);
-function moveCoord() {
-  fileDoc.files.length > 0
-    ? (fileDoc.style.left = "-93px")
-    : (fileDoc.style.left = "-9999rem");
-
-  fileImg.files.length > 0
-    ? (fileImg.style.left = "-93px")
-    : (fileImg.style.left = "-9999rem");
-  console.log(fileImg.files.length);
-}
-moveCoord();
-
-languageSwither.addEventListener("click", languageSwitherClick);
+languageInput.addEventListener("click", languageSwap);
 interactiveMapButton.addEventListener("click", interactiveMapListToggler);
 interactiveMapList.addEventListener("click", interactiveMapItemOpener);
 interactiveMapModalList.addEventListener("click", interactiveMapItemOpener);
+fileDoc.addEventListener("change", showLoadStatus);
+fileImg.addEventListener("change", showLoadStatus);
 modalOpenerRequest.addEventListener("click", openModal);
 modalOpenerMap.addEventListener("click", openModal);
-modalShadow.addEventListener("click", modalClose);
+modalShadow.addEventListener("click", closeModal);
 searchButton.addEventListener("click", toggleSearch);
 burgerWrap.addEventListener("click", burgerChanger);
-document.body.addEventListener("click", () => {
+document.body.addEventListener("click", modalIsActiveCheck);
+window.addEventListener("resize", adaptiveContent);
+[].forEach.call(closeModalr, (el) => {
+  el.addEventListener("click", closeModal);
+});
+[].forEach.call(burgerLink, (el) => {
+  el.addEventListener("click", burgerChanger);
+});
+
+function modalIsActiveCheck() {
   modalIsActive = document.querySelector(".visible-modal");
   navIsActive = document.querySelector(".page-head__nav_active");
-});
-window.addEventListener("resize", adaptiveChanger);
+}
 
 function burgerChanger() {
   if (currWidth < 1280) {
@@ -90,15 +78,13 @@ function burgerChanger() {
     navIsActive
       ? (document.body.style.overflow = "auto")
       : (document.body.style.overflow = "hidden");
-  } else {
-    return;
   }
 }
 
-function adaptiveChanger() {
+function adaptiveContent() {
   currWidth = document.body.clientWidth;
 
-  if (320 <= currWidth && currWidth <= 1280) {
+  if (320 <= currWidth && currWidth < 1280) {
     aboutProjectLink.href = "#about-project";
     beetrootText.textContent =
       "За пітдримки “Бітрут-Академії” була створенна Веб-розробка";
@@ -109,7 +95,19 @@ function adaptiveChanger() {
     aboutProjectLink.removeAttribute("href");
   }
 }
-adaptiveChanger();
+adaptiveContent();
+
+function showLoadStatus() {
+  if (fileDoc.files.length > 0) {
+    fileDoc.classList.remove("window-box__file-doc_hidden");
+  } else if (fileImg.files.length > 0) {
+    fileImg.classList.remove("window-box__file-img_hidden");
+  } else {
+    fileDoc.classList.add("window-box__file-doc_hidden");
+    fileImg.classList.add("window-box__file-img_hidden");
+  }
+}
+showLoadStatus();
 
 function openModal(e) {
   if (e.target.classList.contains("request-block__button")) {
@@ -144,12 +142,7 @@ function openModal(e) {
   } else return;
 }
 
-function toggleSearch() {
-  searchButton.classList.toggle("page-head__search-opener-active");
-  searchInput.classList.toggle("page-head__input-search-active");
-}
-
-function modalClose(e) {
+function closeModal(e) {
   if (
     e.target == modalShadow ||
     e.target.classList.contains("js-close-modal")
@@ -161,13 +154,19 @@ function modalClose(e) {
   }
 }
 
-function languageSwitherClick() {
-  languageSwither.classList.toggle("page-head__button-wrap_orange-bg");
-  languageSwitherBall.classList.toggle("page-head__language-ball_EN");
-  languageSwitherText.classList.toggle("page-head__language_EN");
-  languageSwither.classList.contains("page-head__button-wrap_orange-bg")
-    ? (languageSwitherText.textContent = "EN")
-    : (languageSwitherText.textContent = "Укр");
+function toggleSearch() {
+  searchButton.classList.toggle("page-head__search-opener-active");
+  searchInput.classList.toggle("page-head__input-search-active");
+}
+
+function languageSwap() {
+  if (languageInput.checked) {
+    languageLabel.classList.add("page-head__language-label_swapped");
+    languageText.textContent = "EN";
+  } else {
+    languageLabel.classList.remove("page-head__language-label_swapped");
+    languageText.textContent = "Укр";
+  }
 }
 
 function interactiveMapListToggler() {
@@ -179,40 +178,42 @@ function interactiveMapListToggler() {
 }
 
 function interactiveMapItemOpener(e) {
-  let interactiveMapLi = e.target.closest("li");
-  let interactiveMapButton = e.target.closest("button");
+  let mainPageMapLi = e.target.closest("li");
+  let mainPageMapBtn = e.target.closest("button");
 
   if (
-    (interactiveMapLi
-      ? interactiveMapLi.classList.contains("interactive-map__content-item")
+    (mainPageMapLi
+      ? mainPageMapLi.classList.contains("interactive-map__content-item")
       : false) ||
-    (interactiveMapButton
-      ? interactiveMapButton.classList.contains("interactive-map__button-close")
+    (mainPageMapBtn
+      ? mainPageMapBtn.classList.contains("interactive-map__button-close")
       : false)
   ) {
-    if (interactiveMapLi && !interactiveMapButton) {
+    if (mainPageMapLi && !mainPageMapBtn) {
       for (let key of interactiveMapAllItems) {
         key.classList.remove("interactive-map__content-item_open");
       }
-      interactiveMapLi.classList.add("interactive-map__content-item_open");
+      interactiveMapButton.classList.add("interactive-map__list-button-back");
+      interactiveMapList.classList.add("interactive-map__content-list_blocker");
+      mainPageMapLi.classList.add("interactive-map__content-item_open");
     } else {
       for (let key of interactiveMapAllItems) {
         key.classList.remove("interactive-map__content-item_open");
       }
     }
   } else if (
-    (interactiveMapLi
-      ? interactiveMapLi.classList.contains("window-box__map-content-item")
+    (mainPageMapLi
+      ? mainPageMapLi.classList.contains("window-box__map-content-item")
       : false) ||
-    (interactiveMapButton
-      ? interactiveMapButton.classList.contains("window-box__map-button-close")
+    (mainPageMapBtn
+      ? mainPageMapBtn.classList.contains("window-box__map-button-close")
       : false)
   ) {
-    if (interactiveMapLi && !interactiveMapButton) {
+    if (mainPageMapLi && !mainPageMapBtn) {
       for (let key of interactiveMapModalAllItems) {
         key.classList.remove("window-box__map-content-item_open");
       }
-      interactiveMapLi.classList.add("window-box__map-content-item_open");
+      mainPageMapLi.classList.add("window-box__map-content-item_open");
     } else {
       for (let key of interactiveMapModalAllItems) {
         key.classList.remove("window-box__map-content-item_open");

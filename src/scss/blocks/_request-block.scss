@@ -1,6 +1,4 @@
 .request-block {
-    padding: 85px 0 35px;
-
     &__title-holder {
         max-width: 600px;
 
@@ -78,7 +76,7 @@
             background-color: #DE9E12;
         }
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             max-width: 350px;
             padding: 51px 50px 50px 20px;
             display: flex;
@@ -97,12 +95,12 @@
         &_half {
             max-width: 315px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 max-width: 220px;
             }
         }
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             font-size: 14px;
             line-height: 20px;
             padding: 15px 0;
@@ -121,7 +119,7 @@
         transition: all ease-in-out 0.3s;
         transform: translateX(-2px);
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             padding: 10px 0 10px;
             font-size: 14px;
         }

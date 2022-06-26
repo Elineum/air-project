@@ -2,13 +2,8 @@
     padding-top: 40px;
     margin-bottom: 45px;
     position: relative;
-
-    &__block {
-        position: relative;
-        min-height: 600px;
-        overflow: hidden;
-        padding-top: 20px;
-    }
+    overflow: hidden;
+    padding-top: 20px;
 
     &__head-title {
         position: relative;
@@ -21,6 +16,13 @@
             position: relative;
             z-index: 2;
         }
+    }
+
+    &__swiper-button-wrap {
+        position: relative;
+        overflow: visible;
+        min-height: 84px;
+        margin-bottom: 15px;
     }
 
     &__head-label {
@@ -160,6 +162,10 @@
         padding: 34px 0 44px;
         transform: translateX(1500px);
         min-height: 576.5px;
+
+        @media screen and (max-width: 767px) {
+            max-width: 325px;
+        }
     }
 
     &__content-list {
@@ -272,8 +278,8 @@
         border-radius: 50%;
         top: unset;
         transition: all ease-in-out 0.3s;
-        right: 12px;
-        bottom: 12px;
+        right: 0;
+        bottom: 0;
 
         &:hover {
             box-shadow: 0 0 15px $blue;
@@ -300,15 +306,14 @@
     }
 
     .swiper-button-prev {
-        right: 76px;
+        right: 50px;
         left: unset;
+        &.swiper-button-disabled {
+            right: 64px;
+        }
     }
 
     .swiper-button-next {
-        &.swiper-button-disabled {
-            right: 26px;
-        }
-
         &::after {
             transform: translateX(25%);
         }

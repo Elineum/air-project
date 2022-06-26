@@ -8,7 +8,7 @@
             font-size: 36px;
             margin-bottom: 35px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 font-size: 24px;
                 font-weight: 500;
             }
@@ -19,7 +19,7 @@
             padding-top: 21px;
             margin-bottom: 10px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 font-size: 16px;
             }
         }
@@ -36,14 +36,32 @@
         padding-top: 5px;
         margin-bottom: 25px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             order: 1;
         }
+    }
+
+    &__swiper-button-wrap {
+        position: relative;
+        overflow: visible;
+        min-height: 84px;
+        margin-bottom: 15px;
     }
 
     &__photo-swiper {
         overflow: hidden;
         position: relative;
+ 
+        padding: 0 calc((100% - 1170px) / 2);
+        margin-bottom: 45px;
+
+        @media screen and (max-width: 1279px) {
+            padding: 0 calc((100% - 720px) / 2);
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 0 calc((100% - 325px) / 2);
+        }
     }
 
     &__content-block {
@@ -55,13 +73,13 @@
         margin-bottom: 20px;
 
         &_2 {
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 order: 3;
             }
         }
 
         &_3 {
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 order: 2;
             }
         }
@@ -75,7 +93,7 @@
         padding-left: 13px;
 
         &_order {
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 order: 2;
             }
         }
@@ -83,12 +101,12 @@
         &:first-child {
             padding-left: 25px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 padding-left: 0;
             }
         }
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             padding-left: 0;
             font-size: 16px;
             max-width: inherit;
@@ -99,7 +117,7 @@
     &__our-workers {
         margin-bottom: 50px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             display: flex;
             flex-direction: column;
         }
@@ -115,12 +133,12 @@
         &_big {
             max-width: 100%;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 order: 1;
             }
         }
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             max-width: inherit;
         }
     }
@@ -154,10 +172,6 @@
         }
     }
 
-    &__photo-swiper {
-        padding-bottom: 96px;
-    }
-
     &__span-holder-bot {
         color: $grey;
         max-width: 206px;
@@ -166,6 +180,7 @@
 
         @media screen and (max-width: 1279px) {
             font-size: 14px;
+            letter-spacing: -0.1px;
         }
     }
 
@@ -187,8 +202,8 @@
         border-radius: 50%;
         top: unset;
         transition: all ease-in-out 0.3s;
-        right: 12px;
-        bottom: 12px;
+        right: 0;
+        bottom: 0;
 
         &:hover {
             box-shadow: 0 0 15px $blue;
@@ -215,15 +230,14 @@
     }
 
     .swiper-button-prev {
-        right: 76px;
+        right: 50px;
         left: unset;
+        &.swiper-button-disabled {
+            right: 64px;
+        }
     }
 
     .swiper-button-next {
-        &.swiper-button-disabled {
-            right: 26px;
-        }
-
         &::after {
             transform: translateX(25%);
         }

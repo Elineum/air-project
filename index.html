@@ -22,13 +22,13 @@
           <nav class="page-head__nav">
             <ul class="page-head__list">
               <li class="page-head__item page-head__item-adaptive-first">
-                <a href="#" class="page-head__item-link js">Головна</a>
+                <a href="#" class="page-head__item-link js-burger-link">Головна</a>
               </li>
               <li
                 class="page-head__item page-head__item_arrow page-head__item_arrow-left"
               >
                 <span
-                  class="page-head__item-link page-head__item-link_arrow js"
+                  class="page-head__item-link page-head__item-link_arrow js-burger-link"
                   >Публікації</span
                 >
                 <div class="page-head__inner-menu-wrap">
@@ -36,31 +36,31 @@
                   class="page-head__inner-list page-head__inner-list_left"
                 >
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link js">Статті</a>
+                      <a href="#" class="page-head__inner-link js-burger-link">Статті</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link js">Блоги</a>
+                      <a href="#" class="page-head__inner-link js-burger-link">Блоги</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link js">Дослідження</a>
+                      <a href="#" class="page-head__inner-link js-burger-link">Дослідження</a>
                     </li>
                     <li class="page-head__inner-item">
-                      <a href="#" class="page-head__inner-link js">Новини</a>
+                      <a href="#" class="page-head__inner-link js-burger-link">Новини</a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li class="page-head__item">
-                <a href="#events" class="page-head__item-link js">Івенти</a>
+                <a href="#events" class="page-head__item-link js-burger-link">Івенти</a>
               </li>
               <li class="page-head__item">
-                <a href="#interactive-map" class="page-head__item-link js">Мапа</a>
+                <a href="#interactive-map" class="page-head__item-link js-burger-link">Мапа</a>
               </li>
               <li
                 class="page-head__item page-head__item_arrow page-head__item_arrow-right"
               >
                 <a
-                  class="page-head__item-link page-head__item-link_arrow js-adaptive-href js"
+                  class="page-head__item-link page-head__item-link_arrow js-adaptive-href js-burger-link"
                   >Про проєкт</a
                 >
                 <div class="page-head__inner-menu-wrap">
@@ -80,10 +80,10 @@
                 </div>
               </li>
               <li class="page-head__item page-head__item-adaptive-last">
-                <a href="#our-experts" class="page-head__item-link js">Наші партнери</a>
+                <a href="#our-experts" class="page-head__item-link js-burger-link">Наші партнери</a>
               </li>
               <li class="page-head__item page-head__item-adaptive-last">
-                <a href="#request-block" class="page-head__item-link js">Зворотній звязок</a>
+                <a href="#request-block" class="page-head__item-link js-burger-link">Зворотній звязок</a>
               </li>
             </ul>
           </nav>
@@ -134,18 +134,17 @@
                 </a>
               </li>
             </ul>
-            <div class="page-head__button-wrap">
-              <span class="page-head__language">Укр</span>
-              <span class="page-head__language-ball"></span>
-            </div>
+            <label class="page-head__language-label " for="language-button">
+              <span class="page-head__language-text">Укр</span>
+              <span class="page-head__language-point"></span>
+            </label>
+            <input class="page-head__language-input" type="checkbox" id="language-button">
           </div>
           
         </div>
       </header>
       <main>
-        <div class="container-width">
-          <section
-            class="hot-spot"
+          <section class="hot-spot container-width"
             style="background-image: url(src/img/hot-spots.png)"
           >
             <div class="hot-spot__text-wrap">
@@ -159,8 +158,7 @@
               </div>
             </div>
           </section>
-          <section class="articles" id="articles">
-            <div class="articles__block">
+          <section class="articles container-width container-width_top-slide" id="articles">
               <div class="articles__head-title">
                 <h2>Публікації:</h2>
               </div>
@@ -372,8 +370,12 @@
                     </div>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="articles__swiper-button-wrap">
+                  <div class="articles__swiper-button-wrap">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
               </div>
               <div class="articles__swiper top-sliders articles__swiper-2 swiper-container">
                 <ul class="articles__content-list swiper-wrapper">
@@ -534,8 +536,10 @@
                     </div>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="articles__swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
               <div class="articles__swiper top-sliders articles__swiper-3 swiper-container">
                 <ul class="articles__content-list swiper-wrapper">
@@ -696,8 +700,10 @@
                     </div>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="articles__swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
               <div class="articles__swiper top-sliders articles__swiper-4 swiper-container">
                 <ul class="articles__content-list swiper-wrapper">
@@ -858,13 +864,13 @@
                     </div>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="articles__swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
-            </div>
           </section>
-          <section class="events" id="events">
-            <div class="events__block">
+          <section class="events container-width container-width_top-slide" id="events">
               <div class="events__head-title">
                 <h2>Івенты:</h2>
               </div>
@@ -983,8 +989,10 @@
                     </div>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="events__swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
               <div class="events__swiper top-sliders events__swiper-2 swiper-container">
                 <ul class="events__content-list swiper-wrapper">
@@ -1076,12 +1084,13 @@
                     </div>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="events__swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
-            </div>
           </section>
-          <section class="interactive-map" id="interactive-map">
+          <section class="interactive-map container-width" id="interactive-map">
             <div class="interactive-map__title-block">
               <div class="interactive-map__title">
                 <h2>Мапа гарячих точок еко проблем</h2>
@@ -1127,8 +1136,7 @@
                         <p>
                           Запорізька ТЭЦ — сама потужна теплова електростанція
                           України із загальною встановленою електричною
-                          потужністю 3650 МВт.<br />
-                          Запорізька ТЭЦ — сама потужна теплова електростанція
+                          потужністю 3650 МВт.<br />Запорізька ТЭЦ — сама потужна теплова електростанція
                           України із загальною встановленою електричною
                           потужністю 3650 МВт.Запорізька ТЭЦ — сама потужна
                           теплова електростанція
@@ -1238,7 +1246,7 @@
           </section>
           <section class="special-project" id="special-project">
             <div class="special-project__content">
-              <div class="special-project__block-title">
+              <div class="special-project__block-title container-width">
                 <h2>Спецпроєкты</h2>
               </div>
               <div class="special-project__swiper swiper-container">
@@ -1364,16 +1372,18 @@
                     </a>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="special-project__swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="about-project" id="about-project">
-            <div class="about-project__title-holder">
+            <div class="about-project__title-holder container-width">
               <h2>Про проєкт</h2>
             </div>
-            <div class="about-project__our-workers">
+            <div class="about-project__our-workers container-width">
               <div class="about-project__img-holder-top about-project__img-holder-top_big">
                 <picture>
                   <source srcset="src/img/projBigPhotoMobile.png" media="(max-width: 767px)">
@@ -1400,7 +1410,7 @@
                 <div class="about-project__img-holder-top">
                   <picture>
                     <source srcset="src/img/projPhoto1Mobile.png" media="(max-width: 767px)">
-                    <source srcset="src/img/projPhoto1Tablet.png" media="(max-width: 1280px)">
+                    <source srcset="src/img/projPhoto1Tablet.png" media="(max-width: 1279px)">
                     <img src="src/img/projPhoto1.png" alt="our-workers" />
                   </picture>
                 </div>
@@ -1428,7 +1438,7 @@
               </div>
             </div>
             <div class="about-project__our-team" id="our-experts">
-              <div class="about-project__title-holder about-project__title-holder_center">
+              <div class="about-project__title-holder about-project__title-holder_center container-width">
                 <h2>Наші партнери та експерти</h2>
               </div>
               <div class="about-project__photo-swiper swiper-container">
@@ -1522,12 +1532,14 @@
                     </div>
                   </li>
                 </ul>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="about-project__swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
             </div>
           </section>
-          <section class="request-block" id="request-block">
+          <section class="request-block container-width" id="request-block">
             <div
               class="request-block__title-holder request-block__title-holder_block-title"
             >
@@ -1590,7 +1602,6 @@
               </li>
             </ul>
           </section>
-        </div>
       </main>
       <footer class="page-foot" id="footer">
         <div class="page-foot__bottom-logo-wrap container-width">
@@ -1796,7 +1807,8 @@
                 <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Контактний телефон">
                 <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Назва організації чи ініцітиви">
                 <textarea name="add-info" class="window-box__add-info-textearea" id="" cols="30" rows="10" placeholder="Напишіть свій текст до новини"></textarea>
-                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Посилання на інфомарцію">
+                <span class="window-box__add-info-span">Додайте:</span>
+                <input type="text" name="add-info" class="window-box__input-area-info window-box__input-area-info_request" placeholder="Посилання на інфомарцію">
                 <div class="window-box__add-info-file-browser">
                   <span class="window-box__add-info-file-browser-span">Прикріпити файли</span>
                   <div class="window-box__add-info-file-browser-container">
@@ -1805,13 +1817,13 @@
                         <img src="src/img/addFileImage.png" alt="add-image">
                       </div>
                     </label>
-                    <input class="window-box__file-img" type="file" id="file-browser-img" accept="image/*" multiple>
+                    <input class="window-box__file-img window-box__file-img_hidden" type="file" id="file-browser-img" accept="image/*" multiple>
                     <label for="file-browser-doc" class="window-box__add-info-file-browser-label">
                       <div class="window-box__add-info-file-browser-wrapper">
                         <img src="src/img/addFileDocument.png" alt="add-document">
                       </div>
                     </label>
-                    <input class="window-box__file-doc" type="file" id="file-browser-doc" accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple>
+                    <input class="window-box__file-doc window-box__file-doc_hidden" type="file" id="file-browser-doc" accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple>
                   </div>
                   
                 </div>

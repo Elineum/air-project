@@ -1,23 +1,14 @@
 :root {
-    --height: 302px;
-    --height-tablet: 219px;
     --text-height: 69px;
-    --block-height: 92px;
-}
+    --height: 302px;
 
-@media screen and (max-width: 1279px) {
-    :root {
-        --height: 200px;
-        --height-tablet: 234px;
+    @media screen and (max-width: 1279px) {
         --text-height: 40px;
-        --block-height: 75px;
+        --height: 200px;
     }
-}
 
-@media screen and (max-width: 767px) {
-    :root {
+    @media screen and (max-width: 767px) {
         --height: 400px;
-        --height-tablet: 272px;
     }
 }
 
@@ -38,13 +29,13 @@
         & h2 {
             font-size: 36px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 font-size: 24px;
                 font-weight: 500;
             }
         }
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             margin-bottom: 25px;
         }
     }
@@ -56,7 +47,7 @@
         line-height: 26px;
         color: $grey;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             font-size: 16px;
             max-width: 535px;
         }
@@ -75,7 +66,7 @@
         display: flex;
         gap: 25px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             flex-wrap: wrap;
         }
     }
@@ -84,7 +75,7 @@
         font-size: 18px;
         margin-bottom: 23px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             padding-top: 0;
             max-width: 345px;
             font-size: 16px;
@@ -100,7 +91,7 @@
         position: relative;
         max-width: 551px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             padding-top: 0;
             max-width: 345px;
         }
@@ -125,7 +116,7 @@
         margin-bottom: 25px;
         line-height: 27px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             font-size: 14px;
             line-height: 21.1px;
             word-spacing: -0.1px;
@@ -144,7 +135,7 @@
             font-weight: 500;
             color: #0A0A21;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 font-size: 16px;
             }
         }
@@ -157,9 +148,9 @@
         gap: 10px;
         overflow: hidden;
         max-height: 302px;
-        animation: height-animation-revert 0.5s 1;
+        animation: height-animation-revert 0.8s 1;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             max-height: 200px;
         }
 
@@ -168,7 +159,7 @@
         }
 
         &_blocker {
-            animation: height-animation 0.5s 1;
+            animation: height-animation 2.5s 1;
             max-height: unset;
         }
     }
@@ -182,7 +173,7 @@
         cursor: pointer;
         transition: all ease-in-out 0.3s;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             padding: 25px 33px 25px 10px;
         }
 
@@ -190,12 +181,12 @@
             background-color: $orange;
             padding: 46px 14px 56px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 padding: 26px 10px 44px;
             }
 
             .interactive-map__item-text_block {
-                animation: height-small 0.5s 1;
+                animation: height-small 2.5s 1;
                 max-height: max-content;
             }
 
@@ -223,7 +214,7 @@
             border-bottom: 10px dotted $orange;
             transition: all ease-in-out 0.3s;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 right: 10px;
                 bottom: 10px;
                 width: 30px;
@@ -238,7 +229,7 @@
             &::before {
                 border-bottom: 10px dotted $blue;
 
-                @media screen and (max-width: 1280px) {
+                @media screen and (max-width: 1279px) {
                     border-bottom: 7px dotted $blue;                
                 }
             }
@@ -262,7 +253,7 @@
             right: 25px;
             bottom: 10px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 right: 3px;
                 bottom: 0;
             }
@@ -279,7 +270,7 @@
         &_block {
             max-height: 69px;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 max-height: 40px;
                 line-height: 20px;
             }
@@ -334,7 +325,7 @@
         min-height: 572px;
         min-width: 595px;
     
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             min-height: 468px;
             max-height: 468px;
             min-width: 350px;
@@ -352,7 +343,7 @@
             max-height: var(--height);
         }
         50% {
-            max-height: 602px;
+            max-height: 1002px;
         }
         100% {
             max-height: unset;
@@ -364,7 +355,7 @@
             max-height: unset;
         }
         50% {
-            max-height: 602px;
+            max-height: 1002px;
         }
         100% {
             max-height: var(--height);
@@ -376,7 +367,7 @@
             max-height: var(--text-height);
         }
         50% {
-            max-height: var(--height-tablet);
+            max-height: 700px;
         }
         to {
             max-height: max-content;
@@ -388,10 +379,11 @@
             max-height: max-content;
         }
         50% {
-            max-height: var(--height-tablet);
+            max-height: 700px;
         }
         to {
             max-height: var(--text-height);
         }
     }
 }
+

@@ -28,8 +28,9 @@
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.349);
         background-repeat: no-repeat;
         background-size: cover;
+        overflow-y: scroll;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             max-width: 769px;
         }
 
@@ -54,7 +55,7 @@
         background-size: cover;
         min-height: 254px;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             background-position-x: left;
             background-size: cover;
         }
@@ -68,7 +69,7 @@
             color: white;
             font-weight: 500;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 font-size: 24px;
             }
 
@@ -80,7 +81,7 @@
 
     &__news-head,
     &__add-info-head {
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             min-height: 201px;
         }
 
@@ -98,7 +99,7 @@
         margin: 0 auto;
 
         &_top {
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 max-width: 245px;
             }
 
@@ -154,12 +155,20 @@
         }
     }
 
-    &__add-info-form-wrap {
-        margin-bottom: 25px;
+    &__add-info-span {
+        font-size: 14px;
+        font-weight: 500;
+        color: #0A0A21;
+        width: 100%;
+        display: none;
 
         @media screen and (max-width: 767px) {
-            min-height: calc(100vh - 119px);
+            display: block;
         }
+    }
+
+    &__add-info-form-wrap {
+        margin-bottom: 25px;
     }
 
     &__help-form, 
@@ -171,17 +180,14 @@
         max-width: 700px;
         margin: 0 auto;
         padding-top: 50px;
-        max-height: calc(100vh - 254px);
-        overflow: scroll;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             max-width: 720px;
         }
 
         @media screen and (max-width: 767px) {
             padding-top: 33px;
             max-width: 325px;
-            max-height: calc(100vh - 119px);
         }
 
         &::-webkit-scrollbar {
@@ -222,7 +228,7 @@
             background-color: transparent;
             border: 1px solid #4D4D4D;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 max-width: 350px;
             }
 
@@ -250,7 +256,7 @@
         max-height: 94px;
         background-color: transparent;
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             max-width: 720px;
         }
 
@@ -260,14 +266,6 @@
 
         &::placeholder {
             color: #4D4D4D;
-        }
-    }
-
-    &__add-point-form-wrap {
-        max-height: calc(100vh - 254px);
-
-        @media screen and (max-width: 767px) {
-            max-height: calc(100vh - 119px);
         }
     }
 
@@ -363,7 +361,7 @@
             transform: rotate(-45deg);
         }
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             right: 22px;
             top: 25px;
         }
@@ -395,7 +393,7 @@
             -moz-appearance: none;
             appearance: none;
 
-            @media screen and (max-width: 1280px) {
+            @media screen and (max-width: 1279px) {
                 max-width: 350px;
             }
         }
@@ -424,7 +422,7 @@
             border-radius: 3px;
         }
 
-        @media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1279px) {
             max-width: 350px;
         }
     }
@@ -521,7 +519,7 @@
         gap: 20px;
         overflow: hidden;
         position: relative;
-        padding: 20px 0;
+        padding: 0 0 20px;
 
         @media screen and (max-width: 767px) {
             justify-content: space-between;
@@ -535,6 +533,10 @@
         left: -93px;
         bottom: 15px;
         font-size: 10px;
+
+        &_hidden {
+            left: -999999rem;
+        }
     }
 
     &__file-doc {
@@ -550,6 +552,12 @@
         font-size: 12px;
         color: #4D4D4D;
         padding-right: 5px;
+    }
+
+    &__input-area-info {
+        &_request {
+            margin: 0 0 20px;
+        }
     }
 
     &__add-info-file-browser-label {
@@ -570,17 +578,14 @@
     &__map {
         background-repeat: no-repeat;
         background-size: cover;
+        overflow-y: scroll;
     }
 
     &__map-main {
         max-width: 700px;
-        margin: 50px auto 90px;
-        overflow-y: scroll;
-        max-height: calc(100vh - 394px);
-
-        &::-webkit-scrollbar {
-            width: 0px;
-        }
+        padding: 50px 0 90px;
+        margin: 0 auto;
+        max-height: calc(100vh - 254px);
 
         @media screen and (max-width: 1279px){
             max-width: 720px;
@@ -588,6 +593,7 @@
 
         @media screen and (max-width: 767px){
             max-width: 325px;
+            max-height: calc(100vh - 119px);
         }
     }
 
@@ -639,7 +645,7 @@
             padding: 35px 15px 55px 14px;
 
             .window-box__map-item-text_block {
-                animation: height-small-m 0.5s 1;
+                animation: height-small-m 2.5s 1;
                 max-height: max-content;
             }
 
@@ -666,6 +672,14 @@
             height: 0;
             border-bottom: 10px dotted $orange;
             transition: all ease-in-out 0.3s;
+
+            @media screen and (max-width: 767px) {
+                right: 10px;
+                bottom: 10px;
+                width: 30px;
+                height: 0;
+                border-bottom: 7px dotted $orange;                
+            }
         }
 
         &:hover {
@@ -673,6 +687,14 @@
 
             &::before {
                 border-bottom: 10px dotted $blue;
+
+                @media screen and (max-width: 767px) {
+                    right: 10px;
+                    bottom: 10px;
+                    width: 30px;
+                    height: 0;
+                    border-bottom: 7px dotted $blue;                
+                }
             }
 
             .interactive-map__item-text {
@@ -701,6 +723,10 @@
             right: 25px;
             bottom: 10px;
 
+            @media screen and (max-width: 767px) {
+                right: 3px;
+                bottom: 0;
+            }
         }
     }
 }
@@ -708,6 +734,7 @@
 .visible-modal {
     display: flex;
     animation: modal-show 0.8s 1;
+    flex-wrap: nowrap;
 }
 
 .hide-modal-shadow {
@@ -734,7 +761,7 @@
         max-height: 40px;
     }
     50% {
-        max-height: 135px;
+        max-height: 700px;
     }
     to {
         max-height: max-content;
@@ -746,7 +773,7 @@
         max-height: max-content;
     }
     50% {
-        max-height: 135px;
+        max-height: 700px;
     }
     to {
         max-height: 40px;
