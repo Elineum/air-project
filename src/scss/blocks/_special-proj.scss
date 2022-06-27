@@ -25,7 +25,6 @@
         max-width: 575px;
 
         &:nth-child(even) {
-
             & .special-project__background-wrap {
                 background-color: $orange;
             }
@@ -71,7 +70,7 @@
         position: relative;
         overflow: visible;
         min-height: 84px;
-        margin-bottom: 15px;
+        margin-bottom: 45px;
     }
 
     &__background-wrap {
@@ -138,6 +137,36 @@
             &::after {
                 font-size: 13px;    
                 font-weight: 600;
+            }
+        }
+    }
+
+    .swiper-slide {
+        &::before {
+            content: url(../img/specialProjBlur.png);
+            position: absolute;
+            z-index: -1;
+            left: -10%;
+            top: -10%;
+            transition: all ease-in-out 0.3s;
+            opacity: 0;
+            width: 492px;
+            height: 451px;
+            
+
+            @media screen and (max-width: 1279px) {
+                content: url(../img/specialProjBlurTablet.png);
+                filter: blur(20px);
+            }
+        }
+    }
+
+    .swiper-slide-active {
+        &::before {
+            opacity: 1;
+
+            @media screen and (max-width: 1279px) {
+                top: -20%;
             }
         }
     }

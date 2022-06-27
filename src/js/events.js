@@ -27,6 +27,7 @@ let searchInput = document.querySelector(".page-head__input-search");
 let burgerWrap = document.querySelector(".js-burger-wrap");
 let burgerContent = document.querySelector(".js-burger-content");
 let burgerDrop = document.querySelector(".js-burger-dropmenu");
+let burgetItems = document.querySelectorAll(".js-burger-link");
 let burgerDropContent = document.querySelector(".page-head__inner-menu-wrap");
 let modalShadow = document.querySelector(".window-box");
 let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
@@ -75,6 +76,9 @@ window.addEventListener("resize", adaptiveContent);
   el.addEventListener("click", closeModal);
 });
 [].forEach.call(tabLink, (el) => {
+  el.addEventListener("click", tabSwitcher);
+});
+[].forEach.call(burgetItems, (el) => {
   el.addEventListener("click", burgerChanger);
 });
 
@@ -92,7 +96,8 @@ function dropMenuStarter() {
 }
 
 function burgerChanger(e) {
-  if (currWidth < 1280 && navIsActive) {
+  console.log(e.target);
+  if (currWidth < 1280) {
     burgerWrap.classList.toggle("page-head__burger-wrap_active");
     burgerContent.classList.toggle("page-head__burger-button_active");
     navContactBlock.classList.toggle("page-head__adapt-wrap_active");
@@ -104,24 +109,30 @@ function burgerChanger(e) {
 
     dropMenuActive ? dropMenuStarter() : null;
   }
-
-  e.target.classList.contains("js-tab-link") ? tabSwitcher(e.target) : null;
 }
 
-function tabSwitcher(transferredElement) {
-  transferredElement.classList.contains("js-articles")
+function tabSwitcher(element) {
+  let currentTarget = element.target;
+  currentTarget.classList.contains("js-articles")
     ? remSetChecked(articleInput1)
-    : transferredElement.classList.contains("js-blogs")
+    : currentTarget.classList.contains("js-blogs")
     ? remSetChecked(articleInput2)
-    : transferredElement.classList.contains("js-research")
+    : currentTarget.classList.contains("js-research")
     ? remSetChecked(articleInput3)
-    : transferredElement.classList.contains("js-news")
+    : currentTarget.classList.contains("js-news")
     ? remSetChecked(articleInput4)
-    : transferredElement.classList.contains("js-releases")
+    : currentTarget.classList.contains("js-releases")
     ? remSetChecked(eventInput1)
-    : transferredElement.classList.contains("js-announces")
+    : currentTarget.classList.contains("js-announces")
     ? remSetChecked(eventInput2)
     : null;
+
+  if (
+    currWidth < 1280 &&
+    currentTarget.classList.contains("page-head__inner-link")
+  ) {
+    burgerChanger;
+  }
 }
 
 function remSetChecked(currentInput) {

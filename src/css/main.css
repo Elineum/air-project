@@ -974,6 +974,11 @@ body {
   position: relative;
   z-index: 2;
 }
+@media screen and (max-width: 1279px) {
+  .articles__head-title h2 {
+    font-size: 24px;
+  }
+}
 .articles__swiper-button-wrap {
   position: relative;
   overflow: visible;
@@ -1007,7 +1012,7 @@ body {
   background-color: #E5AA2A;
   -webkit-filter: blur(15px);
           filter: blur(15px);
-  z-index: 1;
+  z-index: -1;
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
   opacity: 0;
@@ -1280,7 +1285,7 @@ body {
 .articles #articles-third:checked ~ #articles-third-label,
 .articles #articles-four:checked ~ #articles-four-label {
   color: #000000;
-  font-weight: 500;
+  font-weight: 400;
 }
 .articles #articles-first:checked ~ #articles-first-label::before,
 .articles #articles-second:checked ~ #articles-second-label::before,
@@ -1592,7 +1597,7 @@ body {
   background-color: #2b75b5;
   -webkit-filter: blur(15px);
           filter: blur(15px);
-  z-index: 1;
+  z-index: -1;
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
   opacity: 0;
@@ -1868,7 +1873,7 @@ body {
 #events-first:checked ~ #events-first-label,
 #events-second:checked ~ #events-second-label {
   color: #000000;
-  font-weight: 500;
+  font-weight: 400;
 }
 #events-first:checked ~ #events-first-label::before,
 #events-second:checked ~ #events-second-label::before {
@@ -2523,7 +2528,7 @@ body {
   position: relative;
   overflow: visible;
   min-height: 84px;
-  margin-bottom: 15px;
+  margin-bottom: 45px;
 }
 .special-project__background-wrap {
   background-color: #2b75b5;
@@ -2587,6 +2592,33 @@ body {
 .special-project .swiper-button-prev.swiper-button-disabled::after {
   font-size: 13px;
   font-weight: 600;
+}
+.special-project .swiper-slide::before {
+  content: url(../img/specialProjBlur.png);
+  position: absolute;
+  z-index: -1;
+  left: -10%;
+  top: -10%;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  opacity: 0;
+  width: 492px;
+  height: 451px;
+}
+@media screen and (max-width: 1279px) {
+  .special-project .swiper-slide::before {
+    content: url(../img/specialProjBlurTablet.png);
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+}
+.special-project .swiper-slide-active::before {
+  opacity: 1;
+}
+@media screen and (max-width: 1279px) {
+  .special-project .swiper-slide-active::before {
+    top: -20%;
+  }
 }
 .special-project .swiper-button-prev {
   right: 50px;

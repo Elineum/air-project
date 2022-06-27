@@ -39,12 +39,12 @@ new Swiper(".special-project__swiper", {
     },
     768: {
       slidesPerView: 2,
-      slidesPerGroup: 2,
+      slidesPerGroup: 1,
       spaceBetween: 15,
     },
     1280: {
       slidesPerView: 2,
-      slidesPerGroup: 2,
+      slidesPerGroup: 1,
       spaceBetween: 20,
     },
   },
@@ -72,6 +72,21 @@ new Swiper(".about-project__photo-swiper", {
       slidesPerView: 4.5,
       slidesPerGroup: 2,
       spaceBetween: 115,
+    },
+  },
+});
+new Swiper(".articles__tab-wrap", {
+  watchOverflow: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      spaceBetween: 23,
+    },
+    768: {
+      slidesPerView: 4,
+      slidesPerGroup: 1,
+      spaceBetween: 35,
     },
   },
 });
