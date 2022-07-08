@@ -56,7 +56,7 @@ new Swiper(".about-project__photo-swiper", {
   },
   watchOverflow: true,
   spaceBetween: 115,
-  speed: 3000,
+  speed: 1500,
   breakpoints: {
     320: {
       slidesPerView: 2.2,
@@ -69,7 +69,7 @@ new Swiper(".about-project__photo-swiper", {
       spaceBetween: 82,
     },
     1280: {
-      slidesPerView: 4.5,
+      slidesPerView: 4,
       slidesPerGroup: 2,
       spaceBetween: 115,
     },

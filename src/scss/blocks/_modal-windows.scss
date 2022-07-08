@@ -239,6 +239,10 @@
             &::placeholder {
                 color: #4D4D4D;
             }
+
+            &:focus {
+                outline: 1px solid black;
+            }
         }
     }
 
@@ -511,6 +515,11 @@
         @media screen and (max-width: 1279px) {
             max-width: 350px;
             padding: 11px 90px 10px 10px;
+        }
+
+        @media screen and (max-width: 767px) {
+            max-width: 350px;
+            padding: 11px 65px 10px 10px;
         }
 
         &::before {
@@ -834,6 +843,14 @@
                 right: 3px;
                 bottom: 0;
             }
+        }
+    }
+
+    .orange-border {
+        border: 1px solid #E5AA2A !important;
+
+        &:focus {
+            outline: 1px solid #E5AA2A !important;
         }
     }
 }

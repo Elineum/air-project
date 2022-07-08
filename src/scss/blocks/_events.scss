@@ -279,6 +279,10 @@
 
         &:hover {
             box-shadow: 0 0 15px $blue;
+
+            @media screen and (max-width: 1279px) {
+                box-shadow: none;
+            }
         }
 
         &::after {

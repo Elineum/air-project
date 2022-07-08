@@ -30,6 +30,11 @@ let burgerDrop = document.querySelector(".js-burger-dropmenu");
 let burgetItems = document.querySelectorAll(".js-burger-link");
 let burgerDropContent = document.querySelector(".page-head__inner-menu-wrap");
 let modalShadow = document.querySelector(".window-box");
+let modalInputBorders = document.querySelectorAll(".js-modal-input");
+let modalSubscriLabel = document.querySelector(".window-box__news-label");
+let modalSubscribeCheckbox = document.querySelectorAll(
+  ".window-box__news-label-inner-input"
+);
 let modalOpenerMap = document.querySelector(".page-foot__interactive-map-wrap");
 let modalOpenerRequest = document.querySelector(
   ".request-block__info-box-holder"
@@ -81,6 +86,31 @@ window.addEventListener("resize", adaptiveContent);
 [].forEach.call(burgetItems, (el) => {
   el.addEventListener("click", burgerChanger);
 });
+[].forEach.call(modalInputBorders, (el) => {
+  el.addEventListener("input", recolorBorder);
+});
+[].forEach.call(modalSubscribeCheckbox, (el) => {
+  el.addEventListener("change", anyCheckboxes);
+});
+
+function anyCheckboxes() {
+  let subscribeCheckbox = [];
+  modalSubscribeCheckbox.forEach((el) => {
+    subscribeCheckbox.push(el.checked);
+    if (subscribeCheckbox.some((key) => key === true)) {
+      modalSubscriLabel.classList.add("orange-border");
+    } else {
+      modalSubscriLabel.classList.remove("orange-border");
+    }
+  });
+  subscribeCheckbox = [];
+}
+
+function recolorBorder(e) {
+  e.target.value
+    ? e.target.classList.add("orange-border")
+    : e.target.classList.remove("orange-border");
+}
 
 function modalIsActiveCheck() {
   modalIsActive = document.querySelector(".visible-modal");
@@ -261,6 +291,7 @@ function interactiveMapItemOpener(e) {
       for (let key of interactiveMapAllItems) {
         key.classList.remove("interactive-map__content-item_open");
       }
+      interactiveMapListToggler();
     }
   } else if (
     (mainPageMapLi

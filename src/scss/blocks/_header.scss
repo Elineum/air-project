@@ -20,7 +20,7 @@
             gap: 50px;
         }
 
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 420px) {
             flex-direction: column;
             align-items: normal;
             gap: 50px;
@@ -54,7 +54,7 @@
             align-items: center;
             justify-content: center;
 
-            @media screen and (max-width: 375px) {
+            @media screen and (max-width: 420px) {
                 padding-left: 25px;
                 align-items: normal;
                 justify-content: normal;

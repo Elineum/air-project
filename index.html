@@ -1361,7 +1361,7 @@
               </div>
             </div>
           </section>
-          <section class="about-project" id="about-project">
+          <section class="about-project container-width" id="about-project">
             <div class="about-project__title-holder container-width">
               <h2>Про проєкт</h2>
             </div>
@@ -1785,13 +1785,13 @@
                 </div>
               </div>
               <div class="window-box__add-info-form-input">
-                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Ваше призвище та ім’я">
-                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Ваш мейл">
-                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Контактний телефон">
-                <input type="text" name="add-info" class="window-box__input-area-info" placeholder="Назва організації чи ініцітиви">
-                <textarea name="add-info" class="window-box__add-info-textearea" id="" cols="30" rows="10" placeholder="Напишіть свій текст до новини"></textarea>
+                <input type="text" name="add-info" class="window-box__input-area-info js-modal-input" placeholder="Ваше призвище та ім’я">
+                <input type="text" name="add-info" class="window-box__input-area-info js-modal-input" placeholder="Ваш мейл">
+                <input type="text" name="add-info" class="window-box__input-area-info js-modal-input" placeholder="Контактний телефон">
+                <input type="text" name="add-info" class="window-box__input-area-info js-modal-input" placeholder="Назва організації чи ініцітиви">
+                <textarea name="add-info" class="window-box__add-info-textearea js-modal-input" id="" cols="30" rows="10" placeholder="Напишіть свій текст до новини"></textarea>
                 <span class="window-box__add-info-span">Додайте:</span>
-                <input type="text" name="add-info" class="window-box__input-area-info window-box__input-area-info_request" placeholder="Посилання на інфомарцію">
+                <input type="text" name="add-info" class="window-box__input-area-info window-box__input-area-info_request js-modal-input" placeholder="Посилання на інфомарцію">
                 <div class="window-box__add-info-file-browser">
                   <span class="window-box__add-info-file-browser-span">Прикріпити файли</span>
                   <div class="window-box__add-info-file-browser-container">
@@ -1829,15 +1829,15 @@
               <div class="window-box__help-head-text window-box__help-head-text_bot"><p>Звернутися з питаннями чи пропозиціями для покращення розвитку платформи до ініціативної групи проєкту. </p></div>
               <div class="window-box__help-head-time window-box__help-head-time_bot"><span>Технічна підтримка працює з 18:00-21:00 щодня</span></div>
               <div class="window-box__help-form-input">
-                <input type="text" placeholder="Ваше призвище та ім’я">
-                <input type="email" placeholder="Ваш мейл">
-                <input type="text" placeholder="Контактний телефон">
-                <input type="text" placeholder="Назва організації чи ініцітиви">
-                <textarea cols="30" rows="10" maxlength="500" class="window-box__help-textarea" placeholder="Залиште Ваше повідомлення/ коментар (до 500 знаків)"></textarea>
+                <input type="text" class="js-modal-input" class="js-modal-input" placeholder="Ваше призвище та ім’я">
+                <input type="email" class="js-modal-input" placeholder="Ваш мейл">
+                <input type="text" class="js-modal-input" placeholder="Контактний телефон">
+                <input type="text" class="js-modal-input" placeholder="Назва організації чи ініцітиви">
+                <textarea cols="30" rows="10" maxlength="500" class="window-box__help-textarea js-modal-input" placeholder="Залиште Ваше повідомлення/ коментар (до 500 знаків)"></textarea>
               </div>
               <div class="window-box__help-add-time">
                 <label for="help-form-number" class="window-box__help-label">Додайте:</label>
-                <input class="window-box__help-input-time" id="help-form-number" type="text" placeholder="Коли вам зручно зателефонувати (з 18:00-21:00)">
+                <input class="window-box__help-input-time js-modal-input" id="help-form-number" type="text" placeholder="Коли вам зручно зателефонувати (з 18:00-21:00)">
               </div>
               <div class="window-box__help-btn-wrap">
                 <button class="window-box__help-button">Відправити</button>
@@ -1855,18 +1855,18 @@
             <form class="window-box__add-point-form">
               <div class="window-box__add-point-head-text window-box__add-point-head-text_bot"><p>Надати інформацію щоб нанести ще одну “гарячу точку” на мапу</p></div>
               <div class="window-box__add-point-form-input">
-                <input type="text" placeholder="Ваше призвище та ім’я">
-                <input type="email" placeholder="Ваш мейл">
-                <input type="text" placeholder="Контактний телефон">
-                <input type="text" placeholder="Назва Вашої організації чи ініцітиви">
+                <input type="text" class="js-modal-input" placeholder="Ваше призвище та ім’я">
+                <input type="email" class="js-modal-input" placeholder="Ваш мейл">
+                <input type="text" class="js-modal-input" placeholder="Контактний телефон">
+                <input type="text" class="js-modal-input" placeholder="Назва Вашої організації чи ініцітиви">
               </div>
               <label for="add-point-info-input" class="window-box__add-point-label">Інформація про гарячу точку:</label>
               <div class="window-box__add-point-form-input-extra">
-                <input type="text" id="add-point-info-input" placeholder="Найменування забруднювача">
-                <input type="text" placeholder="Додайте координати гарячої точки (широта та довгота)">
-                <textarea cols="30" rows="10" class="window-box__add-point-textarea" placeholder="Коротка інформація про забруднювач : (адреса, вид діяльності, код ЄДРПОУ, інше)"></textarea>
-                <input type="text" placeholder="Посилання на статті про забруднювач">
-                <input type="text" placeholder="Пулбікації ГО на цю тему: блоги, дослідження, новини...">
+                <input type="text" class="js-modal-input" id="add-point-info-input" placeholder="Найменування забруднювача">
+                <input type="text" class="js-modal-input" placeholder="Додайте координати гарячої точки (широта та довгота)">
+                <textarea cols="30" rows="10" class="window-box__add-point-textarea js-modal-input" placeholder="Коротка інформація про забруднювач : (адреса, вид діяльності, код ЄДРПОУ, інше)"></textarea>
+                <input type="text" class="js-modal-input" placeholder="Посилання на статті про забруднювач">
+                <input type="text" class="js-modal-input" placeholder="Пулбікації ГО на цю тему: блоги, дослідження, новини...">
               </div>
               <div class="window-box__add-point-btn-wrap">
                 <button class="window-box__add-point-button">Відправити</button>
@@ -1882,41 +1882,41 @@
           <div class="window-box__news-form-wrap">
             <form class="window-box__news-form">
               <div class="window-box__news-form-input">
-                <input type="text" placeholder="Ваше призвище та ім’я">
-                <input type="email" placeholder="Ваш мейл">
-                <input type="text" placeholder="Назва організації чи ініцітиви">
+                <input type="text" class="js-modal-input" placeholder="Ваше призвище та ім’я">
+                <input type="email" class="js-modal-input" placeholder="Ваш мейл">
+                <input type="text" class="js-modal-input" placeholder="Назва організації чи ініцітиви">
                 <div class="window-box__news-label-wrap">
                   <input type="checkbox" id="modalNews" class="window-box__news-input">
                   <label for="modalNews" class="window-box__news-label">Виберіть на який розділ хочете підписатися</label>
                   <div class="window-box__news-label-inner-menu">
                     <ul class="window-box__news-label-inner-list">
                       <li class="window-box__news-label-inner-item">
-                        <span class="window-box__news-label-inner-text">Блоги</span>
-                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                        <label for="subscribe-blogs" class="window-box__news-label-inner-text">Блоги</label>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="subscribe-blogs">
                       </li>
                       <li class="window-box__news-label-inner-item">
-                        <span class="window-box__news-label-inner-text">Статті</span>
-                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                        <label for="subscribe-articles" class="window-box__news-label-inner-text">Статті</label>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="subscribe-articles">
                       </li>
                       <li class="window-box__news-label-inner-item">
-                        <span class="window-box__news-label-inner-text">Івенти</span>
-                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                        <label for="subscribe-ivents" class="window-box__news-label-inner-text">Івенти</label>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="subscribe-ivents">
                       </li>
                       <li class="window-box__news-label-inner-item">
-                        <span class="window-box__news-label-inner-text">Дослідження</span>
-                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                        <label for="subscribe-research" class="window-box__news-label-inner-text">Дослідження</label>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="subscribe-research">
                       </li>
                       <li class="window-box__news-label-inner-item">
-                        <span class="window-box__news-label-inner-text">Новини</span>
-                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                        <label for="subscribe-news" class="window-box__news-label-inner-text">Новини</label>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="subscribe-news">
                       </li>
                       <li class="window-box__news-label-inner-item">
-                        <span class="window-box__news-label-inner-text">Анонси</span>
-                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                        <label for="subscribe-anonces" class="window-box__news-label-inner-text">Анонси</label>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="subscribe-anonces">
                       </li>
                       <li class="window-box__news-label-inner-item">
-                        <span class="window-box__news-label-inner-text">Прес-релізи</span>
-                        <input type="checkbox" class="window-box__news-label-inner-input" id="">
+                        <label for="subscribe-releases" class="window-box__news-label-inner-text">Прес-релізи</label>
+                        <input type="checkbox" class="window-box__news-label-inner-input" id="subscribe-releases">
                       </li>
                     </ul>
                   </div>
