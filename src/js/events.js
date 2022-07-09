@@ -125,8 +125,7 @@ function dropMenuStarter() {
   }
 }
 
-function burgerChanger(e) {
-  console.log(e.target);
+function burgerChanger() {
   if (currWidth < 1280) {
     burgerWrap.classList.toggle("page-head__burger-wrap_active");
     burgerContent.classList.toggle("page-head__burger-button_active");
@@ -157,12 +156,9 @@ function tabSwitcher(element) {
     ? remSetChecked(eventInput2)
     : null;
 
-  if (
-    currWidth < 1280 &&
-    currentTarget.classList.contains("page-head__inner-link")
-  ) {
-    burgerChanger;
-  }
+  currWidth < 1280 && currentTarget.classList.contains("page-head__inner-link")
+    ? burgerChanger
+    : null;
 }
 
 function remSetChecked(currentInput) {

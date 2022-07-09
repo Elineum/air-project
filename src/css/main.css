@@ -968,6 +968,22 @@ body {
   padding-top: 5px;
   display: inline-block;
 }
+.articles__head-title::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  min-height: 85%;
+  min-width: 97%;
+  border-radius: 30px;
+  background-color: #E5AA2A;
+  -webkit-filter: blur(15px);
+          filter: blur(15px);
+  opacity: 0.7;
+  z-index: -1;
+}
 .articles__head-title h2 {
   font-size: 36px;
   font-weight: 400;
@@ -1001,27 +1017,8 @@ body {
       -ms-user-select: none;
           user-select: none;
 }
-.articles__head-label::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100%;
-  min-width: 100%;
-  border-radius: 30px;
-  background-color: #E5AA2A;
-  -webkit-filter: blur(15px);
-          filter: blur(15px);
-  z-index: -1;
-  -webkit-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
-  opacity: 0;
-}
 .articles__head-label:hover {
   color: #000000;
-}
-.articles__head-label:hover::before {
-  opacity: 0.8;
 }
 .articles__head-label:active {
   color: #000000;
@@ -1160,21 +1157,15 @@ body {
 .articles__button-wrap::before {
   content: "";
   position: absolute;
-  top: 5px;
-  left: 15px;
-  min-height: 50%;
-  min-width: 100%;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  max-height: -webkit-max-content;
-  max-height: -moz-max-content;
-  max-height: max-content;
+  top: -4px;
+  left: 10px;
+  min-height: 30px;
+  min-width: 120px;
   border-radius: 30px;
   background-color: #E5AA2A;
-  -webkit-filter: blur(15px);
-          filter: blur(15px);
-  z-index: 1;
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  z-index: -1;
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
   opacity: 0;
@@ -1474,6 +1465,20 @@ body {
 .about-project__photo-item {
   text-align: center;
 }
+.about-project__photo-item::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 65%;
+  width: 25%;
+  background-color: #2B75B5;
+  -webkit-filter: blur(45px);
+          filter: blur(45px);
+}
 .about-project__photo-item:nth-child(even) {
   padding-top: 56px;
 }
@@ -1486,6 +1491,10 @@ body {
   .about-project__photo-item:nth-child(even) {
     padding-top: 29px;
   }
+}
+.about-project__photo-item:nth-child(even)::before {
+  content: "";
+  background-color: #E5AA2A;
 }
 .about-project__span-holder-bot {
   color: #4d4d4d;
@@ -1578,6 +1587,22 @@ body {
   padding-top: 5px;
   display: inline-block;
 }
+.events__head-title::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  min-height: 60%;
+  min-width: 90%;
+  border-radius: 30px;
+  background-color: #2b75b5;
+  -webkit-filter: blur(13px);
+          filter: blur(13px);
+  opacity: 0.7;
+  z-index: -1;
+}
 .events__head-title h2 {
   font-size: 36px;
   position: relative;
@@ -1600,27 +1625,8 @@ body {
       -ms-user-select: none;
           user-select: none;
 }
-.events__head-label::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100%;
-  min-width: 100%;
-  border-radius: 30px;
-  background-color: #2b75b5;
-  -webkit-filter: blur(15px);
-          filter: blur(15px);
-  z-index: -1;
-  -webkit-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
-  opacity: 0;
-}
 .events__head-label:hover {
   color: #000000;
-}
-.events__head-label:hover::before {
-  opacity: 0.8;
 }
 .events__head-label:active {
   color: #000000;
@@ -1758,21 +1764,15 @@ body {
 .events__button-wrap::before {
   content: "";
   position: absolute;
-  top: 5px;
+  top: -4px;
   left: 15px;
-  min-height: 50%;
-  min-width: 100%;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  max-height: -webkit-max-content;
-  max-height: -moz-max-content;
-  max-height: max-content;
+  min-height: 30px;
+  min-width: 120px;
   border-radius: 30px;
   background-color: #2b75b5;
-  -webkit-filter: blur(15px);
-          filter: blur(15px);
-  z-index: 1;
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  z-index: -1;
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
   opacity: 0;
