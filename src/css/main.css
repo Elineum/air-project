@@ -4223,3 +4223,128 @@ body {
     max-height: 40px;
   }
 }
+.body-404 {
+  min-height: 100vh;
+  position: relative;
+}
+
+.head-404 {
+  padding-top: 38px;
+  margin: 0 auto 52px;
+}
+@media screen and (max-width: 1440px) {
+  .head-404 {
+    margin: 0 auto 120px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .head-404 {
+    margin: 0 auto 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .head-404 {
+    margin: 0 auto 150px;
+  }
+}
+
+.content-404 {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (max-width: 1440px) {
+  .content-404 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .content-404 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .content-404 {
+    font-size: 12px;
+  }
+}
+.content-404__title {
+  color: #636363;
+  line-height: 102.38px;
+}
+.content-404__image-wrap {
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (max-width: 1279px) {
+  .content-404__image-wrap {
+    bottom: 15%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .content-404__image-wrap {
+    bottom: 30%;
+  }
+}
+.content-404__image-wrap picture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.content-404__button-wrap {
+  position: absolute;
+  bottom: 44px;
+}
+@media screen and (max-width: 1279px) {
+  .content-404__button-wrap {
+    bottom: 127px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .content-404__button-wrap {
+    bottom: 198px;
+  }
+}
+.content-404__button {
+  text-decoration: none;
+  color: white;
+}
+.content-404__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 152px;
+  height: 152px;
+  background-color: #E5AA2A;
+  border-radius: 50%;
+  font-size: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 22.75px;
+  word-spacing: 10px;
+}
+@media screen and (max-width: 1279px) {
+  .content-404__text {
+    width: 162px;
+    height: 162px;
+    font-size: 18px;
+    line-height: 25.59px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .content-404__text {
+    width: 98px;
+    height: 98px;
+    font-size: 10px;
+    line-height: 14.22px;
+  }
+}

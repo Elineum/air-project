@@ -14,7 +14,7 @@ let articleInput4 = document.querySelector("#articles-four");
 let inputArray = document.querySelectorAll(".tab-array");
 let eventInput1 = document.querySelector("#events-first");
 let eventInput2 = document.querySelector("#events-second");
-let closeModalr = document.querySelectorAll(".js-close-modal");
+let closeModalArr = document.querySelectorAll(".js-close-modal");
 let tabLink = document.querySelectorAll(".js-tab-link");
 let fileDoc = document.querySelector(".window-box__file-doc");
 let fileImg = document.querySelector(".window-box__file-img");
@@ -64,20 +64,20 @@ let navIsActive;
 let dropMenuActive;
 
 languageInput.addEventListener("click", languageSwap);
-interactiveMapButton.addEventListener("click", interactiveMapListToggler);
-interactiveMapList.addEventListener("click", interactiveMapItemOpener);
-interactiveMapModalList.addEventListener("click", interactiveMapItemOpener);
-fileDoc.addEventListener("change", showLoadStatus);
-fileImg.addEventListener("change", showLoadStatus);
-modalOpenerRequest.addEventListener("click", openModal);
-modalOpenerMap.addEventListener("click", openModal);
-modalShadow.addEventListener("click", closeModal);
 searchButton.addEventListener("click", toggleSearch);
 burgerWrap.addEventListener("click", burgerChanger);
 burgerDrop.addEventListener("click", dropMenuStarter);
 document.body.addEventListener("click", modalIsActiveCheck);
 window.addEventListener("resize", adaptiveContent);
-[].forEach.call(closeModalr, (el) => {
+modalOpenerRequest.addEventListener("click", openModal);
+modalOpenerMap.addEventListener("click", openModal);
+modalShadow.addEventListener("click", closeModal);
+interactiveMapButton.addEventListener("click", interactiveMapListToggler);
+interactiveMapList.addEventListener("click", interactiveMapItemOpener);
+interactiveMapModalList.addEventListener("click", interactiveMapItemOpener);
+fileDoc.addEventListener("change", showLoadStatus);
+fileImg.addEventListener("change", showLoadStatus);
+[].forEach.call(closeModalArr, (el) => {
   el.addEventListener("click", closeModal);
 });
 [].forEach.call(tabLink, (el) => {
