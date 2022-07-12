@@ -2,7 +2,6 @@
     position: relative;
     padding-top: 37px;
     padding-bottom: 84px;
-    margin-bottom: 45px;
 
     &__block-title {
         padding-bottom: 35px;
@@ -10,7 +9,7 @@
         & h2 {
             font-size: 36px;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1279px) {
                 font-size: 24px;
                 font-weight: 500;
             }
@@ -19,13 +18,13 @@
 
     &__list {
         list-style: none;
+        min-width: 0;
     }
     
     &__item {
         max-width: 575px;
 
         &:nth-child(even) {
-
             & .special-project__background-wrap {
                 background-color: $orange;
             }
@@ -33,7 +32,7 @@
             & .special-project__text-content-wrap {
                 padding-left: 27px;
 
-                @include media('<=desktop') {
+                @media screen and (max-width: 1279px) {
                     padding: 0;
                 }
             }
@@ -51,6 +50,27 @@
 
     &__imp-wrap {
         display: flex;
+    }
+
+    &__swiper {
+        overflow: hidden;
+        padding: 0 calc((100% - 1170px) / 2);
+        margin-bottom: 45px;
+
+        @media screen and (max-width: 1279px) {
+            padding: 0 calc((100% - 720px) / 2);
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 0 calc((100% - 325px) / 2);
+        }
+    }
+
+    &__swiper-button-wrap {
+        position: relative;
+        overflow: visible;
+        min-height: 84px;
+        margin-bottom: 45px;
     }
 
     &__background-wrap {
@@ -85,122 +105,98 @@
         text-align: end;
     }
 
-    & .slick-arrow {
-        position: absolute;
-        z-index: 4;
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 44px;
+        height: 44px;
+        background-color: #2B75B5;
+        color: white;
+        border-radius: 50%;
+        top: unset;
+        transition: all ease-in-out 0.3s;
         right: 0;
         bottom: 0;
-        height: 44px;
-        width: 44px;
-        background-color: $blue;
-        border: 1px solid $blue;
-        font-size: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all ease-in-out 0.3s;
 
         &:hover {
-            filter: drop-shadow(0px 0px 15px $blue);
+            box-shadow: 0 0 15px $blue;
+
+            @media screen and (max-width: 1279px) {
+                box-shadow: none;
+            }
+        }
+
+        &::after {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        &.swiper-button-disabled {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            color: #4D4D4D;
+            border: 1px solid #4D4D4D;
+            opacity: 1;
+
+            &::after {
+                font-size: 13px;    
+                font-weight: 600;
+            }
         }
     }
 
-    & .slick-arrow.slick-disabled {
-        position: absolute;
-        z-index: 4;
-        bottom: 0;
-        height: 30px;
-        width: 30px;
-        background-color: transparent;
-        border: 1px solid $grey;
-        font-size: 0;
-        border-radius: 50%;
-        cursor: pointer;
-
+    .swiper-slide {
         &::before {
-            content: '';
+            content: url(../img/specialProjBlurB.png);
             position: absolute;
-            width: 8px;
-            height: 8px;
-            border: 2px solid $grey;
-            border-left: 0;
-            border-bottom: 0;
-            left: 50%;
-            top: 50%;
-        }
-
-        &:hover {
-            filter: none;
-        }
-    }
-
-    & .slick-arrow.slick-prev{
-        right: 50px;
-
-        &::before {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border: 2px solid #fff;
-            border-right: 0;
-            border-bottom: 0;
-            transform: translate(-30%, -45%) rotate(-45deg);
-        }
-
-        &.slick-disabled {
-            right: 65px;
+            z-index: -1;
+            left: -10%;
+            top: -10%;
+            transition: all ease-in-out 0.3s;
+            opacity: 0;
+            width: 492px;
+            height: 451px;
             
+            @media screen and (max-width: 1279px) {
+                content: url(../img/specialProjBlurBTablet.png);
+                filter: blur(20px);
+            }
+        }
+
+        &:nth-child(even) {
+
             &::before {
-                content: '';
-                position: absolute;
-                width: 8px;
-                height: 8px;
-                border: 2px solid $grey;
-                border-left: 0;
-                border-bottom: 0;
-                transform: translate(-30%, -45%) rotate(-135deg);
-                left: 50%;
-                top: 50%;
+                content: url(../img/specialProjBlurO.png);
+
+                @media screen and (max-width: 1279px) {
+                    content: url(../img/specialProjBlurOTablet.png);
+                    filter: blur(20px);
+                }
             }
         }
     }
 
-    & .slick-arrow.slick-next{
+    .swiper-slide-active {
         &::before {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border: 2px solid #fff;
-            border-left: 0;
-            border-bottom: 0;
-            transform: translate(-65%, -40%) rotate(45deg);
-            left: 50%;
-            top: 50%;
-        }
+            opacity: 1;
 
-        &.slick-disabled {
-            &::before {
-                content: '';
-                position: absolute;
-                width: 8px;
-                height: 8px;
-                border: 2px solid $grey;
-                border-left: 0;
-                border-bottom: 0;
-                left: 50%;
-                top: 50%;
-                transform: translate(-65%, -40%) rotate(45deg);
+            @media screen and (max-width: 1279px) {
+                top: -20%;
             }
         }
     }
 
-    & .slick-track {
-        display: flex;
-        gap: 20px;
+    .swiper-button-prev {
+        right: 50px;
+        left: unset;
+        &.swiper-button-disabled {
+            right: 64px;
+        }
     }
-}
 
-.slick-list {
-    overflow: hidden;
+    .swiper-button-next {
+        &::after {
+            transform: translateX(25%);
+        }
+    }
 }

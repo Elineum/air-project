@@ -1,3 +1,17 @@
+:root {
+    --text-height: 69px;
+    --height: 302px;
+
+    @media screen and (max-width: 1279px) {
+        --text-height: 40px;
+        --height: 200px;
+    }
+
+    @media screen and (max-width: 767px) {
+        --height: 400px;
+    }
+}
+
 .interactive-map {
     padding-bottom: 55px;
 
@@ -8,16 +22,20 @@
     &__title {
         margin-bottom: 38px;
 
+        @media screen and (max-width: 375px) {
+            max-width: 231px;
+        }
+
         & h2 {
             font-size: 36px;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1279px) {
                 font-size: 24px;
                 font-weight: 500;
             }
         }
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1279px) {
             margin-bottom: 25px;
         }
     }
@@ -29,9 +47,13 @@
         line-height: 26px;
         color: $grey;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1279px) {
             font-size: 16px;
             max-width: 535px;
+        }
+
+        @media screen and (max-width: 375px) {
+            padding-left: 0;
         }
     }
 
@@ -43,11 +65,21 @@
     &__main-content {
         display: flex;
         gap: 25px;
+
+        @media screen and (max-width: 1279px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__name {
         font-size: 18px;
         margin-bottom: 23px;
+
+        @media screen and (max-width: 1279px) {
+            padding-top: 0;
+            max-width: 345px;
+            font-size: 16px;
+        }
 
         & b {
             font-weight: 500;
@@ -57,9 +89,11 @@
     &__right-content-block {
         padding-top: 8px;
         position: relative;
+        max-width: 551px;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1279px) {
             padding-top: 0;
+            max-width: 345px;
         }
     }
 
@@ -69,6 +103,10 @@
         h4 {
             font-size: 18px;
             font-weight: 500;
+
+            @media screen and (max-width: 1279px){
+                font-size: 16px;
+            }
         }
     }
 
@@ -78,10 +116,14 @@
         margin-bottom: 25px;
         line-height: 27px;
 
-        @include media('<=desktop') {
+        @media screen and (max-width: 1279px) {
             font-size: 14px;
             line-height: 21.1px;
             word-spacing: -0.1px;
+        }
+
+        @media screen and (max-width: 767px){
+            font-size: 16px;
         }
     }
 
@@ -92,6 +134,10 @@
             font-size: 18px;
             font-weight: 500;
             color: #0A0A21;
+
+            @media screen and (max-width: 1279px) {
+                font-size: 16px;
+            }
         }
     }
 
@@ -101,17 +147,20 @@
         flex-direction: column;
         gap: 10px;
         overflow: hidden;
+        max-height: 302px;
+        animation: height-animation-revert 0.8s 1;
 
-        &_blocker {
-            max-height: 302px;
-
-            @include media('<=desktop') {
-                max-height: 200px;
-            }
+        @media screen and (max-width: 1279px) {
+            max-height: 200px;
         }
 
-        @include media('<=desktop') {
-            font-size: 14px;
+        @media screen and (max-width: 767px) {
+            max-height: 400px;
+        }
+
+        &_blocker {
+            animation: height-animation 2.5s 1;
+            max-height: unset;
         }
     }
 
@@ -124,15 +173,26 @@
         cursor: pointer;
         transition: all ease-in-out 0.3s;
 
+        @media screen and (max-width: 1279px) {
+            padding: 25px 33px 25px 10px;
+        }
+
         &_open {
             background-color: $orange;
+            padding: 46px 14px 56px;
+
+            @media screen and (max-width: 1279px) {
+                padding: 26px 10px 44px;
+            }
 
             .interactive-map__item-text_block {
+                animation: height-small 2.5s 1;
                 max-height: max-content;
             }
 
             .interactive-map__item-text {
                 color: black;
+                max-width: max-content;
             }
 
             &::before {
@@ -154,7 +214,7 @@
             border-bottom: 10px dotted $orange;
             transition: all ease-in-out 0.3s;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1279px) {
                 right: 10px;
                 bottom: 10px;
                 width: 30px;
@@ -169,7 +229,7 @@
             &::before {
                 border-bottom: 10px dotted $blue;
 
-                @include media('<=desktop') {
+                @media screen and (max-width: 1279px) {
                     border-bottom: 7px dotted $blue;                
                 }
             }
@@ -177,10 +237,6 @@
             .interactive-map__item-text {
                 color: black;
             }
-        }
-
-        @include media('<=desktop') {
-            padding: 25px 33px 25px 10px;
         }
     }
 
@@ -196,9 +252,8 @@
             position: absolute;
             right: 25px;
             bottom: 10px;
-            // TODO add content as icon and add hover
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1279px) {
                 right: 3px;
                 bottom: 0;
             }
@@ -210,11 +265,12 @@
         max-width: 435px;
         color: $grey;
         transition: all ease-in-out 0.3s;
+        animation: height-small-revert 0.5s 1;
 
         &_block {
             max-height: 69px;
 
-            @include media('<=desktop') {
+            @media screen and (max-width: 1279px) {
                 max-height: 40px;
                 line-height: 20px;
             }
@@ -245,6 +301,10 @@
 
         &:hover {
             filter: drop-shadow(0px 0px 15px $blue);
+
+            @media screen and (max-width: 1279px) {
+                filter: none;
+            }
         }
     }
 
@@ -264,15 +324,70 @@
             transition: all ease-in-out 0.5s;
         }
     }
-}
 
-#map {
-    min-height: 572px;
-    min-width: 595px;
+    #map {
+        min-height: 572px;
+        min-width: 595px;
+    
+        @media screen and (max-width: 1279px) {
+            min-height: 468px;
+            max-height: 468px;
+            min-width: 350px;
+        }
+    
+        @media screen and (max-width: 767px) {
+            min-height: 355px;
+            max-height: 355px;
+            min-width: 327px;
+        }
+    }
+    
+    @keyframes height-animation {
+        0% {
+            max-height: var(--height);
+        }
+        50% {
+            max-height: 1002px;
+        }
+        100% {
+            max-height: unset;
+        }
+    }
+    
+    @keyframes height-animation-revert {
+        0% {
+            max-height: unset;
+        }
+        50% {
+            max-height: 1002px;
+        }
+        100% {
+            max-height: var(--height);
+        }
+    }
 
-    @include media('<=desktop') {
-        min-height: 468px;
-        max-height: 479px;
-        min-width: 350px;
+    @keyframes height-small {
+        from {
+            max-height: var(--text-height);
+        }
+        50% {
+            max-height: 700px;
+        }
+        to {
+            max-height: max-content;
+        }
+    }
+
+    @keyframes height-small-revert {
+        from {
+            max-height: max-content;
+        }
+        50% {
+            max-height: 700px;
+        }
+        to {
+            max-height: var(--text-height);
+        }
     }
 }
+
