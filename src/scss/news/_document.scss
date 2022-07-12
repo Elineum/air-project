@@ -13,6 +13,11 @@
         .col-quotes {
             width: 50%;
             padding: 0 10px;
+
+            @include media('<=tablet') {
+                width: 80%;
+                margin: 0 auto 20px;
+            }
             
             .card {
                 padding: 31px;
@@ -30,6 +35,10 @@
                     background-color: $blue;
                     box-shadow: 0px 10px 50px $blue;
                 }
+
+                @include media('<=desktop') {
+                    min-height: 275px;
+                }
             }
         }
     }
@@ -41,6 +50,12 @@
             width: calc(100%/3);
             padding: 0 10px;
             position: relative;
+
+            @include media('<=tablet') {
+                width: 80%;
+                margin: 0 auto 20px;
+            }
+            
 
             .card-small {
                 padding: 67px 37px 42px 37px;
@@ -55,10 +70,23 @@
                 line-height: 25px;
                 justify-content: center;
                 transition: all ease-in-out 0.3s;
+
+                @include media('<=desktop') {
+                    padding: 40px 10px;
+                    min-height: 220px;
+                }
+
+                @include media('<=tablet') {
+                    padding: 40px;
+                }
                 
                 .text-main {
                     font-size: 15px;
                     line-height: 25px;
+
+                    @include media('<=desktop') {
+                        padding-top: 30px;
+                    }
                 }
 
                 .card-number {

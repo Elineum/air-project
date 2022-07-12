@@ -3542,6 +3542,13 @@ body {
   border-radius: 10px;
   padding: 26px 0 55px;
 }
+@media (max-width: 1024px) {
+  .hero-article .article-content.flex {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
 .hero-article .article-content.flex .image-holder {
   border-radius: 10px;
   width: 40%;
@@ -3549,8 +3556,18 @@ body {
       -ms-flex-order: 2;
           order: 2;
 }
+@media (max-width: 768px) {
+  .hero-article .article-content.flex .image-holder {
+    width: 100%;
+  }
+}
 .hero-article .article-content.flex .text-holder {
   width: 50%;
+}
+@media (max-width: 768px) {
+  .hero-article .article-content.flex .text-holder {
+    width: 100%;
+  }
 }
 .hero-article .article-content.flex .text-holder .text-main {
   margin-bottom: 40px;
@@ -3577,21 +3594,18 @@ body {
 
 .article-w-cards {
   padding: 45px 0;
+  position: relative;
 }
 .article-w-cards .text-holder {
   margin-bottom: 35px;
 }
-.article-w-cards .col {
-  width: 33.3333333333%;
-  margin: 0 -10px;
-}
-.article-w-cards .col .card {
+.article-w-cards .card {
   padding: 0 10px;
 }
-.article-w-cards .col .card .image-holder {
+.article-w-cards .card .image-holder {
   margin-bottom: 10px;
 }
-.article-w-cards .col .card .text-holder {
+.article-w-cards .card .text-holder {
   color: #4d4d4d;
   font-weight: 300;
   font-size: 14px;
@@ -3610,6 +3624,12 @@ body {
 .document .card-holder-wide .col-quotes {
   width: 50%;
   padding: 0 10px;
+}
+@media (max-width: 768px) {
+  .document .card-holder-wide .col-quotes {
+    width: 80%;
+    margin: 0 auto 20px;
+  }
 }
 .document .card-holder-wide .col-quotes .card {
   padding: 31px;
@@ -3633,6 +3653,11 @@ body {
   -webkit-box-shadow: 0px 10px 50px #2b75b5;
           box-shadow: 0px 10px 50px #2b75b5;
 }
+@media (max-width: 1024px) {
+  .document .card-holder-wide .col-quotes .card {
+    min-height: 275px;
+  }
+}
 .document .card-holder {
   margin: 0 -10px;
 }
@@ -3640,6 +3665,12 @@ body {
   width: 33.3333333333%;
   padding: 0 10px;
   position: relative;
+}
+@media (max-width: 768px) {
+  .document .card-holder .col {
+    width: 80%;
+    margin: 0 auto 20px;
+  }
 }
 .document .card-holder .col .card-small {
   padding: 67px 37px 42px 37px;
@@ -3665,9 +3696,25 @@ body {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
+@media (max-width: 1024px) {
+  .document .card-holder .col .card-small {
+    padding: 40px 10px;
+    min-height: 220px;
+  }
+}
+@media (max-width: 768px) {
+  .document .card-holder .col .card-small {
+    padding: 40px;
+  }
+}
 .document .card-holder .col .card-small .text-main {
   font-size: 15px;
   line-height: 25px;
+}
+@media (max-width: 1024px) {
+  .document .card-holder .col .card-small .text-main {
+    padding-top: 30px;
+  }
 }
 .document .card-holder .col .card-small .card-number {
   font-family: "Rowdies", cursive;
@@ -3814,20 +3861,17 @@ body {
 
 .see-also {
   padding: 45px 0 75px;
+  position: relative;
 }
-.see-also .col {
-  width: 25%;
-  margin: 0 -10px;
-}
-.see-also .col .card {
+.see-also .card {
   padding: 0 10px;
 }
-.see-also .col .card .image-holder {
+.see-also .card .image-holder {
   position: relative;
   border-radius: 10px;
   margin-bottom: 11px;
 }
-.see-also .col .card .image-holder .date-holder {
+.see-also .card .image-holder .date-holder {
   background-color: #E5AA2A;
   color: #fff;
   position: absolute;
@@ -3838,27 +3882,27 @@ body {
   padding: 5px 11px 5px 8px;
   font-size: 12px;
 }
-.see-also .col .card .text-holder .card-title {
+.see-also .card .text-holder .card-title {
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
   color: #0A0A21;
   margin-bottom: 10px;
 }
-.see-also .col .card .text-holder .text {
+.see-also .card .text-holder .text {
   font-size: 12px;
   line-height: 16px;
   color: #4d4d4d;
   margin-bottom: 15px;
 }
-.see-also .col .card .btn-holder .card-btn {
+.see-also .card .btn-holder .card-btn {
   color: #0A0A21;
   font-size: 14px;
   position: relative;
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
-.see-also .col .card .btn-holder .card-btn:before {
+.see-also .card .btn-holder .card-btn:before {
   content: "";
   width: 24px;
   height: 2px;
@@ -3870,7 +3914,7 @@ body {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
-.see-also .col .card .btn-holder .card-btn::after {
+.see-also .card .btn-holder .card-btn::after {
   content: "";
   position: absolute;
   border-bottom: 2px solid #0A0A21;
@@ -3884,10 +3928,10 @@ body {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
-.see-also .col .card .btn-holder .card-btn:hover:before {
+.see-also .card .btn-holder .card-btn:hover:before {
   width: 42px;
   right: -50px;
 }
-.see-also .col .card .btn-holder .card-btn:hover:after {
+.see-also .card .btn-holder .card-btn:hover:after {
   right: -50px;
 }

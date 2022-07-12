@@ -30,14 +30,27 @@
     }
 
     .article-content.flex {
+
+        @include media('<=desktop') {
+            align-items: flex-start;
+        }
+        
         .image-holder {
             border-radius: 10px;
             width: 40%;
             order: 2;
+
+            @include media('<=tablet') {
+                width: 100%;
+            }
         }
 
         .text-holder {
             width: 50%;
+
+            @include media('<=tablet') {
+                width: 100%;
+            }
 
             .text-main {
                 margin-bottom: 40px;
