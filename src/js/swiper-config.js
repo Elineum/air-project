@@ -75,18 +75,39 @@ new Swiper(".about-project__photo-swiper", {
     },
   },
 });
-new Swiper(".articles__tab-wrap", {
+new Swiper(".articles__label-swiper-container", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   watchOverflow: true,
+  loop: true,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   breakpoints: {
-    320: {
-      slidesPerView: 2,
-      slidesPerGroup: 1,
-      spaceBetween: 23,
-    },
     768: {
+      loop: false,
       slidesPerView: 4,
-      slidesPerGroup: 1,
-      spaceBetween: 35,
+      slidesPerGroup: 4,
+      enabled: false,
+    },
+  },
+});
+new Swiper(".events__label-swiper-container", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  watchOverflow: true,
+  loop: true,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  breakpoints: {
+    768: {
+      loop: false,
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      enabled: false,
     },
   },
 });

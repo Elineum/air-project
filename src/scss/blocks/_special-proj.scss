@@ -147,7 +147,7 @@
 
     .swiper-slide {
         &::before {
-            content: url(../img/specialProjBlur.png);
+            content: url(../img/specialProjBlurB.png);
             position: absolute;
             z-index: -1;
             left: -10%;
@@ -157,10 +157,21 @@
             width: 492px;
             height: 451px;
             
-
             @media screen and (max-width: 1279px) {
-                content: url(../img/specialProjBlurTablet.png);
+                content: url(../img/specialProjBlurBTablet.png);
                 filter: blur(20px);
+            }
+        }
+
+        &:nth-child(even) {
+
+            &::before {
+                content: url(../img/specialProjBlurO.png);
+
+                @media screen and (max-width: 1279px) {
+                    content: url(../img/specialProjBlurOTablet.png);
+                    filter: blur(20px);
+                }
             }
         }
     }

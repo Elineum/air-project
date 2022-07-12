@@ -30,6 +30,9 @@ let burgerDrop = document.querySelector(".js-burger-dropmenu");
 let burgetItems = document.querySelectorAll(".js-burger-link");
 let burgerDropContent = document.querySelector(".page-head__inner-menu-wrap");
 let modalShadow = document.querySelector(".window-box");
+let modalNewsInnerList = document.querySelector(
+  ".window-box__news-label-inner-list"
+);
 let modalInputBorders = document.querySelectorAll(".js-modal-input");
 let modalSubscriLabel = document.querySelector(".window-box__news-label");
 let modalSubscribeCheckbox = document.querySelectorAll(
@@ -99,8 +102,10 @@ function anyCheckboxes() {
     subscribeCheckbox.push(el.checked);
     if (subscribeCheckbox.some((key) => key === true)) {
       modalSubscriLabel.classList.add("orange-border");
+      modalNewsInnerList.classList.add("orange-border");
     } else {
       modalSubscriLabel.classList.remove("orange-border");
+      modalNewsInnerList.classList.remove("orange-border");
     }
   });
   subscribeCheckbox = [];

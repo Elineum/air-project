@@ -392,9 +392,10 @@
     &__news-label-inner-list {
         position: absolute;
         list-style: none;
-        border-radius: 10px;
+        border: 1px solid #4D4D4D;
+        border-radius: 0 0 10px 10px;
         background-color: white;
-        padding: 23px 19px 11px 10px;
+        padding: 23px 17px 11px 10px;
         color: #4D4D4D;
         display: grid;
         transform: translateY(-1000px);
@@ -407,22 +408,22 @@
         "c1r1 c2r1 c3r1"
         "c1r2 c2r2 ."
         "c1r3 c2r3 .";
-        transition: all ease-in-out 0.3s;
-        box-shadow: 0px 1px 5px black;
+        transition: all ease-in-out 0.1s;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
 
         @media screen and (max-width: 1279px) {
-            grid-template-columns: 64px 106px 76px;
-            gap: 22px 25px;
-            grid-template-areas:
-            "c1r1 c2r1 c3r1"
-            "c1r2 c2r2 c3r1"
-            "c1r3 c2r3 .";
+            gap: 11px 35px;
+            padding: 16px 17px 11px 10px;
+        }
+
+        @media screen and (max-width: 767px) {
+            gap: 11px 22.5px;
         }
     }
 
     &__news-label-inner-menu {
         position: absolute;
-        top: 39px;
+        top: 36px;
         width: 380px;
         height: 165px;
         overflow: hidden;
@@ -431,11 +432,11 @@
 
         @media screen and (max-width: 1279px) {
             width: 390px;
-            max-width: 365px;
         }
 
         @media screen and (max-width: 767px) {
-            top: 55px;
+            width: 365px;
+            top: 36px;
         }
     }
 
@@ -460,18 +461,6 @@
         }
         &:nth-child(7) {
             grid-area: c3r1;
-            
-
-            @media screen and (max-width: 1279px) {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                justify-content: center;
-
-                span {
-                    transform: translateY(10px);
-                }
-            }
         }
     }
 
@@ -511,6 +500,7 @@
         -moz-user-select: none;
         -webkit-user-select: none;
         -ms-user-select: none;
+        transition: all ease-in-out 0.1s;
 
         @media screen and (max-width: 1279px) {
             max-width: 350px;
@@ -871,6 +861,8 @@
 }
 
 #modalNews:checked~.window-box__news-label {
+    border-radius: 10px 10px 0 0;
+
     &::before {
         transform: rotate(-35deg);
     }

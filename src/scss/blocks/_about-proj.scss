@@ -124,6 +124,9 @@
 
     &__our-team {
         padding-top: 38px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     &__img-holder-top {
@@ -158,19 +161,6 @@
     &__photo-item {
         text-align: center;
 
-        &::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            height: 65%;
-            width: 25%;
-            background-color: #2B75B5;
-            filter: blur(45px);
-        }
-
         &:nth-child(even) {
             padding-top: 56px;
 
@@ -180,11 +170,6 @@
 
             @media screen and (max-width: 767px) {
                 padding-top: 29px;
-            }
-
-            &::before {
-                content: '';
-                background-color: #E5AA2A;
             }
         }
     }

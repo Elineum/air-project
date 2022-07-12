@@ -141,9 +141,6 @@
             </div>
           </section>
           <section class="articles container-width container-width_top-slide" id="articles">
-            <div class="articles__head-title">
-              <h2>Публікації:</h2>
-            </div>
             <input
               type="radio" name="article-radio"
               id="articles-first"
@@ -151,48 +148,60 @@
               value=""
               checked
             />
-            <label
-              for="articles-first"
-              class="articles__head-label"
-              id="articles-first-label"
-              >Статті</label
-            >
             <input
               type="radio" name="article-radio"
               id="articles-second"
               class="articles__head-hidden-input tab-array"
               value=""
             />
-            <label
-              for="articles-second"
-              class="articles__head-label"
-              id="articles-second-label"
-              >Блоги</label
-            >
             <input
               type="radio" name="article-radio"
               id="articles-third"
               class="articles__head-hidden-input tab-array"
               value=""
             />
-            <label
-              for="articles-third"
-              class="articles__head-label"
-              id="articles-third-label"
-              >Дослідження</label
-            >
             <input
               type="radio" name="article-radio"
               id="articles-four"
               class="articles__head-hidden-input tab-array"
               value=""
             />
-            <label
-              for="articles-four"
-              class="articles__head-label"
-              id="articles-four-label"
-              >Новини</label
-            >
+            <div class="head-flex">
+              <div class="articles__head-title">
+                <h2>Публікації:</h2>
+              </div>
+              <div class="articles__label-swiper-container swiper-container">
+                <div class="articles__label-swiper-wrapper swiper-wrapper">
+                  <label
+                  for="articles-first"
+                  class="articles__head-label swiper-slide"
+                  id="articles-first-label"
+                  >Статті</label>
+                  <label
+                  for="articles-second"
+                  class="articles__head-label swiper-slide"
+                  id="articles-second-label"
+                  >Блоги</label
+                  >
+                  <label
+                  for="articles-third"
+                  class="articles__head-label swiper-slide"
+                  id="articles-third-label"
+                  >Дослідження</label
+                  >
+                  <label
+                  for="articles-four"
+                  class="articles__head-label swiper-slide"
+                  id="articles-four-label"
+                  >Новини</label
+                  >
+                </div>
+                <div class="articles__label-swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+            </div>
             <div class="articles__swiper top-sliders articles__swiper-1 swiper-container">
               <ul class="articles__content-list swiper-wrapper">
                 <li class="articles__content-item swiper-slide">
@@ -353,10 +362,8 @@
                 </li>
               </ul>
               <div class="articles__swiper-button-wrap">
-                <div class="articles__swiper-button-wrap">
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
             </div>
             <div class="articles__swiper top-sliders articles__swiper-2 swiper-container">
@@ -853,34 +860,44 @@
             </div>
           </section>
           <section class="events container-width container-width_top-slide" id="events">
+            <input
+              type="radio" name="events-radio"
+              id="events-first"
+              class="events__head-hidden-input tab-array"
+              value=""
+              checked
+            />
+            <input
+              type="radio" name="events-radio"
+              id="events-second"
+              class="events__head-hidden-input tab-array"
+              value=""
+            />
+            <div class="head-flex">
               <div class="events__head-title">
                 <h2>Івенты:</h2>
               </div>
-              <input
-                type="radio" name="events-radio"
-                id="events-first"
-                class="events__head-hidden-input tab-array"
-                value=""
-                checked
-              />
-              <label
-                for="events-first"
-                class="events__head-label"
-                id="events-first-label"
-                >Прес-релізи</label
-              >
-              <input
-                type="radio" name="events-radio"
-                id="events-second"
-                class="events__head-hidden-input tab-array"
-                value=""
-              />
-              <label
-                for="events-second"
-                class="events__head-label"
-                id="events-second-label"
-                >Анонси</label
-              >
+              <div class="events__label-swiper-container swiper-container">
+                <div class="events__label-swiper-wrapper swiper-wrapper">
+                  <label
+                  for="events-first"
+                  class="events__head-label swiper-slide"
+                  id="events-first-label"
+                  >Прес-релізи</label
+                  >
+                  <label
+                  for="events-second"
+                  class="events__head-label swiper-slide"
+                  id="events-second-label"
+                  >Анонси</label
+                  >
+                </div>
+                <div class="events__label-swiper-button-wrap">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+            </div>
               <div class="events__swiper top-sliders events__swiper-1 swiper-container">
                 <ul class="events__content-list swiper-wrapper">
                   <li class="events__content-item swiper-slide">
@@ -1419,7 +1436,7 @@
                 </div>
               </div>
             </div>
-            <div class="about-project__our-team" id="our-experts">
+            <div class="about-project__our-team" id="our-experts" style="background-image: url(src/img/photoBlockBlurs.png);">
               <div class="about-project__title-holder about-project__title-holder_center container-width">
                 <h2>Наші партнери та експерти</h2>
               </div>
