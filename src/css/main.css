@@ -167,6 +167,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 auto 29px;
+  padding-top: 53px;
+}
+@media screen and (max-width: 1279px) {
+  .page-head {
+    padding-top: 22px;
+  }
 }
 .page-head__list {
   list-style: none;
@@ -4365,6 +4371,56 @@ body {
             transform: translateY(0);
   }
 }
+@-webkit-keyframes height-small-m {
+  from {
+    max-height: 40px;
+  }
+  50% {
+    max-height: 700px;
+  }
+  to {
+    max-height: -webkit-max-content;
+    max-height: max-content;
+  }
+}
+@keyframes height-small-m {
+  from {
+    max-height: 40px;
+  }
+  50% {
+    max-height: 700px;
+  }
+  to {
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+  }
+}
+@-webkit-keyframes height-small-revert-m {
+  from {
+    max-height: -webkit-max-content;
+    max-height: max-content;
+  }
+  50% {
+    max-height: 700px;
+  }
+  to {
+    max-height: 40px;
+  }
+}
+@keyframes height-small-revert-m {
+  from {
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+  }
+  50% {
+    max-height: 700px;
+  }
+  to {
+    max-height: 40px;
+  }
+}
 .news-main {
   padding: 0 15px;
 }
@@ -4838,56 +4894,7 @@ body {
 .see-also .card .btn-holder .card-btn:hover:after {
   right: -50px;
 }
-@-webkit-keyframes height-small-m {
-  from {
-    max-height: 40px;
-  }
-  50% {
-    max-height: 700px;
-  }
-  to {
-    max-height: -webkit-max-content;
-    max-height: max-content;
-  }
-}
-@keyframes height-small-m {
-  from {
-    max-height: 40px;
-  }
-  50% {
-    max-height: 700px;
-  }
-  to {
-    max-height: -webkit-max-content;
-    max-height: -moz-max-content;
-    max-height: max-content;
-  }
-}
-@-webkit-keyframes height-small-revert-m {
-  from {
-    max-height: -webkit-max-content;
-    max-height: max-content;
-  }
-  50% {
-    max-height: 700px;
-  }
-  to {
-    max-height: 40px;
-  }
-}
-@keyframes height-small-revert-m {
-  from {
-    max-height: -webkit-max-content;
-    max-height: -moz-max-content;
-    max-height: max-content;
-  }
-  50% {
-    max-height: 700px;
-  }
-  to {
-    max-height: 40px;
-  }
-}
+
 .body-404 {
   min-height: 100vh;
   position: relative;
